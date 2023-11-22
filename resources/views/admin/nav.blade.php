@@ -74,7 +74,7 @@
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Site Management</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="">Import Members</a></li>
-                            <li><a href="">Manage Category</a></li>
+                            <li><a href="{{ route('category') }}">Manage Category</a></li>
                             <li><a href="">Manage Logo</a></li>
                             <li><a href="">Manage Home Sliders</a></li>
                             <li><a href="">Manage About Us</a></li>

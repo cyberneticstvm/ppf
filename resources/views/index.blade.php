@@ -239,7 +239,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="service_box style_two dark_color">
                         <div class="service_content_two ">
-                            <div class="content_inner" style="background-image:url(/frontend/assets/images/service/service-image-1.png);">
+                            <div class="content_inner" style="background-image:url('{{ asset("/frontend/assets/images/service/service-image-1.png") }}' );">
                                 <div class="content_inner_in">
                                     <div class="icon_image">
                                         <img src="{{ asset('/frontend/assets/images/010-job-search.png') }}" class="img-fluid" alt="Service Image" />
@@ -275,7 +275,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="service_box style_two dark_color">
                         <div class="service_content_two  active_ser">
-                            <div class="content_inner" style="background-image:url(/frontend/assets/images/service/service-image-2.png);">
+                            <div class="content_inner" style="background-image:url('{{ asset("/frontend/assets/images/service/service-image-2.png") }}' );">
                                 <div class="content_inner_in">
                                     <div class="icon_image">
                                         <img src="{{ asset('/frontend/assets/images/service-ico-1.png') }}" class="img-fluid" alt="Service Image" />
@@ -318,7 +318,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="service_box style_two dark_color">
                         <div class="service_content_two ">
-                            <div class="content_inner" style="background-image:url(/frontend/assets/images/service/service-image-3.png);">
+                            <div class="content_inner" style="background-image:url('{{ asset("/frontend/assets/images/service/service-image-3.png") }}' );">
                                 <div class="content_inner_in">
                                     <div class="icon_image">
                                         <img src="{{ asset('/frontend/assets/images/service-ico-2.png') }}" class="img-fluid" alt="Service Image" />

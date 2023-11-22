@@ -25,6 +25,7 @@ Route::get('/login', function () {
 Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::post('/login', 'login')->name('signin');
+        Route::get('/createuser', 'createuser')->name('createuser');
     });
 });
 

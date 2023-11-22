@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,5 +39,16 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login')->with("success", "User logged out successfully.");
+    }
+
+    public function createuser()
+    {
+        User::create([
+            'username' => 'admin',
+            'name' => 'Administrator',
+            'email' => 'ppfk@ppfkuwait.org',
+            'password' => bcrypt('ppf@2022###'),
+        ]);
+        echo "User created successfully";
     }
 }

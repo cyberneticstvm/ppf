@@ -908,7 +908,7 @@
     </section>
     <!---project-end--->
     <!---testimonial--->
-    <section class="testimonial bg_op_1" style="background-image: url(/frontend/assets/images/testimonialbg.jpg);">
+    <section class="testimonial bg_op_1" style="background-image: url('{{ asset("/frontend/assets/images/testimonialbg.jpg") }} ');">
         <div class="row align-items-center">
             <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 pd_zero">
                 <div class="image">

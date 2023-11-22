@@ -8,7 +8,7 @@
 
             <div class="slide-item-content">
                 <div class="slide-item content_left">
-                    <div class="image-layer" style="background-image:url(/frontend/assets/images/sliders/slider-1-1.jpg)">
+                    <div class="image-layer" style="background-image:url('{{ asset("/frontend/assets/images/sliders/slider-1-1.jpg") }}' )">
                     </div>
                     <div class="auto-container">
                         <div class="row">

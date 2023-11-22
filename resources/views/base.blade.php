@@ -44,7 +44,7 @@
          <!----mini cart----->
          <!----preloader----->
          <div class="preloader-wrap">
-            <div class="preloader" style='background-image:url("{{ asset('/frontend/assets/images/preloader.gif') }}")'>
+            <div class="preloader" style="background-image:url('{{ asset("/frontend/assets/images/preloader.gif") }}')">
             </div>
             <div class="overlay"></div>
          </div>

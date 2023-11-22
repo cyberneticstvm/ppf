@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,18 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/login', function () {
     return view('admin.login');
 })->name('login');
 
 Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {
+        Route::post('/', 'index')->name('index');
         Route::post('/login', 'login')->name('signin');
         Route::get('/createuser', 'createuser')->name('createuser');
+    });
+
+    Route::controller(WebController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
     });
 });
 

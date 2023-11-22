@@ -34,14 +34,6 @@
    <div id="page" class="page_wapper hfeed site">
       <!---============== wrapper_full =================-->
       <div id="wrapper_full" class="content_all_warpper">
-         <!----mini cart----->
-         <div class="mini_cart_togglers fixed_cart">
-            <div class="mini-cart-count">
-               0
-            </div>
-            <i class="icon-shopping-cart"></i>
-         </div>
-         <!----mini cart----->
          <!----preloader----->
          <div class="preloader-wrap">
             <div class="preloader" style="background-image:url('{{ asset("/frontend/assets/images/preloader.gif") }}')">
@@ -475,29 +467,42 @@
       <div class="floating_menu_box">
          <ul class="float_menu_box">
             <i class="close fa fa-times"></i>
-            <li class="floating_menu_text active">
-               <a href="#home"> Home </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == '') ? 'active' : '' }}">
+               <a href="/"> Home </a>
+            </li>
+
+            <li class="floating_menu_text {{ (request()->segment(1) == 'about') ? 'active' : '' }}">
+               <a href="/">About PPF</a>
+            </li>
+
+            <li class="floating_menu_text {{ (request()->segment(1) == 'officials') ? 'active' : '' }}">
+               <a href="/"> Officials </a>
             </li>
 
             <li class="floating_menu_text ">
-               <a href="#about">About </a>
+               <a href="/"> Membership </a>
             </li>
 
             <li class="floating_menu_text ">
-               <a href="#service"> Service </a>
-            </li>
-
-            <li class="floating_menu_text ">
-               <a href="#process"> Process </a>
-            </li>
-
-            <li class="floating_menu_text ">
-               <a href="#projects"> Projects </a>
+               <a href="/"> Events </a>
             </li>
 
             <li class="floating_menu_text">
-               <a href="#blog"> Blog </a>
+               <a href="/"> Publications </a>
             </li>
+
+            <li class="floating_menu_text">
+               <a href="/"> Gallery </a>
+            </li>
+
+            <li class="floating_menu_text">
+               <a href="/"> Community </a>
+            </li>
+
+            <li class="floating_menu_text">
+               <a href="/"> Contact </a>
+            </li>
+
          </ul>
       </div>
       <!---==============floating menu=================-->

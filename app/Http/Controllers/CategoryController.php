@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\CategoryType;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -11,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index');
+        $cats = Category::withTrashed()->latest()->get();
+        return view('admin.category.index', compact('cats'));
     }
 
     /**
@@ -19,7 +22,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $types = CategoryType::pluck('name', 'id');
+        return view('admin.category.create', compact('types'));
     }
 
     /**
@@ -27,7 +31,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
+            'category_type' => 'required',
+            'display_order' => 'required|numeric',
+            'status' => 'required',
+        ]);
+        $input = $request->all();
+        $url = uploadFile($request->file('image'), $path = 'category');
+        $input['image'] = $url;
+        $input['created_by'] = $request->user()->id;
+        $input['updated_by'] = $request->user()->id;
+        Category::create($input);
+        return redirect()->route('category')->with("success", "Category saved successfully!");
     }
 
     /**
@@ -43,7 +60,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail(decrypt($id));
+        $types = CategoryType::pluck('name', 'id');
+        return view('admin.category.edit', compact('types', 'category'));
     }
 
     /**
@@ -51,7 +70,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
+            'category_type' => 'required',
+            'display_order' => 'required|numeric',
+            'status' => 'required',
+        ]);
+        $input = $request->all();
+        if ($request->file('image')) :
+            $url = uploadFile($request->file('image'), $path = 'category');
+            $input['image'] = $url;
+        endif;
+        $input['updated_by'] = $request->user()->id;
+        Category::findOrFail($id)->update($input);
+        return redirect()->route('category')->with("success", "Category updated successfully!");
     }
 
     /**
@@ -59,6 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Category::findOrFail(decrypt($id))->update(['status' => 'inactive']);
+        Category::findOrFail(decrypt($id))->delete();
+        return redirect()->route('category')->with("success", "Category deleted successfully!");
     }
 }

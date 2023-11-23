@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('image')->comment('Maximum Allowed Size is 1000 x 600, filesize 150Kb')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->integer('display_order')->default(0);
             $table->foreign('category_type')->references('id')->on('category_types');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

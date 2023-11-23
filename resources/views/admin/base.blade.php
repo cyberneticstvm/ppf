@@ -27,6 +27,7 @@
   <!-- Feather icon-->
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/feather-icon.css') }}">
   <!-- Plugins css start-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/datatables.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/animate.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/chartist.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/date-picker.css') }}">
@@ -104,12 +105,9 @@
   <script src="{{ asset('/backend/assets/js/bootstrap/popper.min.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/bootstrap/bootstrap.min.js') }}"></script>
   <!-- Plugins JS start-->
-  <script src="{{ asset('/backend/assets/js/chart/chartist/chartist.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/chart/chartist/chartist-plugin-tooltip.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/chart/knob/knob.min.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/chart/knob/knob-chart.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/chart/apex-chart/apex-chart.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/chart/apex-chart/stock-prices.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/datatable/datatables/datatable.custom.js') }}"></script>
+
   <script src="{{ asset('/backend/assets/js/prism/prism.min.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/clipboard/clipboard.min.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/counter/jquery.waypoints.min.js') }}"></script>
@@ -125,7 +123,6 @@
   <script src="{{ asset('/backend/assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/vector-map/map/jquery-jvectormap-in-mill.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/vector-map/map/jquery-jvectormap-asia-mill.js') }}"></script>
-  <script src="{{ asset('/backend/assets/js/dashboard/default.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/notify/index.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/datepicker/date-picker/datepicker.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/datepicker/date-picker/datepicker.en.js') }}"></script>

@@ -25,7 +25,7 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Events</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="">Manage Events</a></li>
+                            <li><a href="{{ route('event') }}">Manage Events</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Scrolling Messages</span></a>
@@ -45,7 +45,7 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="image"></i><span>Gallery</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="">Manage Gallery</a></li>
+                            <li><a href="{{ route('gallery') }}">Manage Gallery</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Committee Management</span></a>

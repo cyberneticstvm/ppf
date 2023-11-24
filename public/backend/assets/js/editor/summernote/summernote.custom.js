@@ -1,5 +1,5 @@
 var summernote_custom = {
-    init: function() {
+    init: function () {
         $('.summernote').summernote({
             height: 300,
             tabsize: 2
@@ -17,22 +17,30 @@ var summernote_custom = {
                 search: function (keyword, callback) {
                     callback($.grep(this.words, function (item) {
                         return item.indexOf(keyword) === 0;
-                    }));    
+                    }));
                 }
             }
         });
     }
 };
-(function($) {
+(function ($) {
     "use strict";
     summernote_custom.init();
 })(jQuery);
 
-var edit = function() {
-    $('.click2edit').summernote({focus: true});
+var edit = function () {
+    $('.click2edit').summernote({ focus: true });
 };
 
-var save = function() {
+var save = function () {
     var markup = $('.click2edit').summernote('code');
     $('.click2edit').summernote('destroy');
 };
+
+$(function () {
+    "use strict"
+    $('.editor').summernote({
+        height: 300,
+        tabsize: 2
+    });
+})

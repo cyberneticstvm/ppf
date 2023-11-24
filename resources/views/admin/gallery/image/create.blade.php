@@ -5,46 +5,39 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Category Create</h3>
+                    <h3>Gallery Image List</h3>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Category Create</li>
+                        <li class="breadcrumb-item active">Gallery Image List</li>
                     </ol>
                 </div>
-
             </div>
         </div>
     </div>
-    <!-- Container-fluid starts-->
+    <!-- Container-fluid Ends-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-xl-12">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            {{ html()->form('POST', route('category.save'))->class('theme-form')->acceptsFiles()->open() }}
+                            {{ html()->form('POST', route('gallery.image.save'))->class('theme-form')->acceptsFiles()->open() }}
+                            <input type="hidden" name="gallery_id" value="{{ $gallery->id }}" />
                             <div class="card-body">
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label class="col-form-label pt-0 req" for="name">Category Name / Title </label>
-                                        {{ html()->text('name', old('name'))->class('form-control')->placeholder('Category Name') }}
+                                        <label class="col-form-label pt-0 req" for="name">Gallery Name / Title </label>
+                                        {{ html()->text('name', $gallery->name)->class('form-control')->placeholder('Gallery Name')->attribute('readonly', 'true') }}
                                         @error('name')
                                         <small class="text-danger">{{ $errors->first('name') }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="col-form-label pt-0 req" for="image">Category Image </label>
+                                        <label class="col-form-label pt-0 req" for="image">Gallery Image </label>
                                         {{ html()->file('image', old('image'))->class('form-control') }}
                                         <small class="form-text text-muted">Max file size should be less than 1MB</small>
                                         @error('image')
                                         <small class="text-danger">{{ $errors->first('image') }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="col-form-label pt-0 req" for="category_type">Category Type </label>
-                                        {{ html()->select('category_type', $types, old('category_type'))->class('form-control')->placeholder('Select') }}
-                                        @error('category_type')
-                                        <small class="text-danger">{{ $errors->first('category_type') }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
@@ -74,6 +67,44 @@
             </div>
         </div>
     </div>
-    <!-- Container-fluid Ends-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-xl-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <table class="display table table-sm table-striped" id="basic-2">
+                                    <thead>
+                                        <th>SL No</th>
+                                        <th>Image</th>
+                                        <th>Display Order</th>
+                                        <th>Status</th>
+                                        <th>Deleted?</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($images as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td class="text-center"><a href="{{ $item->image }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td class="text-center">{{ $item->display_order }}</td>
+                                            <td>{!! $item->imageStatus() !!}</td>
+                                            <td>{!! $item->deletedStatus() !!}</td>
+                                            <td class="text-center"><a href="{{ route('gallery.image.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>
+                                            <td class="text-center"><a href="{{ route('gallery.image.delete', encrypt($item->id)) }}" class="dlt"><i class="fa fa-trash text-danger fa-lg"></i></a></td>
+                                        </tr>
+                                        @empty
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

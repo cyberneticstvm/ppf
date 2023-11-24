@@ -28,6 +28,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/feather-icon.css') }}">
   <!-- Plugins css start-->
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/datatables.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/summernote.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/animate.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/chartist.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/date-picker.css') }}">
@@ -107,6 +108,8 @@
   <!-- Plugins JS start-->
   <script src="{{ asset('/backend/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/datatable/datatables/datatable.custom.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/editor/summernote/summernote.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/editor/summernote/summernote.custom.js') }}"></script>
 
   <script src="{{ asset('/backend/assets/js/prism/prism.min.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/clipboard/clipboard.min.js') }}"></script>

@@ -41,10 +41,10 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0 req" for="category_type">Gallery Category </label>
-                                        {{ html()->select('category_type', $types, $gallery->category_type)->class('form-control')->placeholder('Select') }}
-                                        @error('category_type')
-                                        <small class="text-danger">{{ $errors->first('category_type') }}</small>
+                                        <label class="col-form-label pt-0 req" for="category_id">Gallery Category </label>
+                                        {{ html()->select('category_id', $types, $gallery->category_id)->class('form-control')->placeholder('Select') }}
+                                        @error('category_id')
+                                        <small class="text-danger">{{ $errors->first('category_id') }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-3">

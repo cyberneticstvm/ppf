@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\CategoryType;
-use App\Models\Gallery;
+use App\Models\Advertisement;
 use Illuminate\Http\Request;
 
-class GalleryController extends Controller
+class AdvertisementController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $galleries = Gallery::withTrashed()->latest()->get();
-        return view('admin.gallery.index', compact('galleries'));
+        $ads = Advertisement::withTrashed()->latest()->get();
+        return view('admin.advertisement.index', compact('ads'));
     }
 
     /**
@@ -23,8 +21,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $types = Category::where('category_type', 1)->pluck('name', 'id');
-        return view('admin.gallery.create', compact('types'));
+        return view('admin.advertisement.create');
     }
 
     /**
@@ -35,17 +32,17 @@ class GalleryController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
-            'category_id' => 'required',
-            'display_order' => 'required|numeric',
             'status' => 'required',
+            'description' => 'required',
+            'position' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'gallery');
+        $url = uploadFile($request->file('image'), $path = 'advertisement');
         $input['image'] = $url;
         $input['created_by'] = $request->user()->id;
         $input['updated_by'] = $request->user()->id;
-        Gallery::create($input);
-        return redirect()->route('gallery')->with("success", "Gallery saved successfully!");
+        Advertisement::create($input);
+        return redirect()->route('advertisement')->with("success", "Advertisement saved successfully!");
     }
 
     /**
@@ -61,9 +58,8 @@ class GalleryController extends Controller
      */
     public function edit(string $id)
     {
-        $gallery = Gallery::findOrFail(decrypt($id));
-        $types = Category::where('category_type', 1)->pluck('name', 'id');
-        return view('admin.gallery.edit', compact('types', 'gallery'));
+        $ad = Advertisement::findOrFail(decrypt($id));
+        return view('admin.advertisement.edit', compact('ad'));
     }
 
     /**
@@ -74,18 +70,18 @@ class GalleryController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
-            'category_id' => 'required',
-            'display_order' => 'required|numeric',
             'status' => 'required',
+            'description' => 'required',
+            'position' => 'required',
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'gallery');
+            $url = uploadFile($request->file('image'), $path = 'event');
             $input['image'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;
-        Gallery::findOrFail($id)->update($input);
-        return redirect()->route('gallery')->with("success", "Gallery updated successfully!");
+        Advertisement::findOrFail($id)->update($input);
+        return redirect()->route('advertisement')->with("success", "Advertisement updated successfully!");
     }
 
     /**
@@ -93,8 +89,8 @@ class GalleryController extends Controller
      */
     public function destroy(string $id)
     {
-        Gallery::findOrFail(decrypt($id))->update(['status' => 'inactive']);
-        Gallery::findOrFail(decrypt($id))->delete();
-        return redirect()->route('gallery')->with("success", "Gallery deleted successfully!");
+        Advertisement::findOrFail(decrypt($id))->update(['status' => 'inactive']);
+        Advertisement::findOrFail(decrypt($id))->delete();
+        return redirect()->route('advertisement')->with("success", "Advertisement deleted successfully!");
     }
 }

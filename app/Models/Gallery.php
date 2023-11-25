@@ -14,7 +14,7 @@ class Gallery extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_type', 'id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function deletedStatus()

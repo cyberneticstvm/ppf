@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GalleryImageController;
+use App\Http\Controllers\Publicationcontroller;
+use App\Http\Controllers\ScrollingMessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -74,5 +77,32 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/edit/{id}', 'edit')->name('event.edit');
         Route::post('/edit/{id}', 'update')->name('event.update');
         Route::get('/delete/{id}', 'destroy')->name('event.delete');
+    });
+
+    Route::prefix('/scrolling')->controller(ScrollingMessageController::class)->group(function () {
+        Route::get('/', 'index')->name('scrolling');
+        Route::get('/create', 'create')->name('scrolling.create');
+        Route::post('/save', 'store')->name('scrolling.save');
+        Route::get('/edit/{id}', 'edit')->name('scrolling.edit');
+        Route::post('/edit/{id}', 'update')->name('scrolling.update');
+        Route::get('/delete/{id}', 'destroy')->name('scrolling.delete');
+    });
+
+    Route::prefix('/publication')->controller(Publicationcontroller::class)->group(function () {
+        Route::get('/', 'index')->name('publication');
+        Route::get('/create', 'create')->name('publication.create');
+        Route::post('/save', 'store')->name('publication.save');
+        Route::get('/edit/{id}', 'edit')->name('publication.edit');
+        Route::post('/edit/{id}', 'update')->name('publication.update');
+        Route::get('/delete/{id}', 'destroy')->name('publication.delete');
+    });
+
+    Route::prefix('/advertisement')->controller(AdvertisementController::class)->group(function () {
+        Route::get('/', 'index')->name('advertisement');
+        Route::get('/create', 'create')->name('advertisement.create');
+        Route::post('/save', 'store')->name('advertisement.save');
+        Route::get('/edit/{id}', 'edit')->name('advertisement.edit');
+        Route::post('/edit/{id}', 'update')->name('advertisement.update');
+        Route::get('/delete/{id}', 'destroy')->name('advertisement.delete');
     });
 });

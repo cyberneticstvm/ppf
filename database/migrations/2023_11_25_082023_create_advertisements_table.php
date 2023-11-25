@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('advertisements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
             $table->string('name');
+            $table->enum('position', ['top', 'right', 'bottom', 'left', 'floating']);
             $table->string('image')->nullable();
+            $table->string('url')->nullable();
+            $table->longText('description')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->integer('display_order')->default(0);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
-            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('advertisements');
     }
 };

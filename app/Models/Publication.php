@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Event extends Model
+class Publication extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -22,10 +22,8 @@ class Event extends Model
         return ($this->deleted_at == NULL) ? '' : '<span class="badge badge-danger">Deleted</span>';
     }
 
-    public function eventStatus()
+    public function publicationStatus()
     {
         return ($this->status == 'active') ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">Inactive</span>';
     }
-
-    protected $casts = ['date' => 'datetime'];
 }

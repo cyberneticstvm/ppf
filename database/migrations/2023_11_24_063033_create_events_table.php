@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_type');
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('gallery_id');
             $table->string('name');
             $table->string('image')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('display_order')->default(0);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
-            $table->foreign('category_type')->references('id')->on('category_types');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('gallery_id')->references('id')->on('galleries');
             $table->timestamps();
             $table->softDeletes();

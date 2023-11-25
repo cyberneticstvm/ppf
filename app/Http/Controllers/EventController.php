@@ -24,7 +24,8 @@ class EventController extends Controller
     public function create()
     {
         $types = Category::where('category_type', 2)->pluck('name', 'id');
-        $galleries = Gallery::where('category_type', 2)->pluck('name', 'id');
+        //$galleries = Gallery::whereIn('category_id', Category::where('category_type', 2)->pluck('id'))->pluck('name', 'id');
+        $galleries = Gallery::pluck('name', 'id');
         return view('admin.event.create', compact('types', 'galleries'));
     }
 
@@ -36,7 +37,7 @@ class EventController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
-            'category_type' => 'required',
+            'category_id' => 'required',
             'display_order' => 'required|numeric',
             'status' => 'required',
             'description' => 'required',
@@ -65,7 +66,8 @@ class EventController extends Controller
     public function edit(string $id)
     {
         $types = Category::where('category_type', 2)->pluck('name', 'id');
-        $galleries = Gallery::where('category_type', 2)->pluck('name', 'id');
+        //$galleries = Gallery::whereIn('category_id', Category::where('category_type', 2)->pluck('id'))->pluck('name', 'id');
+        $galleries = Gallery::pluck('name', 'id');
         $event = Event::findOrFail(decrypt($id));
         return view('admin.event.edit', compact('types', 'galleries', 'event'));
     }
@@ -78,7 +80,7 @@ class EventController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
-            'category_type' => 'required',
+            'category_id' => 'required',
             'display_order' => 'required|numeric',
             'status' => 'required',
             'description' => 'required',

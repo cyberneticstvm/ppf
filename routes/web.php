@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GalleryImageController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\Publicationcontroller;
 use App\Http\Controllers\ScrollingMessageController;
 use App\Http\Controllers\UserController;
@@ -26,11 +27,18 @@ Route::get('/login', function () {
     return view('admin.login');
 })->name('login');
 
+
 Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::post('/', 'index')->name('index');
         Route::post('/login', 'login')->name('signin');
-        Route::get('/createuser', 'createuser')->name('createuser');
+        //Route::get('/createuser', 'createuser')->name('createuser');
+        Route::get('/membership', 'membership')->name('membership');
+    });
+
+    Route::controller(MembershipController::class)->group(function () {
+        Route::get('/membership', 'create')->name('membership');
+        Route::post('/membership', 'store')->name('apply.membership');
     });
 
     Route::controller(WebController::class)->group(function () {

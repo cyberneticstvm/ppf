@@ -53,14 +53,14 @@
                                  <i class="icon-placeholder"></i>
                                  <div class="text">
                                     <small>Location</small>
-                                    <span>61W Business Str Hobert, LA </span>
+                                    <span>Fahaheel Kala Centre, 30 St, Mangaf, Kuwait </span>
                                  </div>
                               </div>
                               <div class="contntent email">
                                  <i class="icon-email"></i>
                                  <div class="text">
                                     <small>Email</small>
-                                    <a href="mailto:sendmail@creote.com">sendmail@creote.com</a>
+                                    <a href="mailto:ppfk@ppfkuwait.org">ppfk@ppfkuwait.org</a>
                                  </div>
                               </div>
                            </div>
@@ -69,25 +69,8 @@
                                  <i class="icon-phone-call"></i>
                                  <div class="text">
                                     <small>Phone</small>
-                                    <a href="tel:+9806071234">+9806071234</a>
-                                 </div>
-                              </div>
-                              <div class="contntent media">
-                                 <i class="icon-share"></i>
-                                 <div class="text">
-                                    <small>Share</small>
-                                    <a href="#" target=_blank rel=nofollow>
-                                       <small>Fb</small>
-                                    </a>
-                                    <a href="#" target=_blank rel=nofollow>
-                                       <small>Tw</small>
-                                    </a>
-                                    <a href="#" target=_blank rel=nofollow>
-                                       <small>Sk</small>
-                                    </a>
-                                    <a href="#" target=_blank rel=nofollow>
-                                       <small>Te</small>
-                                    </a>
+                                    <a href="tel:+96566935862">+965 66935862</a>,
+                                    <a href="tel:+96565971184">+965 65971184</a>,
                                  </div>
                               </div>
                            </div>
@@ -479,8 +462,8 @@
                <a href="/"> Officials </a>
             </li>
 
-            <li class="floating_menu_text ">
-               <a href="/"> Membership </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
+               <a href="{{ route('membership') }}"> Membership </a>
             </li>
 
             <li class="floating_menu_text ">
@@ -536,6 +519,7 @@
    <!-- main-js -->
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/creote-extension.js') }}"></script>
    <!---========================== javascript ==========================-->
+   @include("admin.message")
 </body>
 
 </html>

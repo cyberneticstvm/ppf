@@ -56,6 +56,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->date('next_renewal_date')->nullable();
             $table->enum('renewal_status', ['pending', 'renewed'])->nullable();
+            $table->date('approved_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

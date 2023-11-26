@@ -45974,3 +45974,8 @@ span.twitter-typeahead .tt-suggestion:active {
   font-weight: bold;
   color: red;
 }
+
+.h5,
+h5 {
+  font-size: 1rem !important;
+}

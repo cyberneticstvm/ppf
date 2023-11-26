@@ -113,4 +113,15 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::post('/edit/{id}', 'update')->name('advertisement.update');
         Route::get('/delete/{id}', 'destroy')->name('advertisement.delete');
     });
+
+    Route::prefix('/member')->controller(MembershipController::class)->group(function () {
+        Route::get('/', 'index')->name('member');
+        Route::get('/pending', 'pending')->name('member.pending');
+        Route::get('/rejected', 'rejected')->name('member.rejected');
+        Route::get('/renewal', 'renewal')->name('member.renewal');
+        Route::get('/edit/{id}', 'edit')->name('member.edit');
+        Route::post('/edit/{id}', 'update')->name('member.update');
+        Route::get('/show/{id}', 'show')->name('member.show');
+        Route::get('/delete/{id}', 'destroy')->name('member.delete');
+    });
 });

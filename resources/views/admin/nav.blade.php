@@ -55,10 +55,10 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user-plus"></i><span>Member Management</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="">Registered Members</a></li>
-                            <li><a href="">New Applications</a></li>
-                            <li><a href="">Rejected Applications</a></li>
-                            <li><a href="">Renewed Applications</a></li>
+                            <li><a href="{{ route('member') }}">Registered Members</a></li>
+                            <li><a href="{{ route('member.pending') }}">New Applications</a></li>
+                            <li><a href="{{ route('member.rejected') }}">Rejected Applications</a></li>
+                            <li><a href="{{ route('member.renewal') }}">Renewed Applications</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="bell"></i><span>Thoughts</span></a>

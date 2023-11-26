@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Membership;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MembershipController extends Controller
@@ -12,7 +13,26 @@ class MembershipController extends Controller
      */
     public function index()
     {
-        //
+        $members = Membership::where('approval_status', 'approved')->latest()->get();
+        return view('admin.member.index', compact('members'));
+    }
+
+    public function pending()
+    {
+        $members = Membership::where('approval_status', 'pending')->latest()->get();
+        return view('admin.member.pending', compact('members'));
+    }
+
+    public function rejected()
+    {
+        $members = Membership::where('approval_status', 'rejected')->latest()->get();
+        return view('admin.member.rejected', compact('members'));
+    }
+
+    public function renewal()
+    {
+        $members = Membership::where('approval_status', 'approved')->whereDate('next_renewal_date', '>=', Carbon::today())->latest()->get();
+        return view('admin.member.renew', compact('members'));
     }
 
     /**
@@ -54,7 +74,8 @@ class MembershipController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $member = Membership::findOrFail(decrypt($id));
+        return view('admin.member.show', compact('member'));
     }
 
     /**

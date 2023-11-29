@@ -63,7 +63,7 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="bell"></i><span>Thoughts</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="">Manage Thoughts</a></li>
+                            <li><a href="{{ route('thought') }}">Manage Thoughts</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file"></i><span>Reports</span></a>
@@ -75,10 +75,10 @@
                         <ul class="nav-submenu menu-content">
                             <li><a href="">Import Members</a></li>
                             <li><a href="{{ route('category') }}">Manage Category</a></li>
-                            <li><a href="">Manage Logo</a></li>
-                            <li><a href="">Manage Home Sliders</a></li>
-                            <li><a href="">Manage About Us</a></li>
-                            <li><a href="">Manage Officials</a></li>
+                            <li><a href="{{ route('logo') }}">Manage Logo</a></li>
+                            <li><a href="{{ route('slider') }}">Manage Home Sliders</a></li>
+                            <li><a href="{{ route('about') }}">Manage About Us</a></li>
+                            <li><a href="{{ route('official') }}">Manage Officials</a></li>
                         </ul>
                     </li>
                 </ul>

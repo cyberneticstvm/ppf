@@ -8,6 +8,8 @@ use App\Http\Controllers\GalleryImageController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\Publicationcontroller;
 use App\Http\Controllers\ScrollingMessageController;
+use App\Http\Controllers\SiteManagementController;
+use App\Http\Controllers\ThoughtController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -46,7 +48,7 @@ Route::middleware(['web'])->group(function () {
     });
 });
 
-Route::middleware(['web', 'auth'])->group(function () {
+Route::prefix('/admin')->middleware(['web', 'auth'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/logout', 'logout')->name('logout');
@@ -114,6 +116,13 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/delete/{id}', 'destroy')->name('advertisement.delete');
     });
 
+    Route::prefix('/thought')->controller(ThoughtController::class)->group(function () {
+        Route::get('/', 'index')->name('thought');
+        Route::get('/edit/{id}', 'edit')->name('thought.edit');
+        Route::post('/edit/{id}', 'update')->name('thought.update');
+        Route::get('/delete/{id}', 'destroy')->name('thought.delete');
+    });
+
     Route::prefix('/member')->controller(MembershipController::class)->group(function () {
         Route::get('/', 'index')->name('member');
         Route::get('/pending', 'pending')->name('member.pending');
@@ -123,5 +132,33 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::post('/edit/{id}', 'update')->name('member.update');
         Route::get('/show/{id}', 'show')->name('member.show');
         Route::get('/delete/{id}', 'destroy')->name('member.delete');
+    });
+
+    Route::prefix('/logo')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'logo')->name('logo');
+        Route::post('/', 'logoUpdate')->name('logo.update');
+    });
+
+    Route::prefix('/slider')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'slider')->name('slider');
+        Route::get('/create', 'sliderCreate')->name('slider.create');
+        Route::post('/save', 'sliderStore')->name('slider.save');
+        Route::get('/edit/{id}', 'sliderEdit')->name('slider.edit');
+        Route::post('/edit/{id}', 'sliderUpdate')->name('slider.update');
+        Route::get('/delete/{id}', 'sliderDestroy')->name('slider.delete');
+    });
+
+    Route::prefix('/about')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'about')->name('about');
+        Route::post('/', 'aboutUpdate')->name('about.update');
+    });
+
+    Route::prefix('/official')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'official')->name('official');
+        Route::get('/create', 'officialCreate')->name('official.create');
+        Route::post('/save', 'officialStore')->name('official.save');
+        Route::get('/edit/{id}', 'officialEdit')->name('official.edit');
+        Route::post('/edit/{id}', 'officialUpdate')->name('official.update');
+        Route::get('/delete/{id}', 'officialDestroy')->name('official.delete');
     });
 });

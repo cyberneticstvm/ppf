@@ -45,6 +45,7 @@ return new class extends Migration
             $table->string('in_pincode', 10)->nullable();
             $table->string('in_primary_contact_number', 15)->nullable();
             $table->string('in_secondary_contact_number', 15)->nullable();
+            $table->string('mentor')->nullable();
             $table->enum('marital_status', ['single', 'married'])->nullable();
             $table->boolean('family_in_kuwait')->comment('1-yes, 0-no')->nullable();
             $table->string('spouse_name', 100)->nullable();
@@ -55,7 +56,7 @@ return new class extends Migration
             $table->boolean('membership_fee_collected')->comment('1-yes, 0-no')->nullable();
             $table->string('photo')->nullable();
             $table->date('next_renewal_date')->nullable();
-            $table->enum('renewal_status', ['pending', 'renewed'])->nullable();
+            $table->enum('renewal_status', ['new', 'pending', 'renewed'])->nullable();
             $table->date('approved_date')->nullable();
             $table->timestamps();
             $table->softDeletes();

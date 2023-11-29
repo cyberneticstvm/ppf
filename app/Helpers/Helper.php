@@ -20,7 +20,7 @@ function booleanStatus()
 
 function renewalStatus()
 {
-    return array('pending' => 'Pending', 'renewed' => 'Renewed');
+    return array('new' => 'New Application', 'pending' => 'Pending', 'renewed' => 'Renewed');
 }
 
 function positions()

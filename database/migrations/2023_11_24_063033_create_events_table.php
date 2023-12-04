@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->unsignedBigInteger('gallery_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('gallery_id')->nullable();
             $table->string('name');
             $table->string('image')->nullable();
             $table->date('date')->nullable();
@@ -24,7 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('gallery_id')->references('id')->on('galleries');
             $table->timestamps();
             $table->softDeletes();
         });

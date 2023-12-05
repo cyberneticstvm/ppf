@@ -99,8 +99,8 @@
                      <div class="footer_widgets about_company light_color">
                         <div class="about_company_inner">
                            <div class="footer_logo">
-                              <a href="#" target="_blank" rel="nofollow">
-                                 <img src="{{ asset('/frontend/assets/images/logo-white.png') }}" class="img-fluid" alt="logo" />
+                              <a href="/" rel="nofollow">
+                                 <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" class="img-fluid" alt="logo" />
                               </a>
                               <!--===============spacing==============-->
                               <div class="pd_bottom_30"></div>
@@ -108,20 +108,8 @@
                            </div>
                            <div class="content_box">
                               <p>
-                                 Duty the obligations of business will frequently occur that pleasure have too
-                                 repudiated annoyances endures accepted.
+                                 Progressive Professional Forum (PPF), Kuwait is a secular collective for channelizing expertise..
                               </p>
-                              <div class="consulting">
-                                 <div class="image">
-                                    <img src="{{ asset('/frontend/assets/images/authour-image.png') }}" alt="need help" />
-                                 </div>
-                                 <div class="help_con">
-                                    <h6>Need Help?</h6>
-                                    <h2>
-                                       <a href="#" target="_blank" rel="nofollow"> Free Consultation</a>
-                                    </h2>
-                                 </div>
-                              </div>
                            </div>
                         </div>
                      </div>
@@ -141,19 +129,19 @@
                               <div class="top">
                                  <h6> Location</h6>
                                  <p>
-                                    280 Granite Run Drive Suite #200
-                                    Lancaster, PA 1760
+                                    Fahaheel Kala Centre, Mangaf
+                                    30 St, Kuwait
                                  </p>
                               </div>
                               <div class="bottom">
                                  <h6> Contact</h6>
                                  <div class="con_content">
                                     <h5> Phone :</h5>
-                                    <a href="tel:+9806071234"> +98 060 712 34</a>
+                                    <a href="tel:+96566935862"> +965 66935862</a>
                                  </div>
                                  <div class="con_content">
                                     <h5> Mail Us :</h5>
-                                    <a href="tel:sendmail@creote.com"> sendmail@creote.com</a>
+                                    <a href="ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a>
                                  </div>
                               </div>
                            </div>
@@ -175,21 +163,21 @@
 
                               <ul class="menu">
                                  <li><a href="#">Home</a></li>
-                                 <li><a href="#">About Us</a></li>
-                                 <li><a href="#">Contact</a></li>
-                                 <li><a href="#">Professionals</a></li>
-                                 <li><a href="#">Insights</a></li>
-                                 <li><a href="#">HR Solutions</a></li>
+                                 <li><a href="#">About PPF</a></li>
+                                 <li><a href="#">Officials</a></li>
+                                 <li><a href="#">Membership</a></li>
+                                 <li><a href="#">Events</a></li>
+                                 <li><a href="#">Publications</a></li>
                               </ul>
 
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div class="col-xl-2 col-lg-4 col-md-4 col-sm-12">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                      <div class="footer_widgets wid_tit style_one">
                         <div class="fo_wid_title">
-                           <h2>Information</h2>
+                           <h2>Our Associates & Links</h2>
                         </div>
                      </div>
                      <!--===============spacing==============-->
@@ -201,41 +189,15 @@
                               <div class="navigation_foo_inner">
 
                                  <ul class="menu">
-                                    <li><a href="#">How it's Work</a></li>
-                                    <li><a href="#">Partners</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Key Areas</a></li>
-                                    <li><a href="#">Case Studies</a></li>
-                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">Kerala Professional Network (KPN)</a></li>
+                                    <li><a href="#">Technos Global, UAE</a></li>
+                                    <li><a href="https://kalakuwait.com" target="_blank">KALA Kuwait</a></li>
+                                    <li><a href="https://norkaroots.org" target="_blank">NORKA-ROOTS</a></li>
+                                    <li><a href="https://pravasikerala.org" target="_blank">Kerala Pravasi Welfare Board</a></li>
+                                    <li><a href="https://indembkwt.gov.in" target="_blank">Indian Embassy Kuwait</a></li>
                                  </ul>
 
                               </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-2 col-lg-4 col-md-4 col-sm-12">
-                     <div class="footer_widgets wid_tit style_one">
-                        <div class="fo_wid_title">
-                           <h2>Essentials</h2>
-                        </div>
-                     </div>
-                     <!--===============spacing==============-->
-                     <div class="pd_bottom_25"></div>
-                     <!--===============spacing==============-->
-                     <div class="footer_widgets clearfix navigation_foo light_color style_one">
-                        <div class="navigation_foo_box">
-                           <div class="navigation_foo_inner">
-
-                              <ul class="menu">
-                                 <li><a href="#">Careers</a></li>
-                                 <li><a href="#">Infrastructure</a></li>
-                                 <li><a href="#">Client Support</a></li>
-                                 <li><a href="#">Privacy Policy</a></li>
-                                 <li><a href="#">Terms of Use</a></li>
-                                 <li><a href="#">Sitemap</a></li>
-                              </ul>
-
                            </div>
                         </div>
                      </div>

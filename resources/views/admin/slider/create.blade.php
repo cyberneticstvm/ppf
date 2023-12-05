@@ -28,7 +28,7 @@
                                     <div class="col-md-6">
                                         <label class="col-form-label pt-0 req" for="image">Slider Image </label>
                                         {{ html()->file('image', old('image'))->class('form-control') }}
-                                        <small class="form-text text-muted">Max file size should be less than 1MB</small>
+                                        <small class="form-text text-muted">Max file size should be less than 1MB & 1920px(W) X 880px(H)</small>
                                         @error('image')
                                         <small class="text-danger">{{ $errors->first('image') }}</small>
                                         @enderror

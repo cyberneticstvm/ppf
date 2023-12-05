@@ -28,7 +28,7 @@
                                 <div class="before_title">PPF Kuwait</div>
                                 <h2>About Us</h2>
                                 <div class="description_box">
-                                    <p>{{ $about->description }}</p>
+                                    <p>{!! $about->description !!}</p>
                                 </div>
                             </div>
                             <!--===============spacing==============-->
@@ -64,7 +64,7 @@
                                 <h3>
                                     <a href="#" target="_blank" rel="nofollow">Mission</a>
                                 </h3>
-                                <p>{{ $about->mission }}</p>
+                                <p>{!! $about->mission !!}</p>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="txt_content">
                                 <h3><a href="#" target="_blank" rel="nofollow">Vision</a></h3>
-                                <p>{{ $about->vision }}</p>
+                                <p>{!! $about->vision !!}</p>
                             </div>
                         </div>
                     </div>

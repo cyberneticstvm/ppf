@@ -45,6 +45,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::controller(WebController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/about', 'about')->name('about');
     });
 });
 

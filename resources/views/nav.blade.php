@@ -24,8 +24,8 @@
                                         <span>Home</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'about') ? 'active' : '' }}">
+                                    <a href="/about" class="nav-link">
                                         <span>About PPF</span>
                                     </a>
                                 </li>

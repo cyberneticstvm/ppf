@@ -14,7 +14,7 @@
                             <img src="{{ asset('/frontend/assets/images/about/successful-happy-business-team.webp') }}" class="img" alt="image">
                         </div>
                         <div class="image two">
-                            <img src="{{ asset('/frontend/assets/images/projects/project-detail-img-2.jpg') }}" class="img" alt="image">
+                            <img src="{{ asset('/frontend/assets/images/projects/arrows-with-copy-space.webp') }}" class="img" alt="image">
                             <!--<div class="video_box">
                                 <a href="#" class="lightbox-image"><i class="icon-play"></i></a>
                             </div>-->
@@ -44,7 +44,7 @@
                         <div class="mr_bottom_30"></div>
                         <!--===============spacing==============-->
                         <div class="theme_btn_all color_one">
-                            <a href="#" target="_blank" rel="nofollow" class="theme-btn three">Contact us</a>
+                            <a href="/contact" target="_blank" rel="nofollow" class="theme-btn three">Contact us</a>
                         </div>
                         <!--===============spacing==============-->
                         <div class="mr_bottom_20"></div>

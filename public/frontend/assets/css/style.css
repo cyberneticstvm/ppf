@@ -565,3 +565,8 @@ input[type="password"] {
 .text-justify {
   text-align: justify !important;
 }
+
+iframe {
+  border: 1px solid red;
+  border-radius: 5px;
+}

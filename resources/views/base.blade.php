@@ -141,7 +141,7 @@
                                  </div>
                                  <div class="con_content">
                                     <h5> Mail Us :</h5>
-                                    <a href="ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a>
+                                    <a href="mailto:ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a>
                                  </div>
                               </div>
                            </div>

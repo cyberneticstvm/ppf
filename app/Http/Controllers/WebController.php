@@ -43,7 +43,8 @@ class WebController extends Controller
     {
         $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderByDesc('display_order')->get();
         $category = Category::findOrFail(decrypt($id));
-        return view('events-all', compact('events', 'category'));
+        $title = "Progressive Professional Forum Kuwait " . $category->name;
+        return view('events-all', compact('events', 'category', 'title'));
     }
 
     public function publications()

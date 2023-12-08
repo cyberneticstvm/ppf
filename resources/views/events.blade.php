@@ -2,7 +2,7 @@
 @section("content")
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="pd_top_80"></div>

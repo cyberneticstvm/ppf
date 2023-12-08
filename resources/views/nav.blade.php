@@ -29,38 +29,38 @@
                                         <span>About PPF</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'officials') ? 'active' : '' }}">
+                                    <a href="/officials" class="nav-link">
                                         <span>Officials</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
                                     <a href="{{ route('membership') }}" class="nav-link">
                                         <span>Membership</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'events') ? 'active' : '' }}">
+                                    <a href="/events" class="nav-link">
                                         <span>Events</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'publications') ? 'active' : '' }}">
+                                    <a href="/publications" class="nav-link">
                                         <span>Publications</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'gallery') ? 'active' : '' }}">
+                                    <a href="/gallery" class="nav-link">
                                         <span>Gallery</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'community') ? 'active' : '' }}">
+                                    <a href="/community" class="nav-link">
                                         <span>Community</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item">
-                                    <a href="/" class="nav-link">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'contact') ? 'active' : '' }}">
+                                    <a href="/contact" class="nav-link">
                                         <span>Contact</span>
                                     </a>
                                 </li>

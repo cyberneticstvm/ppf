@@ -417,35 +417,35 @@
             </li>
 
             <li class="floating_menu_text {{ (request()->segment(1) == 'about') ? 'active' : '' }}">
-               <a href="/">About PPF</a>
+               <a href="/about">About PPF</a>
             </li>
 
             <li class="floating_menu_text {{ (request()->segment(1) == 'officials') ? 'active' : '' }}">
-               <a href="/"> Officials </a>
+               <a href="/officials"> Officials </a>
             </li>
 
             <li class="floating_menu_text {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
                <a href="{{ route('membership') }}"> Membership </a>
             </li>
 
-            <li class="floating_menu_text ">
-               <a href="/"> Events </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'events') ? 'active' : '' }}">
+               <a href="/events"> Events </a>
             </li>
 
-            <li class="floating_menu_text">
-               <a href="/"> Publications </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'publications') ? 'active' : '' }}">
+               <a href="/publications"> Publications </a>
             </li>
 
-            <li class="floating_menu_text">
-               <a href="/"> Gallery </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'gallery') ? 'active' : '' }}">
+               <a href="/gallery"> Gallery </a>
             </li>
 
-            <li class="floating_menu_text">
-               <a href="/"> Community </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'community') ? 'active' : '' }}">
+               <a href="/community"> Community </a>
             </li>
 
-            <li class="floating_menu_text">
-               <a href="/"> Contact </a>
+            <li class="floating_menu_text {{ (request()->segment(1) == 'contact') ? 'active' : '' }}">
+               <a href="/contact"> Contact </a>
             </li>
 
          </ul>

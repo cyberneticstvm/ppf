@@ -328,7 +328,7 @@
                                  <i class="fa fa-comments"></i><br />
                               </label>
                            </p>
-                           <p><input type="submit" value="Submit" /></p>
+                           <p><input type="submit" value="Share" class="btn-submit" /></p>
                         </form>
                      </div>
                   </div>

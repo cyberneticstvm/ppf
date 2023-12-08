@@ -2,7 +2,7 @@
 @section("content")
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="row mt-5">
                     @forelse($events as $key => $item)
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="mg_image_box">
                             <div class="image_box">
                                 <img decoding="async" src="{{ $item->image }}" class="img" alt="{{ $item->name }}">

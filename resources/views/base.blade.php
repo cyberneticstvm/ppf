@@ -322,15 +322,8 @@
                               </label>
                            </p>
                            <p>
-                              <label> Subject<br />
-                                 <input type="text" name="subject" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Enter Your Subject" />
-                                 <br />
-                                 <i class="fa fa-folder"></i><br />
-                              </label>
-                           </p>
-                           <p>
-                              <label> Your message (optional)<br />
-                                 <textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Enter Your Message"></textarea>
+                              <label> Your Thoughts<br />
+                                 <textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Share Your Thoughts"></textarea>
                                  <br />
                                  <i class="fa fa-comments"></i><br />
                               </label>
@@ -342,47 +335,14 @@
                   <div class="col-lg-7 col-md-12 about_company_inner">
                      <div class="abt_content">
                         <div class="logo">
-                           <img src="{{ asset('/frontend/assets/images/logo-default.png') }}" alt="img" class="company_logo_modal">
+                           <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="img" class="company_logo_modal">
                         </div>
                         <div class="text">
-                           <p> The great explorer of the truth, the master-builder of human happiness no one rejects
-                              dislikes avoids pleasure itself because it is pleasure but because know who do not those
-                              how to pursue pleasures rationally encounter consequences that are extremely painful
-                              desires to obtain.</p>
-                           <a href="#">Read More</a>
-                        </div>
-                        <div class="post_contet_modal">
-                           <h2> Latest News</h2>
-                           <div class="post_enable">
-                              <div class="modal_post_grid">
-                                 <a href="blog-single.html">
-                                    <img width="852" height="812" src="{{ asset('/frontend/assets/images/blog/blog-image-9.jpg') }}" class="main_img wp-post-image" alt="img" />
-                                 </a>
-                              </div>
-                              <div class="modal_post_grid">
-                                 <a href="blog-single.html">
-                                    <img width="852" height="812" src="{{ asset('/frontend/assets/images/blog/blog-image-8.jpg') }}" class="main_img wp-post-image" alt="img" />
-                                 </a>
-                              </div>
-                              <div class="modal_post_grid">
-                                 <a href="blog-single.html">
-                                    <img width="852" height="812" src="{{ asset('/frontend/assets/images/blog/blog-image-7.jpg') }}" class="main_img wp-post-image" alt="img" />
-                                 </a>
-                              </div>
-                              <div class="modal_post_grid">
-                                 <a href="blog-single.html">
-                                    <img width="852" height="812" src="{{ asset('/frontend/assets/images/blog/blog-image-6.jpg') }}" class="main_img wp-post-image" alt="img" />
-                                 </a>
-                              </div>
-                              <div class="modal_post_grid">
-                                 <a href="blog-single.html">
-                                    <img width="852" height="812" src="{{ asset('/frontend/assets/images/blog/blog-image-5.jpg') }}" class="main_img wp-post-image" alt="img" />
-                                 </a>
-                              </div>
-                           </div>
+                           <p> PPF Kuwait also promotes their members to avail better placement by linking matching placements in human resources at different parts of the world.</p>
+                           <a href="/about">Read More</a>
                         </div>
                         <div class="copright">
-                           © 2023 Creote. All Rights Reserved.
+                           © {{ date('Y') }} PPF Kuwait. All Rights Reserved.
                         </div>
                      </div>
                   </div>
@@ -391,23 +351,6 @@
          </div>
       </div>
       <!---==============modal popup end=================-->
-      <!---==============cart=================-->
-      <div class="side_bar_cart" id="mini_cart">
-         <div class="cart_overlay"></div>
-         <div class="cart_right_conten">
-            <div class="close">
-               <div class="close_btn_mini"><i class="icon-close"></i></div>
-            </div>
-            <div class="cart_content_box">
-               <div class="contnet_cart_box">
-                  <div class="widget_shopping_cart_content">
-                     <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!---==============cart=================-->
       <!---==============floating menu=================-->
       <div class="floating_menu_box">
          <ul class="float_menu_box">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Event;
 use App\Models\Official;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -34,8 +35,15 @@ class WebController extends Controller
     public function events()
     {
         $title = "Progressive Professional Forum Kuwait Events";
-        $events = Category::where('category_type', 2)->where('status', 'active')->orderByDesc('display_order')->get();
-        return view('events', compact('title', 'events'));
+        $categories = Category::where('category_type', 2)->where('status', 'active')->orderByDesc('display_order')->get();
+        return view('events', compact('title', 'categories'));
+    }
+
+    public function eventsAll($id)
+    {
+        $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderByDesc('display_order')->get();
+        $category = Category::findOrFail(decrypt($id));
+        return view('events-all', compact('events', 'category'));
     }
 
     public function publications()

@@ -162,12 +162,12 @@
                            <div class="navigation_foo_inner">
 
                               <ul class="menu">
-                                 <li><a href="#">Home</a></li>
-                                 <li><a href="#">About PPF</a></li>
-                                 <li><a href="#">Officials</a></li>
-                                 <li><a href="#">Membership</a></li>
-                                 <li><a href="#">Events</a></li>
-                                 <li><a href="#">Publications</a></li>
+                                 <li><a href="/">Home</a></li>
+                                 <li><a href="/about">About PPF</a></li>
+                                 <li><a href="/officials">Officials</a></li>
+                                 <li><a href="/membership">Membership</a></li>
+                                 <li><a href="/events">Events</a></li>
+                                 <li><a href="/publications">Publications</a></li>
                               </ul>
 
                            </div>

@@ -6,7 +6,7 @@
         <!--===============spacing==============-->
         <div class="pd_top_90"></div>
         <!--===============spacing==============-->
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title_all_box style_one text-center dark_color">

@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="team_box style_one">
                         <div class="team_box_outer">
                             <div class="member_image">

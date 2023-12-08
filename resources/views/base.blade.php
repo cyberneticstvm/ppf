@@ -151,7 +151,7 @@
                   <div class="col-xl-2 col-lg-4 col-md-4 col-sm-12">
                      <div class="footer_widgets wid_tit style_one">
                         <div class="fo_wid_title">
-                           <h2>Company</h2>
+                           <h2>Organization</h2>
                         </div>
                      </div>
                      <!--===============spacing==============-->

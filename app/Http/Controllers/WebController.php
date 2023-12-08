@@ -34,7 +34,7 @@ class WebController extends Controller
     public function events()
     {
         $title = "Progressive Professional Forum Kuwait Events";
-        $events = Category::where('category_type', 2)->where('status', 'active')->orderBy('display_order')->get();
+        $events = Category::where('category_type', 2)->where('status', 'active')->orderByDesc('display_order')->get();
         return view('events', compact('title', 'events'));
     }
 

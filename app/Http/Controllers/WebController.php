@@ -64,8 +64,7 @@ class WebController extends Controller
     public function community()
     {
         $title = "Progressive Professional Forum Kuwait Community";
-        $officials = Official::all();
-        return view('community', compact('title', 'officials'));
+        return view('community', compact('title'));
     }
 
     public function contact()

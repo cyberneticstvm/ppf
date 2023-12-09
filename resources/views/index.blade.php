@@ -80,21 +80,6 @@
                                           }
                                         }'>
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="project_post style_nine">
-                                        <div class="image">
-                                            <img loading="lazy" width="999" height="665" src="../assets/images/projects/project-1-img.jpg" class="img-fluid" alt="img">
-                                            <div class="image_zoom_box ">
-                                                <a href="../assets/images/projects/project-1-img.jpg" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="project_caro_content">
-                                            <p>Leadership</p>
-                                            <h2 class="title_pro"><a href="#" rel="bookmark">Company Values &amp; The
-                                                    Relationship</a></h2>
-                                        </div>
-                                    </div>
-                                </div>
                                 @forelse($events as $key => $item)
                                 <div class="swiper-slide">
                                     <div class="project_post style_nine">

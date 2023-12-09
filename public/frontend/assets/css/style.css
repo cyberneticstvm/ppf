@@ -570,3 +570,7 @@ iframe {
   border: 1px solid red;
   border-radius: 5px;
 }
+
+.team_box.style_one .team_box_outer .member_image img {
+  height: 350px !important;
+}

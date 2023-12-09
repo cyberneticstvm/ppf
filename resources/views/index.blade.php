@@ -189,9 +189,6 @@
             </div>
         </div>
     </section>
-    <!--===============spacing==============-->
-    <div class="pd_bottom_50"></div>
-    <!--===============spacing==============-->
 </div>
 <!--===============PAGE CONTENT END==============-->
 @endsection

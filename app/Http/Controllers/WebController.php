@@ -15,7 +15,8 @@ class WebController extends Controller
     {
         $title = "Progressive Professional Forum Kuwait";
         $sliders = Slider::where('status', 'published')->orderBy('display_order')->get();
-        return view('index', compact('title', 'sliders'));
+        $events = Event::where('status', 'active')->orderByDesc('display_order')->get();
+        return view('index', compact('title', 'sliders', 'events'));
     }
 
     public function about()

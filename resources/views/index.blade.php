@@ -164,13 +164,13 @@
                                         </div>
                                         <div class="content_box ">
                                             <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
-                                            <p>{{ $item->category?->name }}</p>
                                             <div class="image_zoom_box ">
                                                 <a href="{{ $item->image }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
                                             </div>
                                         </div>
                                         <div class="overlay ">
                                             <div class="text ">
+                                                <p>{{ $item->category?->name }}</p>
                                                 <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
                                                 <a href="#" class="read_more tp_five ">View More</a>
                                             </div>
@@ -180,9 +180,9 @@
                                 @empty
                                 @endforelse
                             </div>
-                            <div class="p_pagination">
+                            <!--<div class="p_pagination">
                                 <div class="swiper-pagination"></div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>

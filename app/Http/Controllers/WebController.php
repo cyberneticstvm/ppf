@@ -60,8 +60,8 @@ class WebController extends Controller
     public function gallery()
     {
         $title = "Progressive Professional Forum Kuwait Gallery";
-        $officials = Official::all();
-        return view('gallery', compact('title', 'officials'));
+        $galleries = Gallery::where('status', 'active')->get();
+        return view('gallery', compact('title', 'galleries'));
     }
 
     public function community()

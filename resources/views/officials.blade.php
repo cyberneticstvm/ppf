@@ -21,14 +21,14 @@
             </div>
             <div class="row">
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
                     <div class="team_box style_one">
                         <div class="team_box_outer">
                             <div class="member_image">
                                 <img src="{{ $item->image }}" alt="Official image" />
                             </div>
                             <div class="about_member">
-                                <div class="share_media">
+                                <!--<div class="share_media">
                                     <ul class="first">
                                         <li class="text">Share</li>
                                         <li><i class="fa fa-share-alt"></i></li>
@@ -40,14 +40,14 @@
                                         <li><a href="#"> <i class="fa fa-skype"> </i> </a></li>
                                         <li><a href="#"> <i class="fa fa-instagram"> </i> </a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                                 <div class="authour_details">
                                     <span>{{ $item->designation }} </span>
                                     <h6>{{ $item->name }}</h6>
-                                    <div class="button_view">
+                                    <!--<div class="button_view">
                                         <a href="#" target="_blank" rel="nofollow" class="theme-btn one"> View Profile
                                         </a>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>

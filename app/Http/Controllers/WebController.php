@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Official;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class WebController extends Controller
         $title = "Progressive Professional Forum Kuwait";
         $sliders = Slider::where('status', 'published')->orderBy('display_order')->get();
         $events = Event::where('status', 'active')->orderByDesc('display_order')->get();
-        return view('index', compact('title', 'sliders', 'events'));
+        $gallery = Gallery::where('status', 'active')->orderByDesc('display_order')->get();
+        return view('index', compact('title', 'sliders', 'events', 'gallery'));
     }
 
     public function about()

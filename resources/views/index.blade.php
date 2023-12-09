@@ -90,7 +90,7 @@
                                             </div>
                                         </div>
                                         <div class="project_caro_content">
-                                            <p>{{ $item->category->name }}</p>
+                                            <p>{{ $item->category?->name }}</p>
                                             <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
                                         </div>
                                     </div>
@@ -111,6 +111,86 @@
     </section>
     <!--===============spacing==============-->
     <div class="pd_bottom_80"></div>
+    <!--===============spacing==============-->
+    <section class="project-section">
+        <div class="medium-container pd_zero">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="heading mb-3">
+                        <h2>Gallery</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="project_caro_section  style_two light_color">
+                        <div class="swiper-container" data-swiper='{
+                                             "autoplay": {
+                                               "delay": 6000
+                                             },
+                                             "freeMode": false,
+                                             "loop": true,
+                                             "speed": 1000,
+                                             "centeredSlides": true,
+                                             "slidesPerView": 3,
+                                             "spaceBetween": 30,
+                                             "pagination": {
+                                               "el": ".swiper-pagination",
+                                               "clickable": true
+                                             },
+                                              
+                                             "breakpoints": {
+                                                "1200": {
+                                                   "slidesPerView": 5
+                                                },
+                                                "1024": {
+                                                 "slidesPerView": 3 
+                                                },
+                                               "768": {
+                                                 "slidesPerView": 2 
+                                               },
+                                               "576": {
+                                                 "slidesPerView": 1 
+                                               },
+                                               "0": {
+                                                 "slidesPerView": 1 
+                                               }
+                                             }
+                                           }'>
+                            <div class="swiper-wrapper">
+                                @forelse($gallery as $key => $item)
+                                <div class="swiper-slide">
+                                    <div class="project_post style_seven">
+                                        <div class="image_box">
+                                            <img src="{{ $item->image }}" class="img-fluid" alt="img">
+                                        </div>
+                                        <div class="content_box ">
+                                            <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
+                                            <p>{{ $item->category?->name }}</p>
+                                            <div class="image_zoom_box ">
+                                                <a href="{{ $item->image }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="overlay ">
+                                            <div class="text ">
+                                                <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
+                                                <a href="#" class="read_more tp_five ">View More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @empty
+                                @endforelse
+                            </div>
+                            <div class="p_pagination">
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===============spacing==============-->
+    <div class="pd_bottom_50"></div>
     <!--===============spacing==============-->
 </div>
 <!--===============PAGE CONTENT END==============-->

@@ -54,14 +54,14 @@ class WebController extends Controller
     public function publications()
     {
         $title = "Progressive Professional Forum Kuwait Publications";
-        $publications = Publication::where('category_type', 3)->where('status', 'active')->orderByDesc('display_order')->get();
+        $publications = Publication::where('category_id', 3)->where('status', 'active')->orderByDesc('display_order')->get();
         return view('publications', compact('title', 'publications'));
     }
 
     public function gallery()
     {
         $title = "Progressive Professional Forum Kuwait Gallery";
-        $galleries = Gallery::where('category_type', 1)->where('status', 'active')->orderByDesc('display_order')->get();
+        $galleries = Gallery::where('category_id', 1)->where('status', 'active')->orderByDesc('display_order')->get();
         return view('gallery', compact('title', 'galleries'));
     }
 

@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Official;
+use App\Models\Publication;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -53,14 +54,14 @@ class WebController extends Controller
     public function publications()
     {
         $title = "Progressive Professional Forum Kuwait Publications";
-        $officials = Official::all();
-        return view('publications', compact('title', 'officials'));
+        $publications = Publication::where('category_type', 3)->where('status', 'active')->orderByDesc('display_order')->get();
+        return view('publications', compact('title', 'publications'));
     }
 
     public function gallery()
     {
         $title = "Progressive Professional Forum Kuwait Gallery";
-        $galleries = Gallery::where('status', 'active')->get();
+        $galleries = Gallery::where('category_type', 1)->where('status', 'active')->orderByDesc('display_order')->get();
         return view('gallery', compact('title', 'galleries'));
     }
 

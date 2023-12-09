@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    @forelse($galleries as $key => $item)
+                    @forelse($categories as $key => $item)
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="mg_image_box">
                             <div class="image_box">

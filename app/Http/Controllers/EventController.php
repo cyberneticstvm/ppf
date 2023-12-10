@@ -44,7 +44,7 @@ class EventController extends Controller
             'date' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'event');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/event');
         $input['image'] = $url;
         $input['created_by'] = $request->user()->id;
         $input['updated_by'] = $request->user()->id;
@@ -88,7 +88,7 @@ class EventController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'event');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/event');
             $input['image'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;

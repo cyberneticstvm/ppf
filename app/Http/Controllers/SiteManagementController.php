@@ -25,7 +25,7 @@ class SiteManagementController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('logo')) :
-            $url = uploadFile($request->file('logo'), $path = 'website/logo');
+            $url = uploadFile($request->file('logo'), $path = 'ppf-kuwait/website/logo');
             $input['logo'] = $url;
         endif;
         Logo::findOrFail(decrypt($request->logo_id))->update(['logo' => $input['logo'], 'alt_text' => $input['alt_text'], 'updated_at' => Carbon::now()]);
@@ -51,7 +51,7 @@ class SiteManagementController extends Controller
             'status' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'webiste/slider');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/webiste/slider');
         $input['image'] = $url;
         Slider::create($input);
         return redirect()->route('slider')->with("success", "Salider image saved successfully!");
@@ -72,7 +72,7 @@ class SiteManagementController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'website/slider');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/slider');
             $input['image'] = $url;
         endif;
         Slider::findOrFail($id)->update($input);
@@ -124,7 +124,7 @@ class SiteManagementController extends Controller
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'webiste/officials');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/webiste/officials');
         $input['image'] = $url;
         Official::create($input);
         return redirect()->route('official')->with("success", "Official saved successfully!");
@@ -146,7 +146,7 @@ class SiteManagementController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'website/officials');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/officials');
             $input['image'] = $url;
         endif;
         Official::findOrFail($id)->update($input);

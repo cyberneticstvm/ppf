@@ -41,14 +41,14 @@ class Publicationcontroller extends Controller
             'description' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'publication/image');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/publication/image');
         $input['image'] = $url;
         if ($request->file('document')) :
-            $url = uploadFile($request->file('document'), $path = 'publication/document');
+            $url = uploadFile($request->file('document'), $path = 'ppf-kuwait/website/publication/document');
             $input['document'] = $url;
         endif;
         if ($request->file('video')) :
-            $url = uploadFile($request->file('video'), $path = 'publication/video');
+            $url = uploadFile($request->file('video'), $path = 'ppf-kuwait/website/publication/video');
             $input['video'] = $url;
         endif;
         $input['created_by'] = $request->user()->id;
@@ -91,15 +91,15 @@ class Publicationcontroller extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'publication/image');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/publication/image');
             $input['image'] = $url;
         endif;
         if ($request->file('document')) :
-            $url = uploadFile($request->file('document'), $path = 'publication/document');
+            $url = uploadFile($request->file('document'), $path = 'ppf-kuwait/website/publication/document');
             $input['document'] = $url;
         endif;
         if ($request->file('video')) :
-            $url = uploadFile($request->file('video'), $path = 'publication/video');
+            $url = uploadFile($request->file('video'), $path = 'ppf-kuwait/website/publication/video');
             $input['video'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;

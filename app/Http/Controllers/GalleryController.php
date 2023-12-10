@@ -40,7 +40,7 @@ class GalleryController extends Controller
             'status' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'gallery');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/gallery');
         $input['image'] = $url;
         $input['created_by'] = $request->user()->id;
         $input['updated_by'] = $request->user()->id;
@@ -80,7 +80,7 @@ class GalleryController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'gallery');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/gallery');
             $input['image'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;

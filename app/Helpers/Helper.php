@@ -45,7 +45,10 @@ function generateMembershipNumber()
 
 function uploadFile($file, $path)
 {
-    $doc = Storage::disk('s3')->put($path, $file);
+    /*$doc = Storage::disk('s3')->put($path, $file);
     $url = Storage::disk('s3')->url($doc);
-    return $url;
+    return $url;*/
+    $fname = time() . '_' . $file->getClientOriginalName();
+    $file->storeAs($path, $fname, 'public');
+    return '/storage/' . $path . '/' . $fname;
 }

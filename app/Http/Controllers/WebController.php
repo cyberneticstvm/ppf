@@ -20,7 +20,8 @@ class WebController extends Controller
         $sliders = Slider::where('status', 'published')->orderBy('display_order')->get();
         $events = Event::where('status', 'active')->orderByDesc('display_order')->get();
         $gallery = Gallery::where('status', 'active')->orderByDesc('display_order')->get();
-        return view('index', compact('title', 'sliders', 'events', 'gallery'));
+        $category = Category::where('status', 'active')->get();
+        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category'));
     }
 
     public function about()

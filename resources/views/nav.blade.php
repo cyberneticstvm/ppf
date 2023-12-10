@@ -44,6 +44,11 @@
                                         <span>Events</span>
                                     </a>
                                 </li>
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'benevolent') ? 'active' : '' }}">
+                                    <a href="/benevolent" class="nav-link">
+                                        <span>Benevolent</span>
+                                    </a>
+                                </li>
                                 <li class="menu-item nav-item {{ (request()->segment(1) == 'publications') ? 'active' : '' }}">
                                     <a href="/publications" class="nav-link">
                                         <span>Publications</span>

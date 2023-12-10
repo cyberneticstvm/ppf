@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Benevolent;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
@@ -41,6 +42,13 @@ class WebController extends Controller
         $title = "Progressive Professional Forum Kuwait Events";
         $categories = Category::where('category_type', 2)->where('status', 'active')->orderByDesc('display_order')->get();
         return view('events', compact('title', 'categories'));
+    }
+
+    public function benevolent()
+    {
+        $title = "Progressive Professional Forum Kuwait Benevolent Activities";
+        $activities = Benevolent::where('status', 'active')->orderByDesc('display_order')->get();
+        return view('benevolent', compact('title', 'activities'));
     }
 
     public function eventsAll($id)

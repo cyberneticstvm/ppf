@@ -375,6 +375,10 @@
                <a href="/events"> Events </a>
             </li>
 
+            <li class="floating_menu_text {{ (request()->segment(1) == 'benevolent') ? 'active' : '' }}">
+               <a href="/benevolent"> Benevolent </a>
+            </li>
+
             <li class="floating_menu_text {{ (request()->segment(1) == 'publications') ? 'active' : '' }}">
                <a href="/publications"> Publications </a>
             </li>

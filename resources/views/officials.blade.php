@@ -133,7 +133,7 @@
                     <div class="team_box style_one">
                         <div class="team_box_outer">
                             <div class="member_image">
-                                <img src="{{ $item->image }}" alt="Official image" />
+                                <img src="{{ asset($item->image) }}" alt="Official image" />
                             </div>
                             <div class="about_member">
                                 <!--<div class="share_media">

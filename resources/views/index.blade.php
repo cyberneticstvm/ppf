@@ -46,7 +46,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ $events->where('status', 'active')->take(1)->first()->image ? asset($events->where('status', 'active')->take(1)->first()->image) : asset('frontend/assets/images/cal-to-action-2.jpg')}}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/cal-to-action-2.jpg') }}" class="img" alt="image">
                             <a href="#" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>

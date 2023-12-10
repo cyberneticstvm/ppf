@@ -39,7 +39,7 @@ class CategoryController extends Controller
             'status' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'category');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/category');
         $input['image'] = $url;
         $input['created_by'] = $request->user()->id;
         $input['updated_by'] = $request->user()->id;
@@ -79,7 +79,7 @@ class CategoryController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'category');
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/category');
             $input['image'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;

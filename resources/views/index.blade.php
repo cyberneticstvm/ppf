@@ -74,6 +74,57 @@
             </div>
         </div>
     </section>
+    <section class="image_grid_content style_one image_covered">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2>Galleries</h2>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/cal-to-action-2.jpg') }}" class="img" alt="image">
+                            <a href="#" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="#">View</a></h2>
+                            <div class="tag">Galleries</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/cal-to-action-2.jpg') }}" class="img" alt="image">
+                            <a href="#" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="#">View</a></h2>
+                            <div class="tag">Publications</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/cal-to-action-2.jpg') }}" class="img" alt="image">
+                            <a href="#" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="#">View</a></h2>
+                            <div class="tag">Benevolent Activities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <!--===============PAGE CONTENT END==============-->
 @endsection

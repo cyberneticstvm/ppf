@@ -8,7 +8,7 @@
             @forelse($sliders as $key => $item)
             <div class="slide-item-content">
                 <div class="slide-item content_{{ ($key == 0 || $key == 2 || $key == 4) ? 'left' : 'right' }}">
-                    <div class="image-layer" style="background-image:url( '{{ url($item->image) }}' )">
+                    <div class="image-layer" style="background-image:url( '{{ asset($item->image) }}' )">
                     </div>
                     <div class="auto-container">
                         <div class="row">
@@ -84,9 +84,9 @@
                                 <div class="swiper-slide">
                                     <div class="project_post style_nine">
                                         <div class="image">
-                                            <img width="746" height="497" src="{{ $item->image }}" class="img-fluid" alt="img">
+                                            <img width="746" height="497" src="{{ asset($item->image) }}" class="img-fluid" alt="img">
                                             <div class="image_zoom_box ">
-                                                <a href="{{ $item->image }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
+                                                <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
                                             </div>
                                         </div>
                                         <div class="project_caro_content">
@@ -160,12 +160,12 @@
                                 <div class="swiper-slide">
                                     <div class="project_post style_seven">
                                         <div class="image_box">
-                                            <img src="{{ $item->image }}" class="img-fluid" alt="img">
+                                            <img src="{{ asset($item->image) }}" class="img-fluid" alt="img">
                                         </div>
                                         <div class="content_box ">
                                             <h2 class="title_pro"><a href="#" rel="bookmark">{{ $item->name }}</a></h2>
                                             <div class="image_zoom_box ">
-                                                <a href="{{ $item->image }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
+                                                <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
                                             </div>
                                         </div>
                                         <div class="overlay ">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\BenevolentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
@@ -95,6 +96,15 @@ Route::prefix('/admin')->middleware(['web', 'auth'])->group(function () {
         Route::get('/edit/{id}', 'edit')->name('event.edit');
         Route::post('/edit/{id}', 'update')->name('event.update');
         Route::get('/delete/{id}', 'destroy')->name('event.delete');
+    });
+
+    Route::prefix('/benevolent')->controller(BenevolentController::class)->group(function () {
+        Route::get('/', 'index')->name('benevolent');
+        Route::get('/create', 'create')->name('benevolent.create');
+        Route::post('/save', 'store')->name('benevolent.save');
+        Route::get('/edit/{id}', 'edit')->name('benevolent.edit');
+        Route::post('/edit/{id}', 'update')->name('benevolent.update');
+        Route::get('/delete/{id}', 'destroy')->name('benevolent.delete');
     });
 
     Route::prefix('/scrolling')->controller(ScrollingMessageController::class)->group(function () {

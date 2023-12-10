@@ -28,6 +28,11 @@
                             <li><a href="{{ route('event') }}">Manage Events</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Benevolent Activities</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a href="{{ route('benevolent') }}">Manage Benevolent Activities</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Scrolling Messages</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('scrolling') }}">Manage Scrolling Messages</a></li>

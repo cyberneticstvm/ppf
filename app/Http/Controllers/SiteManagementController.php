@@ -51,7 +51,7 @@ class SiteManagementController extends Controller
             'status' => 'required',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/webiste/slider');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/slider');
         $input['image'] = $url;
         Slider::create($input);
         return redirect()->route('slider')->with("success", "Salider image saved successfully!");
@@ -124,7 +124,7 @@ class SiteManagementController extends Controller
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
         ]);
         $input = $request->all();
-        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/webiste/officials');
+        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/officials');
         $input['image'] = $url;
         Official::create($input);
         return redirect()->route('official')->with("success", "Official saved successfully!");

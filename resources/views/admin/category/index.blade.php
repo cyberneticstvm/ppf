@@ -43,7 +43,7 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->type?->name }}</td>
-                                            <td><a href="{{ $item->image }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
                                             <td class="text-center">{{ $item->display_order }}</td>
                                             <td>{!! $item->categoryStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>

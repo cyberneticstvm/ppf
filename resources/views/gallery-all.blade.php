@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-lg-12">
                         <div class="heading mb-3">
-                            <h2>Galleries</h2>
+                            <h2>{{ $category->name }}</h2>
                         </div>
                     </div>
                 </div>

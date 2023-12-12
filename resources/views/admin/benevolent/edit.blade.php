@@ -33,7 +33,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0 req" for="category_id">Activity Category </label>
+                                        <label class="col-form-label pt-0 req" for="category_id">Activity </label>
                                         {{ html()->select('category_id', $types, $event->category_id)->class('form-control')->placeholder('Select') }}
                                         @error('category_id')
                                         <small class="text-danger">{{ $errors->first('category_id') }}</small>

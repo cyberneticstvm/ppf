@@ -18,8 +18,8 @@ class WebController extends Controller
     {
         $title = "Progressive Professional Forum Kuwait";
         $sliders = Slider::where('status', 'published')->orderBy('display_order')->get();
-        $events = Event::where('status', 'active')->orderByDesc('display_order')->get();
-        $gallery = Gallery::where('status', 'active')->orderByDesc('display_order')->get();
+        $events = Event::where('status', 'active')->orderBy('display_order')->get();
+        $gallery = Gallery::where('status', 'active')->orderBy('display_order')->get();
         $category = Category::where('status', 'active')->get();
         return view('index', compact('title', 'sliders', 'events', 'gallery', 'category'));
     }
@@ -41,20 +41,20 @@ class WebController extends Controller
     public function events()
     {
         $title = "Progressive Professional Forum Kuwait Events";
-        $categories = Category::where('category_type', 2)->where('status', 'active')->orderByDesc('display_order')->get();
+        $categories = Category::where('category_type', 2)->where('status', 'active')->orderBy('display_order')->get();
         return view('events', compact('title', 'categories'));
     }
 
     public function benevolent()
     {
         $title = "Progressive Professional Forum Kuwait Benevolent Activities";
-        $activities = Benevolent::where('status', 'active')->orderByDesc('display_order')->get();
+        $activities = Benevolent::where('status', 'active')->orderBy('display_order')->get();
         return view('benevolent', compact('title', 'activities'));
     }
 
     public function eventsAll($id)
     {
-        $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderByDesc('display_order')->get();
+        $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();
         $category = Category::findOrFail(decrypt($id));
         $title = "Progressive Professional Forum Kuwait " . $category->name;
         return view('events-all', compact('events', 'category', 'title'));
@@ -63,20 +63,20 @@ class WebController extends Controller
     public function publications()
     {
         $title = "Progressive Professional Forum Kuwait Publications";
-        $categories = Category::where('category_type', 3)->where('status', 'active')->orderByDesc('display_order')->get();
+        $categories = Category::where('category_type', 3)->where('status', 'active')->orderBy('display_order')->get();
         return view('publications', compact('title', 'categories'));
     }
 
     public function gallery()
     {
         $title = "Progressive Professional Forum Kuwait Gallery";
-        $categories = Category::where('category_type', 1)->where('status', 'active')->orderByDesc('display_order')->get();
+        $categories = Category::where('category_type', 1)->where('status', 'active')->orderBy('display_order')->get();
         return view('gallery', compact('title', 'categories'));
     }
 
     public function galleryAll($id)
     {
-        $gals = Gallery::where('category_id', decrypt($id))->where('status', 'active')->orderByDesc('display_order')->get();
+        $gals = Gallery::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();
         $category = Category::findOrFail(decrypt($id));
         $title = "Progressive Professional Forum Kuwait " . $category->name;
         return view('gallery-all', compact('gals', 'category', 'title'));

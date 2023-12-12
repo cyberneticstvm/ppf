@@ -74,6 +74,14 @@ class WebController extends Controller
         return view('gallery', compact('title', 'categories'));
     }
 
+    public function galleryAll($id)
+    {
+        $gals = Gallery::where('category_id', decrypt($id))->where('status', 'active')->orderByDesc('display_order')->get();
+        $category = Category::findOrFail(decrypt($id));
+        $title = "Progressive Professional Forum Kuwait " . $category->name;
+        return view('gallery-all', compact('gals', 'category', 'title'));
+    }
+
     public function community()
     {
         $title = "Progressive Professional Forum Kuwait Community";

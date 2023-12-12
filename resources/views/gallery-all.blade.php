@@ -2,7 +2,7 @@
 @section("content")
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
@@ -14,17 +14,17 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    @forelse($categories as $key => $item)
+                    @forelse($gals as $key => $item)
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="mg_image_box">
                             <div class="image_box">
                                 <img decoding="async" src="{{ asset($item->image) }}" class="img" alt="{{ $item->name }}">
-                                <a href="{{ route('gallery.all', encrypt($item->id)) }}" class="ab_link">
+                                <a href="" class="ab_link">
                                     <span class="icon-right-arrow-long"></span>
                                 </a>
                             </div>
                             <div class="content">
-                                <h2><a href="{{ route('gallery.all', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
+                                <h2><a href="">{{ $item->name }}</a></h2>
                                 <div class="tag">Gallery</div>
                             </div>
                         </div>

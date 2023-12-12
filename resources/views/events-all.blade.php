@@ -17,14 +17,14 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="mg_image_box">
                             <div class="image_box">
-                                <img decoding="async" src="{{ $item->image }}" class="img" alt="{{ $item->name }}">
+                                <img decoding="async" src="{{ asset($item->image) }}" class="img" alt="{{ $item->name }}">
                                 <a href="#" class="ab_link">
                                     <span class="icon-right-arrow-long"></span>
                                 </a>
                             </div>
                             <div class="content">
                                 <h2><a href="#">{{ $item->name }}</a></h2>
-                                <div class="tag">Event</div>
+                                <div class="tag">{{ $category->name }}</div>
                             </div>
                         </div>
                     </div>

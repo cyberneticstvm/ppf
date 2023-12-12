@@ -2,7 +2,7 @@
 @section("content")
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="content">
                                 <h2><a href="">{{ $item->name }}</a></h2>
-                                <div class="tag">Gallery</div>
+                                <div class="tag">{{ $category->name }}</div>
                             </div>
                         </div>
                     </div>

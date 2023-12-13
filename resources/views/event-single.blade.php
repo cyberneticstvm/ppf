@@ -84,7 +84,7 @@
                                     <div class="swiper-slide">
                                         <div class="news_box default_style list_view normal_view clearfix has_images">
                                             <div class="image img_hover-1">
-                                                <img src="{{ asset($item->imag) }}" class="img-fluid" alt="img">
+                                                <img src="{{ asset($item->image) }}" class="img-fluid" alt="img">
                                                 <a href="#" class="categories">
                                                     <i class="icon-folder"></i>{{ $item->category->name }}
                                                 </a>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="content_inner">
                                     <p class="post-date"><span class="icon-calendar"></span>{{ $item->date?->format('d, F Y') }}</p>
-                                    <h3><a href="blog-single.html">{{ $item->name }}</a></h3>
+                                    <h3><a href="{{ route('event.single', encrypt($item->id)) }}">{{ $item->name }}</a></h3>
                                 </div>
                             </div>
                             @empty

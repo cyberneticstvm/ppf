@@ -52,7 +52,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/events', 'events')->name('events');
         Route::get('/events/all/{id}', 'eventsAll')->name('events.all');
         Route::get('/publications', 'publications')->name('publications');
-        Route::get('/gallery', 'gallery')->name('gallery');
+        Route::get('/gallery', 'gallery')->name('galleries');
         Route::get('/gallery/all/{id}', 'galleryAll')->name('gallery.all');
         Route::get('/community', 'community')->name('community');
         Route::get('/contact', 'contact')->name('contact');

@@ -28,6 +28,8 @@
                                 <img src="{{ asset($event->image) }}" class="wp-post-image" alt="img">
                             </div>
                             <!--===============spacing==============-->
+                            <div class="pd_bottom_20"></div>
+                            <!--===============spacing==============-->
                             <div class="post_single_content">
                                 <h5>{{ $event->name }}</h5>
                                 <!--===============spacing==============-->

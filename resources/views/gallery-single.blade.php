@@ -18,10 +18,6 @@
             </div>
         </div>
         <section class="project-section">
-            <!--===============spacing==============-->
-            <div class="pd_top_85"></div>
-            <!--===============spacing==============-->
-
             <div class="container-fluid pd_zero">
                 <div class="row">
                     <div class="col-lg-12">

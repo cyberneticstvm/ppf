@@ -124,7 +124,7 @@
                             @forelse($recents as $key =>$item)
                             <div class="blog_in clearfix image_in">
                                 <div class="image">
-                                    <img decoding="async" src="{{ asset('frontend/assets/images/blog/blog-image-9.jpg') }}" alt="img">
+                                    <img decoding="async" src="{{ asset('frontend/assets/images/home/logo.png') }}" alt="img">
                                 </div>
                                 <div class="content_inner">
                                     <p class="post-date"><span class="icon-calendar"></span>{{ $item->date?->format('d, F Y') }}</p>

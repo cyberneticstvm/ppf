@@ -307,28 +307,29 @@
                <div class="row">
                   <div class="col-lg-5 col-md-12 form_inner">
                      <div class="form_content">
-                        <form class="contact-form" method="post" action="sendemail.php">
+                        <form class="contact-form" method="post" action="{{ route('thought.save') }}">
+                           @csrf
                            <p>
                               <label> Your name<br />
-                                 <input type="text" name="name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Enter Your Name" />
+                                 <input type="text" name="name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Enter Your Name" required />
                                  <br />
                                  <i class="fa fa-user"></i><br />
                               </label>
                            </p>
                            <p><label> Your email<br />
-                                 <input type="email" name="email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Enter Your Email" />
+                                 <input type="email" name="email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Enter Your Email" required />
                                  <br />
                                  <i class="fa fa-envelope"></i><br />
                               </label>
                            </p>
                            <p>
                               <label> Your Thoughts<br />
-                                 <textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Share Your Thoughts"></textarea>
+                                 <textarea name="thought" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Share Your Thoughts" required></textarea>
                                  <br />
                                  <i class="fa fa-comments"></i><br />
                               </label>
                            </p>
-                           <p><input type="submit" value="Share" class="btn-submit" /></p>
+                           <p><input type="submit" value="Submit" class="btn-submit" /></p>
                         </form>
                      </div>
                   </div>

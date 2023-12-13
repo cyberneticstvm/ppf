@@ -57,6 +57,10 @@ Route::middleware(['web'])->group(function () {
         Route::get('/community', 'community')->name('community');
         Route::get('/contact', 'contact')->name('contact');
     });
+
+    Route::prefix('/user/thoughts')->controller(ThoughtController::class)->group(function () {
+        Route::post('/', 'store')->name('thought.save');
+    });
 });
 
 Route::prefix('/admin')->middleware(['web', 'auth'])->group(function () {

@@ -29,7 +29,15 @@ class ThoughtController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email:rfs,dns',
+            'thought' => 'required',
+        ]);
+        $input = $request->all();
+        $input['status'] = 'draft';
+        Thought::create($input);
+        return redirect()->back()->with("success", "Thought submitted successfully!");
     }
 
     /**

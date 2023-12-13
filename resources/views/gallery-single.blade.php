@@ -69,7 +69,6 @@
                                             <div class="content_box ">
                                                 <h2 class="title_pro"><a href="#" rel="bookmark">Time HR Prepares Plastic
                                                         Contract Manufacturer</a></h2>
-                                                <p>Pre sale</p>
                                                 <div class="image_zoom_box ">
                                                     <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
                                                 </div>

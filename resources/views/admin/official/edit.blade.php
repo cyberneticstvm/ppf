@@ -61,7 +61,7 @@
                                         <label class="col-form-label pt-0" for="order">Display Order </label>
                                         {{ html()->text('display_order', $official->display_order)->class('form-control')->placeholder('Display Order') }}
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label class="col-form-label pt-0 req" for="image">Official Image </label>
                                         {{ html()->file('image', old('image'))->class('form-control') }}
                                         <small class="form-text text-muted">Max file size should be less than 1MB</small>

@@ -3,7 +3,7 @@
         <div class="badge-bottom"><span class="badge badge-primary">New</span></div><a href="user-profile.html">
             <h6 class="mt-3 f-14 f-w-600">{{ Auth::user()->name }}</h6>
         </a>
-        <p class="mb-0 font-roboto">Administrator</p>
+        <p class="mb-0 font-roboto"><a href="{{ route('change.password') }}">Change Password</a></p>
     </div>
     <nav>
         <div class="main-navbar">

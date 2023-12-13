@@ -41,6 +41,21 @@ class UserController extends Controller
         return redirect('/login')->with("success", "User logged out successfully.");
     }
 
+    public function changePassword()
+    {
+        return view('admin.user.change-password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
+        ]);
+        $user = User::findOrFail(Auth::id())->update(['password' => bcrypt($request->password)]);
+        return redirect()->back()->with("success", "Password has been reset successfully");
+    }
+
     public function createuser()
     {
         User::create([

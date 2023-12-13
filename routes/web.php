@@ -63,6 +63,8 @@ Route::prefix('/admin')->middleware(['web', 'auth'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/logout', 'logout')->name('logout');
+        Route::get('/change/password', 'changePassword')->name('change.password');
+        Route::post('/change/password', 'updatePassword')->name('change.password.update');
     });
 
     Route::prefix('/category')->controller(CategoryController::class)->group(function () {

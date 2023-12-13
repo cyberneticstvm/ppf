@@ -51,7 +51,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/benevolent', 'benevolent')->name('benevolent');
         Route::get('/events', 'events')->name('events');
         Route::get('/events/all/{id}', 'eventsAll')->name('events.all');
-        Route::get('/event/single/{id}', 'eventSingle')->name('event.single');
+        Route::get('/events/single/{id}', 'eventSingle')->name('event.single');
         Route::get('/publications', 'publications')->name('publications');
         Route::get('/gallery', 'gallery')->name('galleries');
         Route::get('/gallery/all/{id}', 'galleryAll')->name('gallery.all');

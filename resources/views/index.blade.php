@@ -94,6 +94,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="image_grid_content style_one image_covered">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2>Publications</h2>
+                </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mg_image_box">
                         <div class="image_box">

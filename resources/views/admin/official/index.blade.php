@@ -31,6 +31,7 @@
                                         <th>Name</th>
                                         <th>Panel</th>
                                         <th>Contact Number</th>
+                                        <th>Email</th>
                                         <th>Photo</th>
                                         <th>Deleted?</th>
                                         <th>Edit</th>
@@ -43,6 +44,7 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->panel }}</td>
                                             <td>{{ $item->contact_number }}</td>
+                                            <td>{{ $item->email }}</td>
                                             <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
                                             <td>{!! $item->deletedStatus() !!}</td>
                                             <td class="text-center"><a href="{{ route('official.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>

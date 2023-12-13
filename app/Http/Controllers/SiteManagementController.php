@@ -121,6 +121,7 @@ class SiteManagementController extends Controller
             'name' => 'required',
             'panel' => 'required',
             'contact_number' => 'required',
+            'email' => 'nullable|email:rfs,dns',
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
         ]);
         $input = $request->all();
@@ -142,6 +143,7 @@ class SiteManagementController extends Controller
             'name' => 'required',
             'panel' => 'required',
             'contact_number' => 'required',
+            'email' => 'nullable|email:rfs,dns',
             'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
         ]);
         $input = $request->all();

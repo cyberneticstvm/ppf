@@ -44,6 +44,13 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="email">Email </label>
+                                        {{ html()->email('email', old('email'))->class('form-control')->placeholder('Email') }}
+                                        @error('email')
+                                        <small class="text-danger">{{ $errors->first('email') }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="panel">Panel </label>
                                         {{ html()->select('panel', array('auditor' => 'Auditors', 'executive_member' => 'Executive Members', 'office_bearer' => 'Office Bearers'), old('panel'))->class('form-control')->placeholder('Select') }}
                                         @error('panel')

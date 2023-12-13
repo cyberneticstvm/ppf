@@ -60,6 +60,14 @@ class WebController extends Controller
         return view('events-all', compact('events', 'category', 'title'));
     }
 
+    public function eventSingle($id)
+    {
+        $event = Event::findOrFail(decrypt($id));
+        $recents = Event::where('id', '!=', $event->id)->latest()->limit(10)->get();
+        $title = $event->name;
+        return view('event-single', compact('event', 'title', 'recents'));
+    }
+
     public function publications()
     {
         $title = "Progressive Professional Forum Kuwait Publications";

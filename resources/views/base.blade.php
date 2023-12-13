@@ -422,11 +422,6 @@
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/jquery.countTo.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/sharer.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/validation.js') }}"></script>
-   <!-- map script -->
-   <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
-   <script src="{{ asset('/frontend/assets/js/gmaps.js') }}"></script>
-   <script src="{{ asset('/frontend/assets/js/map-helper.js') }}"></script>-->
-   <!-- main-js -->
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/creote-extension.js') }}"></script>
    <!---========================== javascript ==========================-->
    @include("admin.message")

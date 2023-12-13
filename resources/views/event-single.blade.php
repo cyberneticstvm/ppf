@@ -40,8 +40,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <h3 class="text-center"><a href="{{ ($event->gallery_id) ? route('event.single', encrypt($event->gallery_id)) : '#' }}">Event Gallery</a></h3>
+                        <div class="text-center">
+                            <a class="theme-btn one" href="{{ ($event->gallery_id) ? route('event.single', encrypt($event->gallery_id)) : '#' }}">Event Gallery</a>
                         </div>
                         <div class="related_post">
                             <div class="title_sections_inner">

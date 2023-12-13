@@ -34,7 +34,7 @@ class WebController extends Controller
     public function officials()
     {
         $title = "Progressive Professional Forum Kuwait Officials";
-        $officials = Official::all();
+        $officials = Official::orderBy('display_order')->get();
         return view('officials', compact('title', 'officials'));
     }
 

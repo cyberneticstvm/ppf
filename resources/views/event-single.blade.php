@@ -35,7 +35,7 @@
                                 <!--===============spacing==============-->
                                 <div class="pd_bottom_15"></div>
                                 <!--===============spacing==============-->
-                                <div class="description_box">
+                                <div class="description_box text-justify text-dark">
                                     {!! $event->description !!}
                                 </div>
                             </div>

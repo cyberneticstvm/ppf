@@ -84,12 +84,12 @@
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/common.webp') }}" class="img" alt="image">
-                            <a href="{{ route('gallery') }}" class="ab_link">
+                            <a href="{{ route('galleries') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('gallery') }}">View</a></h2>
+                            <h2><a href="{{ route('galleries') }}">View</a></h2>
                             <div class="tag">Galleries</div>
                         </div>
                     </div>

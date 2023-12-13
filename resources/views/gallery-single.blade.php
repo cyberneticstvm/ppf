@@ -64,14 +64,14 @@
                                     <div class="swiper-slide">
                                         <div class="project_post style_seven">
                                             <div class="image_box">
-                                                <img src="{{ asset($item-image) }}" class="img-fluid" alt="img">
+                                                <img src="{{ asset($item->image) }}" class="img-fluid" alt="img">
                                             </div>
                                             <div class="content_box ">
                                                 <h2 class="title_pro"><a href="#" rel="bookmark">Time HR Prepares Plastic
                                                         Contract Manufacturer</a></h2>
                                                 <p>Pre sale</p>
                                                 <div class="image_zoom_box ">
-                                                    <a href="{{ asset($item-image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
+                                                    <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
                                                 </div>
                                             </div>
                                             <div class="overlay ">

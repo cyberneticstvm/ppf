@@ -60,7 +60,7 @@ class WebController extends Controller
         return view('events-all', compact('events', 'category', 'title'));
     }
 
-    public function eventSingle($id)
+    public function eventSingle(string $id)
     {
         $event = Event::findOrFail(decrypt($id));
         $recents = Event::where('id', '!=', $event->id)->latest()->limit(10)->get();
@@ -88,6 +88,13 @@ class WebController extends Controller
         $category = Category::findOrFail(decrypt($id));
         $title = "Progressive Professional Forum Kuwait " . $category->name;
         return view('gallery-all', compact('gals', 'category', 'title'));
+    }
+
+    public function gallerySingle(string $id)
+    {
+        $gallery = Gallery::findOrFail(decrypt($id));
+        $title = $gallery->name;
+        return view('gallery-single', compact('gallery', 'title', 'gallery'));
     }
 
     public function community()

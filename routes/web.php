@@ -55,6 +55,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/publications', 'publications')->name('publications');
         Route::get('/gallery', 'gallery')->name('galleries');
         Route::get('/gallery/all/{id}', 'galleryAll')->name('gallery.all');
+        Route::get('/gallery/single/{id}', 'gallerySingle')->name('gallery.single');
         Route::get('/community', 'community')->name('community');
         Route::get('/contact', 'contact')->name('contact');
     });

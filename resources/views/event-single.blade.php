@@ -40,10 +40,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div>Event Gallery</div>
+                        <div class="text-center"><a href="{{ ($event->gallery_id) ? route('event.single', encrypt($event->gallery_id)) : '#' }}">Event Gallery</a></div>
                         <div class="related_post">
                             <div class="title_sections_inner">
-                                <h2><a href="{{ ($event->gallery_id) ? route('event.single', encrypt($event->gallery_id)) : '#' }}">Recents Events</a></h2>
+                                <h2>Recents Events</h2>
                             </div>
                             <!-- Swiper -->
 

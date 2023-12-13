@@ -35,7 +35,7 @@
                                 <!--===============spacing==============-->
                                 <div class="pd_bottom_15"></div>
                                 <!--===============spacing==============-->
-                                <div class="description_box text-justify text-dark">
+                                <div class="description_box text-justify">
                                     {!! $event->description !!}
                                 </div>
                             </div>
@@ -80,72 +80,28 @@
                                        }
                                      }'>
                                 <div class="swiper-wrapper">
+                                    @forelse($recents as $key =>$item)
                                     <div class="swiper-slide">
                                         <div class="news_box default_style list_view normal_view clearfix has_images">
                                             <div class="image img_hover-1">
-                                                <img src="assets/images/blog/blog-image-7.jpg" class="img-fluid" alt="img">
+                                                <img src="{{ asset($item->imag) }}" class="img-fluid" alt="img">
                                                 <a href="#" class="categories">
-                                                    <i class="icon-folder"></i>Compliance Audits
+                                                    <i class="icon-folder"></i>{{ $item->category->name }}
                                                 </a>
                                             </div>
                                             <div class="content_box">
                                                 <div class="date">
-                                                    <span class="date_in_number">October 8, 2023</span>
+                                                    <span class="date_in_number">{{ $item->date?->format('d, F Y') }}</span>
                                                 </div>
                                                 <div class="source">
-                                                    <h2 class="title"><a href="blog-single.html" rel="bookmark">How to
-                                                            Handle Employee</a></h2>
-                                                    <p class="short_desc">How well this mistaken ideas off denouncing
-                                                        pleasure &amp; praisings will give you complete.</p>
+                                                    <h2 class="title"><a href="{{ route('event.single', encrypt($item->id)) }}" rel="bookmark">{{ $item->name }}</a></h2>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="news_box default_style list_view normal_view clearfix has_images">
-                                            <div class="image img_hover-1">
-                                                <img width="750" height="420" src="assets/images/blog/blog-image-6.jpg" class="img-fluid" alt="img">
-                                                <a href="#" class="categories">
-                                                    <i class="icon-folder"></i>Coaching
-                                                </a>
-                                            </div>
-                                            <div class="content_box">
-                                                <div class="date">
-                                                    <span class="date_in_number">October 8, 2023</span>
-                                                </div>
-                                                <div class="source">
-                                                    <h2 class="title"><a href="blog-single.html" rel="bookmark">Retaining
-                                                            Good Employees &amp; Motivated</a></h2>
-                                                    <p class="short_desc">How well this mistaken ideas off denouncing
-                                                        pleasure &amp; praisings will give you complete.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="news_box default_style list_view normal_view clearfix has_images">
-                                            <div class="image img_hover-1">
-                                                <img width="750" height="420" src="assets/images/blog/blog-image-9.jpg" class="img-fluid" alt="img">
-                                                <a href="#" class="categories">
-                                                    <i class="icon-folder"></i>Coaching
-                                                </a>
-                                            </div>
-                                            <div class="content_box">
-                                                <div class="date">
-                                                    <span class="date_in_number">October 8, 2023</span>
-                                                </div>
-                                                <div class="source">
-                                                    <h2 class="title"><a href="blog-single.html" rel="bookmark">Why Should
-                                                            Business Payroll Outsourcing?</a></h2>
-                                                    <p class="short_desc">How well this mistaken ideas off denouncing
-                                                        pleasure &amp; praisings will give you complete.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @empty
+                                    @endforelse
                                 </div>
-
                             </div>
                             <div class="arrow_related">
                                 <div class="related-button-prev">
@@ -163,53 +119,20 @@
             <aside id="secondary" class="widget-area all_side_bar col-lg-4 col-md-12 col-sm-12">
                 <div class="side_bar">
                     <div class="widgets_grid_box">
-                        <form role="search" method="get" action="index.html/">
-                            <div class="wp-block-search__inside-wrapper">
-                                <input type="search" name="s" value="" placeholder="Key Words here" required="">
-                                <i class="fa fa-search"></i>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="widgets_grid_box">
                         <h2 class="widget-title">Recent Events</h2>
                         <div class="widget_post_box">
+                            @forelse($recents as $key =>$item)
                             <div class="blog_in clearfix image_in">
                                 <div class="image">
-                                    <img decoding="async" src="assets/images/blog/blog-image-9.jpg" alt="img">
+                                    <img decoding="async" src="{{ asset('frontend/assets/images/blog/blog-image-9.jpg') }}" alt="img">
                                 </div>
                                 <div class="content_inner">
-                                    <p class="post-date"><span class="icon-calendar"></span>October 8, 2023</p>
-                                    <h3><a href="blog-single.html">Why Should Business Payroll Outsourcing?</a></h3>
+                                    <p class="post-date"><span class="icon-calendar"></span>{{ $item->date?->format('d, F Y') }}</p>
+                                    <h3><a href="blog-single.html">{{ $item->name }}</a></h3>
                                 </div>
                             </div>
-                            <div class="blog_in clearfix image_in">
-                                <div class="image">
-                                    <img decoding="async" src="assets/images/blog/blog-image-8.jpg" alt="img">
-                                </div>
-                                <div class="content_inner">
-                                    <p class="post-date"><span class="icon-calendar"></span>October 8, 2023</p>
-                                    <h3><a href="blog-single.html">Most Employees Support Measures</a></h3>
-                                </div>
-                            </div>
-                            <div class="blog_in clearfix image_in">
-                                <div class="image">
-                                    <img decoding="async" src="assets/images/blog/blog-image-7.jpg" alt="img">
-                                </div>
-                                <div class="content_inner">
-                                    <p class="post-date"><span class="icon-calendar"></span>October 8, 2023</p>
-                                    <h3><a href="blog-single.html">How to Handle Employee</a></h3>
-                                </div>
-                            </div>
-                            <div class="blog_in clearfix image_in">
-                                <div class="image">
-                                    <img decoding="async" src="assets/images/blog/blog-image-6.jpg" alt="img">
-                                </div>
-                                <div class="content_inner">
-                                    <p class="post-date"><span class="icon-calendar"></span>October 8, 2023</p>
-                                    <h3><a href="blog-single.html">Retaining Good Employees &amp; Motivated</a></h3>
-                                </div>
-                            </div>
-
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                 </div>

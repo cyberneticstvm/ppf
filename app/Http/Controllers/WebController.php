@@ -94,7 +94,7 @@ class WebController extends Controller
     {
         $gallery = Gallery::findOrFail(decrypt($id));
         $title = $gallery->name;
-        return view('gallery-single', compact('gallery', 'title', 'gallery'));
+        return view('gallery-single', compact('gallery', 'title'));
     }
 
     public function community()

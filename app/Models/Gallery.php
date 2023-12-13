@@ -26,4 +26,9 @@ class Gallery extends Model
     {
         return ($this->status == 'active') ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">Inactive</span>';
     }
+
+    public function images()
+    {
+        return $this->hasMany(GalleryImage::class, 'gallery_id', 'id');
+    }
 }

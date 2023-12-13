@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('contact_number')->nullable();
             $table->string('email')->nullable();
             $table->string('image')->nullable();
+            $table->integer('display_order')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

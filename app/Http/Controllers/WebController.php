@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Advertisement;
 use App\Models\Benevolent;
 use App\Models\Category;
 use App\Models\Event;
@@ -21,7 +22,8 @@ class WebController extends Controller
         $events = Event::where('status', 'active')->orderBy('display_order')->get();
         $gallery = Gallery::where('status', 'active')->orderBy('display_order')->get();
         $category = Category::where('status', 'active')->get();
-        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category'));
+        $ads = Advertisement::where('position', 'floating')->where('status', 'active')->latest()->get();
+        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category', 'ads'));
     }
 
     public function about()

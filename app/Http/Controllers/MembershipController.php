@@ -53,16 +53,17 @@ class MembershipController extends Controller
             'name' => 'required',
             'dob' => 'required',
             'email' => 'required|email:rfs,dns|unique:memberships,email',
-            'civil_id' => 'required',
-            'qualification' => 'required',
-            'profession' => 'required',
-            'institute' => 'required',
-            'organization' => 'required',
-            'kw_primary_contact_number' => 'required',
-            'kw_secondary_contact_number' => 'required',
             'type' => 'required',
+            'kw_primary_contact_number_country' => 'required',
+            'kw_primary_contact_number' => 'required',
+            'passport_number' => 'required_if:type,==,overseas',
+            'civil_id' => 'required_if:type,==,primary|required_if:type,==,associate',
+            'profession' => 'required_if:type,==,primary|required_if:type,==,overseas',
+            'qualification' => 'required_if:type,==,primary|required_if:type,==,overseas',
         ]);
-        $input = $request->all();
+        $input = $request->except(array('kw_primary_contact_number_country', 'kw_secondary_contact_number_country'));
+        $input['kw_primary_contact_number'] = $request->kw_primary_contact_number_country . $request->kw_primary_contact_number;
+        $input['kw_secondary_contact_number'] = $request->kw_secondary_contact_number_country . $request->kw_secondary_contact_number;
         $input['membership_number'] = generateMembershipNumber($request->type)->mn;
         $input['approval_status'] = 'pending';
         Membership::create($input);
@@ -97,13 +98,6 @@ class MembershipController extends Controller
             'name' => 'required',
             'dob' => 'required',
             'email' => 'required|email:rfs,dns|unique:memberships,email,' . $id,
-            'civil_id' => 'required',
-            'qualification' => 'required',
-            'profession' => 'required',
-            'institute' => 'required',
-            'organization' => 'required',
-            'kw_primary_contact_number' => 'required',
-            'kw_secondary_contact_number' => 'required',
             'type' => 'required',
         ]);
         $input = $request->all();

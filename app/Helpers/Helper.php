@@ -38,6 +38,11 @@ function membershipTypes()
     return array('primary' => 'Primary', 'associate' => 'Associate', 'overseas' => 'Overseas');
 }
 
+function countrycodes()
+{
+    return array('+91' => 'India (+91)', '+965' => 'Kuwait (+965)', '+971' => 'UAE (+971)', '+968' => 'Oman (+968)', '+974' => 'Qatar (+974)');
+}
+
 function generateMembershipNumber($type)
 {
     $label = 'PM';

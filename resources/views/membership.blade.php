@@ -13,6 +13,20 @@
                         {{ html()->form('POST', route('apply.membership'))->open() }}
                         <div class="row">
                             <div class="form-group col-md-6">
+                                <label class="req">Membership Type</label>
+                                {{ html()->select('type', membershipTypes())->class('form-control')->placeholder('Select') }}
+                                @error('type')
+                                <small class="text-danger">{{ $errors->first('type') }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="">Passport Number</label>
+                                {{ html()->text('passport_number', old('passport_number'))->class('form-control')->placeholder('Passport Number') }}
+                                @error('passport_number')
+                                <small class="text-danger">{{ $errors->first('passport_number') }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label class="req">Full Name</label>
                                 {{ html()->text('name', old('name'))->class('form-control')->placeholder('Full Name') }}
                                 @error('name')
@@ -34,59 +48,66 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="req">Civil ID Number</label>
+                                <label class="">Civil ID Number</label>
                                 {{ html()->text('civil_id', old('civil_id'))->class('form-control')->placeholder('Civil ID Number') }}
                                 @error('civil_id')
                                 <small class="text-danger">{{ $errors->first('civil_id') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="req">Qualification</label>
+                                <label class="">Qualification</label>
                                 {{ html()->text('qualification', old('qualification'))->class('form-control')->placeholder('Qualification') }}
                                 @error('qualification')
                                 <small class="text-danger">{{ $errors->first('qualification') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="req">Profession</label>
+                                <label class="">Profession</label>
                                 {{ html()->text('profession', old('profession'))->class('form-control')->placeholder('Profession') }}
                                 @error('profession')
                                 <small class="text-danger">{{ $errors->first('profession') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="req">Institute</label>
+                                <label class="">Institute</label>
                                 {{ html()->text('institute', old('institute'))->class('form-control')->placeholder('Institute') }}
                                 @error('institute')
                                 <small class="text-danger">{{ $errors->first('institute') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="req">Organization</label>
+                                <label class="">Organization</label>
                                 {{ html()->text('organization', old('organization'))->class('form-control')->placeholder('Organization') }}
                                 @error('organization')
                                 <small class="text-danger">{{ $errors->first('organization') }}</small>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Primary Contact Number</label> <small>with country code</small>
+                            <div class="form-group col-md-2 col-5">
+                                <label class="req">Country Code</label>
+                                {{ html()->select('kw_primary_contact_number_country', countrycodes())->class('form-control')->placeholder('Select') }}
+                                @error('kw_primary_contact_number_country')
+                                <small class="text-danger">{{ $errors->first('kw_primary_contact_number_country') }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4 col-7">
+                                <label class="req">Primary Contact Number</label>
                                 {{ html()->text('kw_primary_contact_number', old('kw_primary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
                                 @error('kw_primary_contact_number')
                                 <small class="text-danger">{{ $errors->first('kw_primary_contact_number') }}</small>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Secondary Contact Number</label> <small>with country code</small>
+                            <div class="form-group col-md-2 col-4">
+                                <label class="">Country Code</label>
+                                {{ html()->select('kw_secondary_contact_number_country', countrycodes())->class('form-control')->placeholder('Select') }}
+                                @error('kw_secondary_contact_number_country')
+                                <small class="text-danger">{{ $errors->first('kw_secondary_contact_number_country') }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4 col-8">
+                                <label class="">Secondary Contact Number</label>
                                 {{ html()->text('kw_secondary_contact_number', old('kw_secondary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
                                 @error('kw_secondary_contact_number')
                                 <small class="text-danger">{{ $errors->first('kw_secondary_contact_number') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Membership Type</label>
-                                {{ html()->select('type', membershipTypes())->class('form-control')->placeholder('Select') }}
-                                @error('type')
-                                <small class="text-danger">{{ $errors->first('type') }}</small>
                                 @enderror
                             </div>
                             <button type="submit" class="btn-submit theme-btn one">Submit</button>

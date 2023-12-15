@@ -139,7 +139,7 @@
                                        },
                                        "speed": 1000,
                                        "centeredSlides": false,
-                                       "slidesPerView": 4,
+                                       "slidesPerView": 2,
                                        "spaceBetween": 30,
                                        "pagination": {
                                          "el": ".swiper-pagination",

@@ -118,7 +118,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ $adb->image ? asset($adb->image) ? '' }}" class="img-fluid" /></a>
+                    <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ $adb->image ? asset($adb->image) : '' }}" class="img-fluid" /></a>
                 </div>
             </div>
         </div>

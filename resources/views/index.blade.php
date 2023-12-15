@@ -130,7 +130,7 @@
                                        },
                                        "speed": 1000,
                                        "centeredSlides": false,
-                                       "slidesPerView": 2,
+                                       "slidesPerView": 4,
                                        "spaceBetween": 30,
                                        "pagination": {
                                          "el": ".swiper-pagination",
@@ -142,10 +142,10 @@
                                        },
                                        "breakpoints": {
                                           "1200": {
-                                             "slidesPerView": 2 
+                                             "slidesPerView": 4 
                                             },
                                           "1024": {
-                                           "slidesPerView": 2 
+                                           "slidesPerView": 4 
                                           },
                                          "768": {
                                            "slidesPerView": 2 

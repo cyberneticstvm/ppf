@@ -273,7 +273,8 @@ select:active {
     border-color: var(--primary-color-one);
 }
 
-body input[type="submit"] , body button[type="submit"] {
+body input[type="submit"],
+body button[type="submit"] {
     position: relative;
     display: inline-block;
     min-width: 160px;
@@ -287,7 +288,7 @@ body input[type="submit"] , body button[type="submit"] {
     font-family: var(--creote-family-one);
     color: #fff;
     font-weight: 600;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
 
 @media (min-width:1200px) {
@@ -925,9 +926,11 @@ body.error404 {
     .comment-respond {
         position: relative;
         margin-top: 20px;
-        .title_para{
+
+        .title_para {
             padding-bottom: 15px;
         }
+
         .comment-reply-title {
             font-size: 26px;
             display: block;
@@ -935,7 +938,7 @@ body.error404 {
             font-weight: 700;
             color: var(--heading-dark);
             font-family: var(--creote-family-one);
-           
+
             small {
                 margin: 5px 0px;
                 display: block;

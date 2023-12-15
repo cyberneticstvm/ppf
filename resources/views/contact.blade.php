@@ -17,7 +17,7 @@
         </div>
         <section class="creote-contact-box">
             <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
                     <div class="contact_box_content style_one">
                         <div class="contact_box_inner icon_yes ">
                             <div class="icon_bx">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
                     <div class="contact_box_content style_one">
                         <div class="contact_box_inner icon_yes">
                             <div class="icon_bx">
@@ -38,12 +38,12 @@
                             </div>
                             <div class="contnet">
                                 <h3> Post Address </h3>
-                                <p>Fahaheel Kala Centre, 30 St, Mangaf, Kuwait</p>
+                                <p>Fahaheel Kala Centre, 30 St,<br /> Mangaf, Kuwait</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <!--<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="contact_box_content style_one">
                         <div class="contact_box_inner icon_yes">
                             <div class="icon_bx">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
         <section class="contact-map-section mt-5">

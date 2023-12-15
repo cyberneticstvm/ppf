@@ -35,42 +35,52 @@
       <!---============== wrapper_full =================-->
       <div id="wrapper_full" class="content_all_warpper">
          <!----preloader----->
-         <div class="preloader-wrap">
+         <!--<div class="preloader-wrap">
             <div class="preloader" style="background-image:url('{{ asset("/frontend/assets/images/preloader.gif") }}')">
             </div>
             <div class="overlay"></div>
-         </div>
+         </div>-->
          <!----preloader----->
          <!----header----->
          <div class="header_area" id="header_contents">
-            <div class="top_bar style_one">
-               <div class="auto-container">
-                  <div class="row align-items-center">
-                     <div class="col-lg-12">
-                        <div class="top_inner">
-                           <div class="left_side common_css">
-                              <div class="contntent address">
-                                 <i class="icon-placeholder"></i>
-                                 <div class="text">
-                                    <small>Location</small>
-                                    <span>Fahaheel Kala Centre, 30 St, Mangaf, Kuwait </span>
-                                 </div>
+            <div class="header_style_six_nw ver_2">
+               <div class="top_bar style_six">
+                  <div class="auto-container">
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <div class="top_inner">
+                              <div class="left_side common_css">
+                                 <ul>
+                                    <li><a href="tel:+96566935862"> +965 66935862</a></li>
+                                    <li><a href="tel:+96565971184"> +965 65971184</a></li>
+                                    <li><a href="mailto:ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a></li>
+                                 </ul>
                               </div>
-                              <div class="contntent email">
-                                 <i class="icon-email"></i>
-                                 <div class="text">
-                                    <small>Email</small>
-                                    <a href="mailto:ppfk@ppfkuwait.org">ppfk@ppfkuwait.org</a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="right_side common_css">
-                              <div class="contntent phone">
-                                 <i class="icon-phone-call"></i>
-                                 <div class="text">
-                                    <small>Phone</small>
-                                    <a href="tel:+96566935862">+965 66935862</a>,
-                                    <a href="tel:+96565971184">+965 65971184</a>,
+                              <div class="right_side common_css">
+                                 <div class="rg_content_box">
+                                    <div class="btn_lf_side">
+                                       <a href="javascript:void(0)" class="top_six_btn" target="_blank" rel="nofollow"> Get In Touch</a>
+                                    </div>
+                                    <div class="med_rg_side">
+                                       <ul>
+                                          <li> <a href="https://www.facebook.com/people/Progressive-Professional-Forum-PPF-Kuwait/100087090770049/" target="_blank" rel="nofollow">
+                                                <i class="fa fa-facebook"></i>
+                                             </a>
+                                          </li>
+                                          <li> <a href="https://twitter.com/ppfkuwait" target="_blank" rel="nofollow">
+                                                <i class="fa fa-twitter"></i>
+                                             </a>
+                                          </li>
+                                          <li> <a href="https://instagram.com/ppfkuwait" target="_blank" rel="nofollow">
+                                                <i class="fa fa-instagram"></i>
+                                             </a>
+                                          </li>
+                                          <li> <a href="https://www.youtube.com/@ppfkuwait721" target="_blank" rel="nofollow">
+                                                <i class="fa fa-youtube"></i>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </div>
                                  </div>
                               </div>
                            </div>
@@ -232,27 +242,27 @@
                         <div class="social_media_v_one">
                            <ul>
                               <li>
-                                 <a href="#">
+                                 <a href="https://www.facebook.com/people/Progressive-Professional-Forum-PPF-Kuwait/100087090770049/" target="_blank">
                                     <span class="fa fa-facebook"></span>
                                     <small>facebook</small>
                                  </a>
                               </li>
                               <li>
-                                 <a href="#">
+                                 <a href="https://twitter.com/ppfkuwait" target="_blank">
                                     <span class="fa fa-twitter"></span>
                                     <small>twitter</small>
                                  </a>
                               </li>
                               <li>
-                                 <a href="#">
-                                    <span class="fa fa-skype"></span>
-                                    <small>skype</small>
+                                 <a href="https://instagram.com/ppfkuwait" target="_blank">
+                                    <span class="fa fa-instagram"></span>
+                                    <small>Instagram</small>
                                  </a>
                               </li>
                               <li>
-                                 <a href="#">
-                                    <span class="fa fa-instagram"></span>
-                                    <small>instagram</small>
+                                 <a href="https://www.youtube.com/@ppfkuwait721" target="_blank">
+                                    <span class="fa fa-youtube"></span>
+                                    <small>YouTube</small>
                                  </a>
                               </li>
                            </ul>

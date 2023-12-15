@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-4 col-sm-4">
                             <h6>DOB</h6>
-                            <h5>{{ $member->dob->format('d-M-Y') }}</h5>
+                            <h5>{{ $member->dob?->format('d-M-Y') }}</h5>
                         </div>
                     </div>
                     <div class="card-footer row">

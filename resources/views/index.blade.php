@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-3">
-                    <h2>Events</h2>
+                    <h4>Events</h4>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mg_image_box">
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mb-3">
-                        <h2>Galleries</h2>
+                        <h4>Galleries</h4>
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mb-3">
-                        <h2>Publications</h2>
+                        <h4>Publications</h4>
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">

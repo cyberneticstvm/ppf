@@ -117,6 +117,15 @@
     <section>
         <div class="container">
             <div class="row">
+                <div class="col">
+                    <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ $adb->image ? asset($adb->image) ? '' }}" class="img-fluid" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
                 <div class="related_post">
                     <div class="title_sections_inner">
                         <h2>Advertisements</h2>

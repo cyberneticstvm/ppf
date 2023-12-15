@@ -23,7 +23,8 @@ class WebController extends Controller
         $gallery = Gallery::where('status', 'active')->orderBy('display_order')->get();
         $category = Category::where('status', 'active')->get();
         $ads = Advertisement::where('position', 'floating')->where('status', 'active')->latest()->get();
-        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category', 'ads'));
+        $adb = Advertisement::where('position', 'bottom')->where('status', 'active')->first();
+        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category', 'ads', 'adb'));
     }
 
     public function about()

@@ -38,9 +38,14 @@ function membershipTypes()
     return array('primary' => 'Primary', 'associate' => 'Associate', 'overseas' => 'Overseas');
 }
 
-function generateMembershipNumber()
+function generateMembershipNumber($type)
 {
-    return DB::table('memberships')->selectRaw("CONCAT_WS('', 'PPFKWT', IFNULL(MAX(CAST(SUBSTRING_INDEX(membership_number, '-', -1) AS INTEGER))+1, 1001)) AS mn")->first();
+    $label = 'PM';
+    if ($type == 'associate')
+        $label = 'AM';
+    if ($type == 'overseas')
+        $label = 'EM';
+    return DB::table('memberships')->where('type', $type)->selectRaw("CONCAT_WS('', '$label', IFNULL(MAX(CAST(SUBSTRING_INDEX(membership_number, '-', -1) AS INTEGER))+1, 1001)) AS mn")->first();
 }
 
 function uploadFile($file, $path)

@@ -63,7 +63,7 @@ class MembershipController extends Controller
             'type' => 'required',
         ]);
         $input = $request->all();
-        $input['membership_number'] = generateMembershipNumber()->mn;
+        $input['membership_number'] = generateMembershipNumber($request->type)->mn;
         $input['approval_status'] = 'pending';
         Membership::create($input);
         return redirect()->back()->with("success", "Member registration success!");

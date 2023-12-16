@@ -43,7 +43,7 @@
                 <div class="col-12 mb-3">
                     <h4>Events</h4>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/organization.jpg') }}" class="img" alt="image">
@@ -57,10 +57,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/completed.webp') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/1702523644_8.webp') }}" class="img" alt="image">
                             <a href="{{ route('events') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/gallery.webp') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/mk.jpg') }}" class="img" alt="image">
                             <a href="{{ route('galleries') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/webinar.jpg') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/publication.jpg') }}" class="img" alt="image">
                             <a href="{{ route('publications') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
@@ -111,6 +111,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <h4>Ad</h4>
+                    </div>
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.png') }}" class="img" alt="image">
+                            <a href="{{ route('membership') }}" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="{{ route('membership') }}">Join</a></h2>
+                            <div class="tag">Join with PPF</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -118,12 +135,12 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ $adb->image ? asset($adb->image) : '' }}" class="img-fluid" /></a>
+                    <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ ($adb && $adb->image) ? asset($adb->image) : '' }}" class="img-fluid" /></a>
                 </div>
             </div>
         </div>
     </section>
-    <section>
+    <section class="mb-5">
         <div class="container">
             <div class="row">
                 <div class="related_post">

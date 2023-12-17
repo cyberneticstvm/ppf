@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationConfirmationEmail;
 use App\Models\Membership;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MembershipController extends Controller
 {
@@ -75,7 +77,7 @@ class MembershipController extends Controller
             'type' => $request->type,
         ]);
         $input['user_id'] = $user->id;
-        Membership::create($input);
+        //Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
         return redirect()->back()->with("success", "Member registration success!");
     }
 

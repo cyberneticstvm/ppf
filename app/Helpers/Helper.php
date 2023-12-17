@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Membership;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -50,7 +52,7 @@ function generateMembershipNumber($type)
         $label = 'AM';
     if ($type == 'overseas')
         $label = 'EM';
-    return DB::table('memberships')->where('type', $type)->selectRaw("CONCAT_WS('', '$label', IFNULL(MAX(CAST(SUBSTRING_INDEX(membership_number, '-', -1) AS INTEGER))+1, 1001)) AS mn")->first();
+    return DB::table('memberships')->where('type', $type)->selectRaw("CONCAT_WS('', '$label', IFNULL(MAX(CAST(SUBSTRING(membership_number, 3) AS INTEGER))+1, 1001)) AS mn")->first();
 }
 
 function uploadFile($file, $path)
@@ -61,4 +63,9 @@ function uploadFile($file, $path)
     $fname = time() . '_' . $file->getClientOriginalName();
     $file->storeAs($path, $fname, 'public');
     return '/storage/' . $path . '/' . $fname;
+}
+
+function member()
+{
+    return Membership::where('user_id', Auth::id())->firstOrFail();
 }

@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            {{ html()->form('POST', route('member.update', $member->id))->class('theme-form')->acceptsFiles()->open() }}
+                            {{ html()->form('POST', (Auth::user()->type == 'admin') ? route('member.update', $member->id) : route('user.profile.update', $member->id))->class('theme-form')->acceptsFiles()->open() }}
                             <div class="card-body">
                                 <div class="row g-3">
                                     <h4>Personal Details</h4>

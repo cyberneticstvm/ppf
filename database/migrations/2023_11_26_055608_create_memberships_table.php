@@ -58,6 +58,7 @@ return new class extends Migration
             $table->date('next_renewal_date')->nullable();
             $table->enum('renewal_status', ['new', 'pending', 'renewed'])->nullable();
             $table->date('approved_date')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

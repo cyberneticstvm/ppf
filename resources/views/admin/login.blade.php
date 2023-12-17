@@ -57,7 +57,7 @@
                         @csrf
                         <div class="text-center mb-3">
                             <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" class="img-fluid" />
-                            <h4 class="mt-3">Admin Login</h4>
+                            <h4 class="mt-3">Admin / Member Login</h4>
                             <h6>Welcome back! Log in to your account.</h6>
                         </div>
                         <div class="form-group">

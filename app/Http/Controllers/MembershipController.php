@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Membership;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -66,6 +67,14 @@ class MembershipController extends Controller
         $input['kw_secondary_contact_number'] = $request->kw_secondary_contact_number_country . $request->kw_secondary_contact_number;
         $input['membership_number'] = generateMembershipNumber($request->type)->mn;
         $input['approval_status'] = 'pending';
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $input['membership_number'],
+            'email' => $request->email,
+            'password' => bcrypt($input['membership_number']),
+            'type' => $request->type,
+        ]);
+        $input['user_id'] = $user->id;
         Membership::create($input);
         return redirect()->back()->with("success", "Member registration success!");
     }

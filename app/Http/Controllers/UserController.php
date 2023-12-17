@@ -19,8 +19,13 @@ class UserController extends Controller
         try {
             $credentials = $request->only('username', 'password');
             if (Auth::attempt($credentials)) {
-                return redirect()->intended('admin/dashboard')
-                    ->withSuccess('User logged in successfully');
+                if (Auth::user()->type == 'admin') :
+                    return redirect()->intended('admin/dashboard')
+                        ->withSuccess('User logged in successfully');
+                else :
+                    return redirect()->intended('user/dashboard')
+                        ->withSuccess('User logged in successfully');
+                endif;
             }
             return redirect()->back()->with("error", "Invalid Credentials")->withInput($request->all());
         } catch (Exception $e) {

@@ -65,7 +65,7 @@
         <div class="nav-right col pull-right right-menu p-0">
           <ul class="nav-menus">
             <li class="onhover-dropdown p-0">
-              <button class="btn btn-primary-light" type="button"><a href="{{ route('logout') }}"><i data-feather="log-out"></i>Log out</a></button>
+              <button class="btn btn-primary-light" type="button"><a href="{{ (Auth::user()->type == 'admin') ? route('logout') : route('user.logout') }}"><i data-feather="log-out"></i>Log out</a></button>
             </li>
           </ul>
         </div>

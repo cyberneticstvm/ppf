@@ -83,10 +83,10 @@
                             <button class="btn btn-primary btn-block btn-submit" type="submit">Sign in</button>
                         </div>
                         <div class="login-social-title">
-                            <h5>Sign in with</h5>
+                            <h5>Change Password</h5>
                         </div>
 
-                        <p>Don't have account?<a class="ms-2" href="{{ route('login') }}">Create Account</a></p>
+                        <p>Forgot Passwordt?<a class="ms-2" href="{{ route('login') }}">Request Password Reset Link</a></p>
                         {{ html()->form()->close() }}
                     </div>
                 </div>

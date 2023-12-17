@@ -7,7 +7,7 @@
 
 <body>
     Dear {{ $data['name'] }},
-    <p>You've successfully registered with PPF Kuwait. Your login credenetials are below and recommended to change the password immediately.</p>
+    <p>You've successfully registered with PPF Kuwait. Your login credenetials are below and recommend to change the password immediately.</p>
     <p>Username: {{ $data['membership_number'] }}</p>
     <p>Password: {{ $data['membership_number'] }}</p>
     <a href="https://ppfkuwait.org/login" target="_blank">Click here to login</a>

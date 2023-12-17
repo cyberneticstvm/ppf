@@ -17,6 +17,7 @@ class RegistrationConfirmationEmail extends Mailable
      * Create a new message instance.
      */
     public $data;
+
     public function __construct($data)
     {
         $this->data = $data;
@@ -39,6 +40,7 @@ class RegistrationConfirmationEmail extends Mailable
     {
         return new Content(
             view: 'admin.email.registration-confirmation',
+            with: ['data' => $this->data]
         );
     }
 

@@ -16,7 +16,7 @@ class RegistrationConfirmationEmail extends Mailable
     /**
      * Create a new message instance.
      */
-    protected $data;
+    public $data;
     public function __construct($data)
     {
         $this->data = $data;

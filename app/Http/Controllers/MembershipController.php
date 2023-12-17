@@ -77,6 +77,7 @@ class MembershipController extends Controller
             'type' => $request->type,
         ]);
         $input['user_id'] = $user->id;
+        Membership::create($input);
         //Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
         return redirect()->back()->with("success", "Member registration success!");
     }

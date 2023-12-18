@@ -80,7 +80,7 @@ class WebController extends Controller
 
     public function publicationsAll($id)
     {
-        $publications = Publication::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();
+        $publications = Publication::where('category_id', decrypt($id))->where('status', 'active')->get();
         $category = Category::findOrFail(decrypt($id));
         $title = "Progressive Professional Forum Kuwait " . $category->name;
         return view('publications-all', compact('publications', 'category', 'title'));

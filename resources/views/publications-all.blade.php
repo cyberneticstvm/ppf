@@ -1,0 +1,41 @@
+@extends("base")
+@section("content")
+<div id="content" class="site-content ">
+    <div class="container-fluid">
+        <div class="row default_row">
+            <div class="full_width_box">
+                <div class="pd_top_80"></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="heading mb-3">
+                            <h2>{{ $category->name }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    @forelse($publications as $key => $item)
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="mg_image_box">
+                            <div class="image_box">
+                                <img decoding="async" src="{{ asset($item->image) }}" class="img" alt="{{ $item->name }}">
+                                <a href="{{ route('publication.single', encrypt($item->id)) }}" class="ab_link">
+                                    <span class="icon-right-arrow-long"></span>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h2><a href="{{ route('publication.single', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
+                                <div class="tag">{{ $category->name }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                    @endforelse
+                </div>
+                <!--===============spacing==============-->
+                <div class="pd_bottom_70"></div>
+                <!--===============spacing==============-->
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

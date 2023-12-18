@@ -78,6 +78,22 @@ class WebController extends Controller
         return view('publications', compact('title', 'categories'));
     }
 
+    public function publicationsAll($id)
+    {
+        $publications = Publication::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();
+        $category = Category::findOrFail(decrypt($id));
+        $title = "Progressive Professional Forum Kuwait " . $category->name;
+        return view('publications-all', compact('publications', 'category', 'title'));
+    }
+
+    public function publicationSingle(string $id)
+    {
+        $publication = Publication::findOrFail(decrypt($id));
+        $recents = Publication::where('id', '!=', $publication->id)->latest()->limit(10)->get();
+        $title = $publication->name;
+        return view('event-single', compact('publication', 'title', 'recents'));
+    }
+
     public function gallery()
     {
         $title = "Progressive Professional Forum Kuwait Gallery";

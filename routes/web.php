@@ -53,6 +53,8 @@ Route::middleware(['web'])->group(function () {
         Route::get('/events/all/{id}', 'eventsAll')->name('events.all');
         Route::get('/events/single/{id}', 'eventSingle')->name('event.single');
         Route::get('/publications', 'publications')->name('publications');
+        Route::get('/publications/all/{id}', 'publicationsAll')->name('publications.all');
+        Route::get('/publications/single/{id}', 'publicationSingle')->name('publication.single');
         Route::get('/gallery', 'gallery')->name('galleries');
         Route::get('/gallery/all/{id}', 'galleryAll')->name('gallery.all');
         Route::get('/gallery/single/{id}', 'gallerySingle')->name('gallery.single');

@@ -25,7 +25,7 @@
                     <section class="blog_single_details_outer">
                         <div class="single_content_upper">
                             <div class="blog_feature_image">
-                                <img src="{{ asset($event->image) }}" class="wp-post-image" alt="img">
+                                <img src="{{ asset($publication->image) }}" class="wp-post-image" alt="img">
                             </div>
                             <!--===============spacing==============-->
                             <div class="pd_bottom_20"></div>
@@ -96,7 +96,7 @@
                                                     <span class="date_in_number">{{ $item->date?->format('d, F Y') }}</span>
                                                 </div>
                                                 <div class="source">
-                                                    <h2 class="title"><a href="{{ route('event.single', encrypt($item->id)) }}" rel="bookmark">{{ $item->name }}</a></h2>
+                                                    <h2 class="title"><a href="{{ route('publication.single', encrypt($item->id)) }}" rel="bookmark">{{ $item->name }}</a></h2>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
             <aside id="secondary" class="widget-area all_side_bar col-lg-4 col-md-12 col-sm-12">
                 <div class="side_bar">
                     <div class="widgets_grid_box">
-                        <h2 class="widget-title">Recent Events</h2>
+                        <h2 class="widget-title">Recent Publications</h2>
                         <div class="widget_post_box">
                             @forelse($recents as $key =>$item)
                             <div class="blog_in clearfix image_in">
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="content_inner">
                                     <p class="post-date"><span class="icon-calendar"></span>{{ $item->date?->format('d, F Y') }}</p>
-                                    <h3><a href="{{ route('event.single', encrypt($item->id)) }}">{{ $item->name }}</a></h3>
+                                    <h3><a href="{{ route('publication.single', encrypt($item->id)) }}">{{ $item->name }}</a></h3>
                                 </div>
                             </div>
                             @empty

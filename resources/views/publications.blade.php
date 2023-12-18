@@ -19,12 +19,12 @@
                         <div class="mg_image_box">
                             <div class="image_box">
                                 <img decoding="async" src="{{ asset($item->image) }}" class="img" alt="{{ $item->name }}">
-                                <a href="" class="ab_link">
+                                <a href="{{ route('publications.all', encrypt($item->id)) }}" class="ab_link">
                                     <span class="icon-right-arrow-long"></span>
                                 </a>
                             </div>
                             <div class="content">
-                                <h2><a href="">{{ $item->name }}</a></h2>
+                                <h2><a href="{{ route('publications.all', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
                                 <div class="tag">Publication</div>
                             </div>
                         </div>

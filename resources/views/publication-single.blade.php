@@ -45,7 +45,7 @@
                         </div>
                         <div class="related_post">
                             <div class="title_sections_inner">
-                                <h2>Recents Events</h2>
+                                <h2>Recents Publications</h2>
                             </div>
                             <!-- Swiper -->
 

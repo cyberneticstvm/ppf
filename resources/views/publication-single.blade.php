@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            Video Url: <a href="{{ url($publication->url) }}" target="_blank">{!! $publication->url !!}</a>
+                            <a href="{{ url($publication->url) }}" target="_blank">{!! $publication->url !!}</a>
                         </div>
                         <div class="related_post">
                             <div class="title_sections_inner">

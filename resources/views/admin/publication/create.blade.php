@@ -67,7 +67,7 @@
                                     <div class="col-md-6">
                                         <label class="col-form-label pt-0" for="url">Youtube iFrame / URL </label>
                                         {{ html()->text('url', old('url'))->class('form-control')->placeholder('Youtube iFrame / URL') }}
-                                        <small class="form-text"><a href="https://ppf-kuwait-bucket.s3.ap-south-1.amazonaws.com/docs/instructions-youtube-upload.pdf" target="_blank" class="text-info">Instructions to add youtube Iframe/Url</a></small>
+                                        <!--<small class="form-text"><a href="https://ppf-kuwait-bucket.s3.ap-south-1.amazonaws.com/docs/instructions-youtube-upload.pdf" target="_blank" class="text-info">Instructions to add youtube Iframe/Url</a></small>-->
                                     </div>
                                     <div class="col-md-12">
                                         <label class="col-form-label pt-0 req" for="description">Publication Description </label>

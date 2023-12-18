@@ -91,7 +91,7 @@ class WebController extends Controller
         $publication = Publication::findOrFail(decrypt($id));
         $recents = Publication::where('id', '!=', $publication->id)->latest()->limit(10)->get();
         $title = $publication->name;
-        return view('event-single', compact('publication', 'title', 'recents'));
+        return view('publication-single', compact('publication', 'title', 'recents'));
     }
 
     public function gallery()

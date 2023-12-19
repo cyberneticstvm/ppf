@@ -31,7 +31,6 @@
     <div class="container-fluid">
         <div class="row default_row">
             <div class="full_width_box">
-                <div class="pd_top_40"></div>
                 <div class="row mt-5">
                     @forelse($publications as $key => $item)
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">

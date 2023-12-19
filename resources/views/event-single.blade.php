@@ -16,6 +16,7 @@
                             <ul class="breadcrumb m-auto">
                                 <li><a href="/">Home</a> </li>
                                 <li><a href="{{ route('events') }}">Events</a></li>
+                                <li><a href="{{ route('events.all', (encrypt($event->category_id))) }}">{{ $event->category->name }}</a></li>
                                 <li class="active">{{ $event->name }}</li>
                             </ul>
                         </div>

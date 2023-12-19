@@ -6,9 +6,19 @@
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="col-md-6 col-sm-6 col-lg-6">
                         <div class="heading mb-3">
                             <h2>{{ $publication->name }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 text-end">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="/">Home</a> </li>
+                                <li><a href="{{ route('publications') }}">Publications</a></li>
+                                <li><a href="{{ route('publications.all', (encrypt($publication->category_id))) }}">{{ $publication->category->name }}</a></li>
+                                <li class="active">{{ $publication->name }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

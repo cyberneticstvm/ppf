@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-lg-6">
                         <div class="heading mb-3">
-                            <h2>Events</h2>
+                            <h2>{{ $category->name }}</h2>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 text-end">

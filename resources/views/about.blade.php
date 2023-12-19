@@ -17,7 +17,7 @@
                     <div class="breadcrumbs creote">
                         <ul class="breadcrumb m-auto">
                             <li><a href="/">Home</a> </li>
-                            <li class="active">About PPF Kuwait</li>
+                            <li class="active">About Us</li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="title_all_box style_two  dark_color">
                             <div class="title_sections two">
                                 <div class="before_title">PPF Kuwait</div>
-                                <h2>About Us</h2>
+                                <h2>About PPF Kuwait</h2>
                                 <div class="description_box">
                                     <p>{!! $about->description !!}</p>
                                 </div>

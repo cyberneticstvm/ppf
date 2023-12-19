@@ -38,7 +38,7 @@ class EventController extends Controller
             'name' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
             'category_id' => 'required',
-            'display_order' => 'required|numeric',
+            //'display_order' => 'required|numeric',
             'status' => 'required',
             'description' => 'required',
             'date' => 'required',
@@ -48,6 +48,7 @@ class EventController extends Controller
         $input['image'] = $url;
         $input['created_by'] = $request->user()->id;
         $input['updated_by'] = $request->user()->id;
+        $input['display_order'] = 0;
         Event::create($input);
         return redirect()->route('event')->with("success", "Event saved successfully!");
     }
@@ -81,7 +82,7 @@ class EventController extends Controller
             'name' => 'required',
             'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
             'category_id' => 'required',
-            'display_order' => 'required|numeric',
+            //'display_order' => 'required|numeric',
             'status' => 'required',
             'description' => 'required',
             'date' => 'required',
@@ -91,6 +92,7 @@ class EventController extends Controller
             $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/event');
             $input['image'] = $url;
         endif;
+        $input['display_order'] = 0;
         $input['updated_by'] = $request->user()->id;
         Event::findOrFail($id)->update($input);
         return redirect()->route('event')->with("success", "Event updated successfully!");

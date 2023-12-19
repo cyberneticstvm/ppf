@@ -58,13 +58,13 @@
                                         <label class="col-form-label pt-0" for="gallery_id">Event Gallery </label>
                                         {{ html()->select('gallery_id', $galleries, old('gallery_id'))->class('form-control')->placeholder('Select') }}
                                     </div>
-                                    <div class="col-md-3">
+                                    <!--<div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="display_order">Display Order </label>
                                         {{ html()->number('display_order', old('display_order'), 0, 100, '1')->class('form-control')->placeholder('0') }}
                                         @error('display_order')
                                         <small class="text-danger">{{ $errors->first('display_order') }}</small>
                                         @enderror
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="status">Status </label>
                                         {{ html()->select('status', status(), old('status'))->class('form-control')->placeholder('Select') }}

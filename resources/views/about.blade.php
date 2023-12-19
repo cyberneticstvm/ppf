@@ -17,7 +17,7 @@
                     <div class="breadcrumbs creote">
                         <ul class="breadcrumb m-auto">
                             <li><a href="/">Home</a> </li>
-                            <li class="active">About Us</li>
+                            <li class="active">About PPF Kuwait</li>
                         </ul>
                     </div>
                 </div>

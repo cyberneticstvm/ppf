@@ -8,14 +8,17 @@
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="title_all_box style_one text-center dark_color">
-                        <div class="title_sections">
-                            <div class="before_title">OFFICE BEARERS</div>
-                        </div>
-                        <!--===============spacing==============-->
-                        <div class="pd_bottom_20"></div>
-                        <!--===============spacing==============-->
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div class="heading mb-3">
+                        <h2>Officials</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 text-end">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">Officials</li>
+                        </ul>
                     </div>
                 </div>
             </div>

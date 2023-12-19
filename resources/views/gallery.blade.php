@@ -1,26 +1,36 @@
 @extends("base")
 @section("content")
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            Gallery
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">Gallery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
     <div class="container-fluid">
         <div class="row default_row">
             <div class="full_width_box">
-                <div class="pd_top_80"></div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6">
-                        <div class="heading mb-3">
-                            <h2>Galleries</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 text-end">
-                        <div class="breadcrumbs creote">
-                            <ul class="breadcrumb m-auto">
-                                <li><a href="/">Home</a> </li>
-                                <li class="active">Gallery</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 <div class="row mt-5">
                     @forelse($categories as $key => $item)
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -41,7 +51,7 @@
                     @endforelse
                 </div>
                 <!--===============spacing==============-->
-                <div class="pd_bottom_70"></div>
+                <div class="pd_bottom_40"></div>
                 <!--===============spacing==============-->
             </div>
         </div>

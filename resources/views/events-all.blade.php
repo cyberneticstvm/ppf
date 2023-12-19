@@ -51,7 +51,7 @@
                     @endforelse
                 </div>
                 <!--===============spacing==============-->
-                <div class="pd_bottom_70"></div>
+                <div class="pd_bottom_40"></div>
                 <!--===============spacing==============-->
             </div>
         </div>

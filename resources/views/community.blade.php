@@ -1,5 +1,31 @@
 @extends("base")
 @section("content")
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            Community
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">Community</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content ">
     <div class="container">
@@ -7,19 +33,6 @@
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6">
-                        <div class="heading mb-3">
-                            <h2>Community</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 text-end">
-                        <div class="breadcrumbs creote">
-                            <ul class="breadcrumb m-auto">
-                                <li><a href="/">Home</a> </li>
-                                <li class="active">Community</li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="col-12">
                         <div class="description_box">
                             <p class="text-justify">Progressive Professional Forum (PPF), Kuwait has established cordial relationships with similar Professional organizations all over the world working for the social and scientific development of the society. PPF has been destined to instigate the transfer of technology, knowledge, experience, and modern management techniques for the total comprehensive and sustainable development of the State of Kerala, heads for a knowledge-based economy. This has been done by an inclusive integration of experience and skills ascertained from overseas work profile of graduates from Kerala who have built a successful work profile in the development of Kuwait and all countries abroad.</p>

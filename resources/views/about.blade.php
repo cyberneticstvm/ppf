@@ -1,5 +1,31 @@
 @extends("base")
 @section("content")
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            About Us
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--===============PAGE CONTENT==============-->
 <div id="content" class="site-content">
     <section class="about-section bg_light_1">
@@ -8,19 +34,6 @@
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-lg-6">
-                    <div class="heading mb-3">
-                        <h2>About Us</h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-lg-6 text-end">
-                    <div class="breadcrumbs creote">
-                        <ul class="breadcrumb m-auto">
-                            <li><a href="/">Home</a> </li>
-                            <li class="active">About Us</li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="col-xl-6 col-lg-12 mb-5 mb-lg-5 mb-xl-0">
                     <div class="image_boxes style_one">
                         <div class="image one">

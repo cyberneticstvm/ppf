@@ -575,11 +575,15 @@ iframe {
   height: 350px !important;
 }*/
 
-.breadcrumbs ul li:before,
+/*.breadcrumbs ul li:before,
 .breadcrumbs ul li a {
   color: var(--primary-color-one) !important;
 }
 
 .breadcrumbs ul li {
-  color: var(--text-color-dark) !important;
+  color: #fff !important;
+}*/
+.page_header_default {
+  min-height: 0 !important;
+  padding: 50px 0 50px !important;
 }

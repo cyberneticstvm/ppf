@@ -1,28 +1,35 @@
 @extends("base")
 @section("content")
-<!--===============PAGE CONTENT==============-->
-<div id="content" class="site-content ">
-    <div class="container">
-        <div class="row default_row">
-            <div class="full_width_box">
-                <div class="pd_top_80"></div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6">
-                        <div class="heading mb-3">
-                            <h2>Contact</h2>
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            Contact
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 text-end">
-                        <div class="breadcrumbs creote">
-                            <ul class="breadcrumb m-auto">
-                                <li><a href="/">Home</a> </li>
-                                <li class="active">Contact</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">Contact</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!--===============PAGE CONTENT==============-->
+<div id="content" class="site-content ">
+    <div class="container">
+        <div class="pd_top_80"></div>
         <section class="creote-contact-box">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">

@@ -59,7 +59,7 @@
                               <div class="right_side common_css">
                                  <div class="rg_content_box">
                                     <div class="btn_lf_side">
-                                       <a href="javascript:void(0)" class="top_six_btn" target="_blank" rel="nofollow"> Get In Touch</a>
+                                       <a href="javascript:void(0)" class="top_six_btn" rel="nofollow"> Get In Touch</a>
                                     </div>
                                     <div class="med_rg_side">
                                        <ul>

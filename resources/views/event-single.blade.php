@@ -1,35 +1,37 @@
 @extends("base")
 @section("content")
-<div id="content" class="site-content ">
-    <div class="container">
-        <div class="row default_row">
-            <div class="full_width_box">
-                <div class="pd_top_80"></div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6">
-                        <div class="heading mb-3">
-                            <h2>{{ $event->name }}</h2>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 text-end">
-                        <div class="breadcrumbs creote">
-                            <ul class="breadcrumb m-auto">
-                                <li><a href="/">Home</a> </li>
-                                <li><a href="{{ route('events') }}">Events</a></li>
-                                <li><a href="{{ route('events.all', (encrypt($event->category_id))) }}">{{ $event->category->name }}</a></li>
-                                <li class="active">{{ $event->name }}</li>
-                            </ul>
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            {{ $event->name }}
                         </div>
                     </div>
                 </div>
-                <!--===============spacing==============-->
-                <div class="pd_bottom_40"></div>
-                <!--===============spacing==============-->
+                <div class="col-lg-12">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li><a href="{{ route('events') }}">Events</a></li>
+                            <li><a href="{{ route('events.all', (encrypt($event->category_id))) }}">{{ $event->category->name }}</a></li>
+                            <li class="active">{{ $event->name }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+<div id="content" class="site-content ">
     <div class="auto-container">
         <div class="row default_row">
+            <div class="pd_top_40"></div>
             <div id="primary" class="content-area service col-lg-8 col-md-12 col-sm-12 col-xs-12">
                 <main id="main" class="site-main" role="main">
                     <section class="blog_single_details_outer">

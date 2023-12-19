@@ -1,19 +1,20 @@
 @extends("base")
 @section("content")
-<!--===============PAGE CONTENT==============-->
-<div id="content" class="site-content">
-    <section class="team-section bg_light_1">
-        <!--===============spacing==============-->
-        <div class="pd_top_90"></div>
-        <!--===============spacing==============-->
-        <div class="container">
+<div class="page_header_default style_one ">
+    <div class="parallax_cover">
+        <img src="{{ asset('/frontend/assets/images/page-header-default.jpg') }}" alt="bg_image" class="cover-parallax">
+    </div>
+    <div class="page_header_content">
+        <div class="auto-container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-lg-6">
-                    <div class="heading mb-3">
-                        <h2>Officials</h2>
+                <div class="col-md-12">
+                    <div class="banner_title_inner">
+                        <div class="title_page">
+                            Officials
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-lg-6 text-end">
+                <div class="col-lg-12">
                     <div class="breadcrumbs creote">
                         <ul class="breadcrumb m-auto">
                             <li><a href="/">Home</a> </li>
@@ -22,6 +23,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!--===============PAGE CONTENT==============-->
+<div id="content" class="site-content">
+    <section class="team-section bg_light_1">
+        <!--===============spacing==============-->
+        <div class="pd_top_90"></div>
+        <!--===============spacing==============-->
+        <div class="container">
             <div class="row">
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
                 <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">

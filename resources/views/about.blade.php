@@ -8,6 +8,19 @@
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div class="heading mb-3">
+                        <h2>About Us</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 text-end">
+                    <div class="breadcrumbs creote">
+                        <ul class="breadcrumb m-auto">
+                            <li><a href="/">Home</a> </li>
+                            <li class="active">About Us</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-xl-6 col-lg-12 mb-5 mb-lg-5 mb-xl-0">
                     <div class="image_boxes style_one">
                         <div class="image one">

@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                     <div class="banner_title_inner">
                         <div class="title_page">
-                            {{ $event->name }}
+                            {{ $gallery->name }}
                         </div>
                     </div>
                 </div>

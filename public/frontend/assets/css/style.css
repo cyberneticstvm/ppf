@@ -587,3 +587,7 @@ iframe {
   min-height: 0 !important;
   padding: 50px 0 50px !important;
 }
+
+.page_header_default .page_header_content .banner_title_inner .title_page {
+  font-size: 35px !important;
+}

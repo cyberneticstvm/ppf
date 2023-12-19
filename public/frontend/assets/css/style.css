@@ -574,3 +574,12 @@ iframe {
 /*.team_box.style_one .team_box_outer .member_image img {
   height: 350px !important;
 }*/
+
+.breadcrumbs ul li:before,
+.breadcrumbs ul li a {
+  color: var(--primary-color-one) !important;
+}
+
+.breadcrumbs ul li {
+  color: var(--text-color-dark) !important;
+}

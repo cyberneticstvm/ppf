@@ -32,20 +32,34 @@
         <div class="pd_top_80"></div>
         <section class="creote-contact-box">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
                     <div class="contact_box_content style_one">
                         <div class="contact_box_inner icon_yes ">
                             <div class="icon_bx">
                                 <span class="fa fa-headphones"></span>
                             </div>
                             <div class="contnet">
-                                <h3>General Enquires</h3>
-                                <p>Phone: <a href="tel:+96566935862"> +965 66935862</a><br />Email: <a href="mailto:ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a></p>
+                                <h3>Office Bearers</h3>
+                                <p>President: <a href="tel:+96566935862"> +965 66935862</a><br />Gen. Secretary: <a href="tel:+96565971184"> +965 65971184</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                    <div class="contact_box_content style_one">
+                        <div class="contact_box_inner icon_yes ">
+                            <div class="icon_bx">
+                                <span class="fa fa-envelope"></span>
+                            </div>
+                            <div class="contnet">
+                                <h3>Email</h3>
+                                <p><a href="mailto:ppfk@ppfkuwait.org"> ppfk@ppfkuwait.org</a><br />&nbsp;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
                     <div class="contact_box_content style_one">
                         <div class="contact_box_inner icon_yes">
                             <div class="icon_bx">

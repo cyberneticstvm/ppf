@@ -16,7 +16,7 @@
                         <div class="breadcrumbs creote">
                             <ul class="breadcrumb m-auto">
                                 <li><a href="/">Home</a> </li>
-                                <li><a href="{{ route('galleries') }}">Gallery</a></li>
+                                <li class="active">Gallery</li>
                             </ul>
                         </div>
                     </div>

@@ -16,6 +16,7 @@
                             <ul class="breadcrumb m-auto">
                                 <li><a href="/">Home</a> </li>
                                 <li><a href="{{ route('galleries') }}">Gallery</a></li>
+                                <li><a href="{{ route('gallery.all', (encrypt($gallery->category_id))) }}">{{ $gallery->category->name }}</a></li>
                                 <li class="active">{{ $gallery->name }}</li>
                             </ul>
                         </div>

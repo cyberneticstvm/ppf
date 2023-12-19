@@ -57,7 +57,7 @@ class WebController extends Controller
 
     public function eventsAll($id)
     {
-        $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();
+        $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderBy('event_date')->get();
         $category = Category::findOrFail(decrypt($id));
         $title = "Progressive Professional Forum Kuwait " . $category->name;
         return view('events-all', compact('events', 'category', 'title'));

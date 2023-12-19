@@ -23,6 +23,7 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
+  font-family: 'Roboto', 'PT Sans', 'Helvetica', sans-serif !important;
 }
 
 /* Sections

@@ -44,7 +44,7 @@
                                              "loop": true,
                                              "speed": 1000,
                                              "centeredSlides": true,
-                                             "slidesPerView": 3,
+                                             "slidesPerView": 1,
                                              "spaceBetween": 30,
                                              "pagination": {
                                                "el": ".swiper-pagination",
@@ -53,7 +53,7 @@
                                               
                                              "breakpoints": {
                                                 "1200": {
-                                                   "slidesPerView": 5
+                                                   "slidesPerView": 4
                                                 },
                                                 "1024": {
                                                  "slidesPerView": 3 

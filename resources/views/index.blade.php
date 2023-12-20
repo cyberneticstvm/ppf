@@ -20,7 +20,7 @@
                                         frequently occur that pleasures <br> have to be repudiated and annoyances
                                         accepted. </p>
                                     <div class="button_all animate_down">
-                                        <a href="#" target="_blank" rel="nofollow" class="theme-btn one  animated">Read
+                                        <a href="{{ route('aboutus') }}" rel="nofollow" class="theme-btn one  animated">Read
                                             More</a>
                                     </div>
                                 </div>

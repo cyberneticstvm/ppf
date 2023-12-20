@@ -46,7 +46,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::controller(WebController::class)->group(function () {
         Route::get('/', 'index')->name('index');
-        Route::get('/about', 'about')->name('about');
+        Route::get('/about', 'about')->name('aboutus');
         Route::get('/officials', 'officials')->name('officials');
         Route::get('/benevolent', 'benevolent')->name('benevolent');
         Route::get('/events', 'events')->name('events');

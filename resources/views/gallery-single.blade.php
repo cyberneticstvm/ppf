@@ -42,10 +42,10 @@
                             <div class="mg_image_box">
                                 <div class="image_box">
                                     <img decoding="async" src="{{ asset($item->image) }}" class="img" alt="image">
-                                    <div class="content_box ">
-                                        <div class="image_zoom_box ">
-                                            <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
-                                        </div>
+                                </div>
+                                <div class="content_box ">
+                                    <div class="image_zoom_box ">
+                                        <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="icon-right-arrow-long"></span></a>
                                     </div>
                                 </div>
                             </div>

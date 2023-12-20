@@ -25,7 +25,7 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body table-responsive">
-                                <table class="display table table-sm table-striped" id="basic-2">
+                                <table class="display table table-sm table-striped" id="basic-3">
                                     <thead>
                                         <th>SL No</th>
                                         <th>Event Name</th>

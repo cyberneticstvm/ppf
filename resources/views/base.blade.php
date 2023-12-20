@@ -44,7 +44,7 @@
          <!----preloader----->
          <!----header----->
          <div class="header_area" id="header_contents">
-            <div class="header_style_six_nw ver_2">
+            <!--<div class="header_style_six_nw ver_2">
                <div class="top_bar style_six">
                   <div class="auto-container">
                      <div class="row">
@@ -89,8 +89,54 @@
                      </div>
                   </div>
                </div>
-            </div>
-            @include("nav")
+            </div>-->
+            <header class="header header_default style_three">
+               <div class="header_mid">
+                  <div class="medium-container">
+                     <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2 col-md-12">
+                           <div class="logo mid_logo_icon">
+                              <a href="index.html" class="logo_mid">
+                                 <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="PPF Logo" class="logo_default">
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-10 col-md-12 hidden-sm">
+                           <div class="row">
+                              <div class="col-lg-4 same_column">
+                                 <div class="mid_content one">
+                                    <span class=" icon-phone mid_icon"></span>
+                                    <div class="text">
+                                       <h4>Requesting a call:</h4>
+                                       <p><a href="tel:+96566935862">+965 66935862</a></p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-4 same_column">
+                                 <div class="mid_content one">
+                                    <span class="icon-email mid_icon"></span>
+                                    <div class="text">
+                                       <h4>Email us:</h4>
+                                       <p><a href="mailto:ppfk@ppfkuwait.org">ppfk@ppfkuwait.org</a></p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--<div class="col-lg-4 same_column">
+                                 <div class="mid_content one">
+                                    <span class="icon-location mid_icon"></span>
+                                    <div class="text">
+                                       <h4>Fahaheel Kala Centre, 30 St,</h4>
+                                       <p>Mangaf, Kuwait</p>
+                                    </div>
+                                 </div>
+                              </div>-->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               @include("nav")
+            </header>
          </div>
          <!----header end----->
          <!--===============PAGE CONTENT==============-->

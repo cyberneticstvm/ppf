@@ -1,15 +1,16 @@
-<header class="header header_default style_one get_sticky_header">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-2 col-md-9 col-sm-9 col-xs-9 logo_column">
+<!--<header class="header header_default style_one get_sticky_header">-->
+<div class="navbar_outer mod_btn_enable get_sticky_header">
+    <div class="medium-container">
+        <div class="row align-items-left">
+            <!--<div class="col-lg-2 col-md-9 col-sm-9 col-xs-9 logo_column">
                 <div class="header_logo_box">
                     <a href="/" class="logo navbar-brand">
-                        <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="Creote Elementor" class="logo_default">
-                        <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="Creote Elementor" class="logo__sticky">
+                        <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="PPF Logo" class="logo_default">
+                        <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="PPF Logo" class="logo__sticky">
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-10 col-md-3 col-sm-3 col-xs-3 menu_column">
+            </div>-->
+            <div class="col-lg-12 menu_column">
                 <div class="navbar_togglers hamburger_menu">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -89,4 +90,5 @@
             </div>
         </div>
     </div>
-</header>
+</div>
+<!--</header>-->

@@ -4043,7 +4043,7 @@ body .enabled_custom_title .title_page .main_tit {
 .default_sickty_heaad .hamburger_menu .line {
   width: 25px;
   height: 2px;
-  background-color: var(--menu-color);
+  background-color: red;
   display: block;
   margin: 6px auto;
   transition: all 0.3s ease-in-out;
@@ -5083,7 +5083,7 @@ body .enabled_custom_title .title_page .main_tit {
 
 .header.style_three .navbar_outer .header_content_collapse .header_right_content .theme-btn,
 .default_sickty_heaad.style_three .navbar_outer .header_content_collapse .header_right_content .theme-btn {
-  background: var(--primary-color-two) !important;
+  background: var(--primary-color-one) !important;
 }
 
 .header.style_three .navbar_outer .header_content_collapse .header_right_content .theme-btn:hover,
@@ -34332,7 +34332,7 @@ body.side_menu_toggled .style-switcher {
   }
 
   .header.style_three .navbar_outer .menu_column .hamburger_menu .line {
-    background-color: #fff !important;
+    background-color: red !important;
   }
 
   .header.style_three .navbar_outer .header_content_collapse {
@@ -34344,7 +34344,7 @@ body.side_menu_toggled .style-switcher {
   }
 
   .fixed-header .header.style_three .navbar_outer .menu_column .hamburger_menu .line {
-    background-color: var(--primary-color-two) !important;
+    background-color: red !important;
   }
 
   .slider.pag_position_one .owl-dots {
@@ -35242,7 +35242,7 @@ body.side_menu_toggled .style-switcher {
 
   .header.style_three .mid_logo_icon {
     margin-bottom: 0px !important;
-    text-align: center;
+    /*text-align: center;*/
   }
 
   .header.style_three .header_right_content ul li:first-child {

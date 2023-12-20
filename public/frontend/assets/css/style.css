@@ -593,7 +593,30 @@ iframe {
   font-size: 35px !important;
 }
 
-.header .header_logo_box img,
-.default_sickty_heaad .header_logo_box img {
+.header.style_three .header_mid .mid_logo_icon img,
+.default_sickty_heaad.style_three .header_mid .mid_logo_icon img {
   width: auto !important;
+}
+
+.header.style_three .navbar_outer,
+.default_sickty_heaad.style_three .navbar_outer {
+  background: #fff !important;
+}
+
+.navbar_nav li a {
+  color: black !important;
+}
+
+.header.style_three .navbar_outer .header_content_collapse .header_menu_box .navigation_menu .navbar_nav li.active>a.nav-link span,
+.default_sickty_heaad.style_three .navbar_outer .header_content_collapse .header_menu_box .navigation_menu .navbar_nav li.active>a.nav-link span {
+  color: red !important;
+}
+
+.header.style_three .header_mid,
+.default_sickty_heaad.style_three .header_mid {
+  background: aliceblue !important;
+}
+
+.page_header_default .page_header_content {
+  text-align: left !important;
 }

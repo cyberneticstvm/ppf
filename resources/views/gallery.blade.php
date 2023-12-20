@@ -43,7 +43,7 @@
                             </div>
                             <div class="content">
                                 <h2><a href="{{ route('gallery.all', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
-                                <div class="tag">Gallery</div>
+                                <!--<div class="tag">Gallery</div>-->
                             </div>
                         </div>
                     </div>

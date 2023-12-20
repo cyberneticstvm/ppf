@@ -24817,7 +24817,7 @@ form .wpcf7-response-output {
   position: absolute;
   /*display: inline-block;*/
   padding: 10px 18px;
-  background: var(--primary-color-two);
+  background: var(--primary-color-one);
   bottom: 0;
   line-height: normal;
   /*transition: all 0.5s ease;

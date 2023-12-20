@@ -46,8 +46,11 @@
                                         <span class="icon-right-arrow-long"></span>
                                     </a>
                                 </div>
-                                <div class="tag">New</div>
-                                <h2><a href="#">Title</a></h2>
+                                <div class="content_box ">
+                                    <div class="image_zoom_box ">
+                                        <a href="{{ asset($item->image) }}" data-fancybox="gallery"><span class="fa fa-plus zoom_icon"></span></a>
+                                    </div>
+                                </div>
                             </div>
                             @empty
                             @endforelse

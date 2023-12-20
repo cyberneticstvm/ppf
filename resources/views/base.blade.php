@@ -155,18 +155,10 @@
                   <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                      <div class="footer_widgets about_company light_color">
                         <div class="about_company_inner">
-                           <div class="footer_logo">
-                              <a href="/" rel="nofollow">
-                                 <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" class="img-fluid" alt="logo" />
-                              </a>
-                              <!--===============spacing==============-->
-                              <div class="pd_bottom_30"></div>
-                              <!--===============spacing==============-->
-                           </div>
                            <div class="content_box">
-                              <p>
-                                 Progressive Professional Forum (PPF), Kuwait is a secular collective for channelizing expertise..
-                              </p>
+                              <div class="image_box">
+                                 <a href="{{ route('membership') }}"><img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.png') }}" class="img" alt="image"></a>
+                              </div>
                            </div>
                         </div>
                      </div>

@@ -43,7 +43,7 @@
                             </div>
                             <div class="content">
                                 <h2><a href="{{ route('events.all', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
-                                <div class="tag">Event</div>
+                                <!--<div class="tag">Event</div>-->
                             </div>
                         </div>
                     </div>

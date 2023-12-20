@@ -43,7 +43,7 @@
                             </div>
                             <div class="content">
                                 <h2><a href="{{ route('publication.single', encrypt($item->id)) }}">{{ $item->name }}</a></h2>
-                                <div class="tag">{{ $category->name }}</div>
+                                <!--<div class="tag">{{ $category->name }}</div>-->
                             </div>
                         </div>
                     </div>

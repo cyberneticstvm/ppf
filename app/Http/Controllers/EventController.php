@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::withTrashed()->orderBy('display_order')->get();
+        $events = Event::withTrashed()->orderByAsc('date')->get();
         return view('admin.event.index', compact('events'));
     }
 

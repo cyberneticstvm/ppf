@@ -32,6 +32,7 @@
                                         <th>Event Category</th>
                                         <th>Event Date</th>
                                         <th>Image</th>
+                                        <th>Display Order</th>
                                         <th>Status</th>
                                         <th>Deleted?</th>
                                         <th>Edit</th>
@@ -45,6 +46,7 @@
                                             <td>{{ $item->category?->name }}</td>
                                             <td>{{ $item->date->format('d, M Y') }}</td>
                                             <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td>{{ $item->display_order }}</td>
                                             <td>{!! $item->eventStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>
                                             <td class="text-center"><a href="{{ route('event.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>

@@ -42,9 +42,7 @@
                             <div class="mg_image_box">
                                 <div class="image_box">
                                     <a href="{{ asset($item->image) }}" data-fancybox="gallery"><img decoding="async" src="{{ asset($item->image) }}" class="img" alt="image"></a>
-                                    <a href="#" class="ab_link">
-                                        <span class="icon-right-arrow-long"></span>
-                                    </a>
+                                    <span class="fa fa-plus zoom_icon"></span>
                                 </div>
                             </div>
                             @empty

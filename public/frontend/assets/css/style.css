@@ -622,7 +622,7 @@ iframe {
 }
 
 .image_covered {
-  background: url('/frontend/assets/images/home/bg-events.png');
+  background: url('/public/frontend/assets/images/home/bg-events.png');
   background-size: cover;
   background-repeat: no-repeat;
 }

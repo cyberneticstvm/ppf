@@ -142,7 +142,7 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col">
                     <a href="{{ $adb->url ?? '#' }}" target="_blank"><img src="{{ ($adb && $adb->image) ? asset($adb->image) : '' }}" class="img-fluid" /></a>

@@ -157,7 +157,7 @@
                         <div class="about_company_inner">
                            <div class="content_box">
                               <div class="image_box">
-                                 <a href="{{ route('membership') }}"><img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.png') }}" class="img" alt="image"></a>
+                                 <a href="{{ route('membership') }}"><img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.jpeg') }}" class="img" alt="image"></a>
                               </div>
                            </div>
                         </div>

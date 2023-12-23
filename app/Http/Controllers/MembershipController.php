@@ -35,7 +35,7 @@ class MembershipController extends Controller
 
     public function renewal()
     {
-        $members = Membership::where('approval_status', 'approved')->whereDate('next_renewal_date', '>=', Carbon::today())->latest()->get();
+        $members = Membership::where('approval_status', 'approved')->whereDate('next_renewal_date', '<=', Carbon::today())->latest()->get();
         return view('admin.member.renew', compact('members'));
     }
 

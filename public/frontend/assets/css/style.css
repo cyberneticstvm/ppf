@@ -620,3 +620,9 @@ iframe {
 .page_header_default .page_header_content {
   text-align: left !important;
 }
+
+.image_covered {
+  background: url('/frontend/assets/images/home/bg-events.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

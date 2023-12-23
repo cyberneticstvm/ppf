@@ -101,9 +101,9 @@
                               </a>
                            </div>
                         </div>
-                        <div class="col-xl-9 col-lg-10 col-md-12 hidden-sm">
+                        <div class="col-xl-6 col-lg-10 col-md-12 hidden-sm">
                            <div class="row">
-                              <div class="col-lg-4 same_column">
+                              <div class="col-lg-6 same_column">
                                  <div class="mid_content one">
                                     <span class=" icon-phone mid_icon"></span>
                                     <div class="text">
@@ -112,7 +112,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="col-lg-4 same_column">
+                              <div class="col-lg-6 same_column">
                                  <div class="mid_content one">
                                     <span class="icon-email mid_icon"></span>
                                     <div class="text">
@@ -130,6 +130,36 @@
                                     </div>
                                  </div>
                               </div>-->
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-2 col-md-12 hidden-sm">
+                           <div class="social_media_v_one">
+                              <ul>
+                                 <li>
+                                    <a href="https://www.facebook.com/people/Progressive-Professional-Forum-PPF-Kuwait/100087090770049/" target="_blank">
+                                       <span class="fa fa-facebook"></span>
+                                       <small>facebook</small>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://twitter.com/ppfkuwait" target="_blank">
+                                       <span class="fa fa-twitter"></span>
+                                       <small>twitter</small>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://instagram.com/ppfkuwait" target="_blank">
+                                       <span class="fa fa-instagram"></span>
+                                       <small>Instagram</small>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.youtube.com/@ppfkuwait721" target="_blank">
+                                       <span class="fa fa-youtube"></span>
+                                       <small>YouTube</small>
+                                    </a>
+                                 </li>
+                              </ul>
                            </div>
                         </div>
                      </div>

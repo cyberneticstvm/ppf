@@ -47,13 +47,27 @@
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/organization.jpg') }}" class="img" alt="image">
+                            <a href="{{ route('events.all', encrypt(11)) }}" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="{{ route('events.all', encrypt(11)) }}">View</a></h2>
+                            <div class="tag">Upcoming Events</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/organization.jpg') }}" class="img" alt="image">
                             <a href="{{ route('events') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
                             <h2><a href="{{ route('events') }}">View</a></h2>
-                            <div class="tag">Upcoming Events</div>
+                            <div class="tag">Recently Completed Events</div>
                         </div>
                     </div>
                 </div>
@@ -111,23 +125,23 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="mb-3">
-                        <h4>Ad</h4>
+                        <h4>Competitions</h4>
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.png') }}" class="img" alt="image">
-                            <a href="{{ route('membership') }}" class="ab_link">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/competitions.webp') }}" class="img" alt="image">
+                            <a href="{{ route('events.all', encrypt(4)) }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('membership') }}">Join</a></h2>
-                            <div class="tag">Join with PPF</div>
+                            <h2><a href="{{ route('events.all', encrypt(4)) }}">View</a></h2>
+                            <div class="tag">Competitions</div>
                         </div>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </section>

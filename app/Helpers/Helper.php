@@ -69,3 +69,8 @@ function member()
 {
     return Membership::where('user_id', Auth::id())->firstOrFail();
 }
+
+function members()
+{
+    return Membership::all();
+}

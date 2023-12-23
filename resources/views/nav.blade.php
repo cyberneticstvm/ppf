@@ -82,7 +82,7 @@
                                 <a href="{{ route('login') }}" target="_blank" rel="" class="theme-btn one"> Login </a>
                             </li>
                             <li>
-                                <button type="button" class="contact-toggler"><i class="icon-bar"></i></button>
+                                <button type="button" class="contact-toggler" title="Share Your Thoughts"><i class="icon-bar"></i></button>
                             </li>
                         </ul>
                     </div>

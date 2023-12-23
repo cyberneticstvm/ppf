@@ -9,7 +9,7 @@
                     <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card card-primary">
                             <div class="card-body text-center">
-                                <h5>{{ members()->where('status', 'approved')->count() }}</h5>
+                                <h5>{{ members()->where('approval_status', 'approved')->count() }}</h5>
                                 <p>Registered Members</p><a class="btn-arrow arrow-primary" href="{{ route('member') }}"><i class="toprightarrow-primary fa fa-arrow-up me-2"></i>More Info </a>
                                 <div class="parrten">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 448.057 448.057" style="enable-background:new 0 0 448.057 448.057;" xml:space="preserve">
@@ -31,7 +31,7 @@
                     <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card card-primary">
                             <div class="card-body text-center">
-                                <h5>{{ members()->where('status', 'pending')->count() }}</h5>
+                                <h5>{{ members()->where('approval_status', 'pending')->count() }}</h5>
                                 <p>New Membership Applications</p><a class="btn-arrow arrow-primary" href="{{ route('member.pending') }}"><i class="toprightarrow-primary fa fa-arrow-up me-2"></i>More Info </a>
                                 <div class="parrten">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 448.057 448.057" style="enable-background:new 0 0 448.057 448.057;" xml:space="preserve">
@@ -53,7 +53,7 @@
                     <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card card-primary">
                             <div class="card-body text-center">
-                                <h5>{{ members()->where('status', 'approved')->where('next_renewal_date', '<=', date('Y-m-d'))->count() }}</h5>
+                                <h5>{{ members()->where('approval_status', 'approved')->where('next_renewal_date', '<=', date('Y-m-d'))->count() }}</h5>
                                 <p>Renewal Membership Applications</p><a class="btn-arrow arrow-primary" href="{{ route('member.renewal') }}"><i class="toprightarrow-primary fa fa-arrow-up me-2"></i>More Info </a>
                                 <div class="parrten">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 448.057 448.057" style="enable-background:new 0 0 448.057 448.057;" xml:space="preserve">

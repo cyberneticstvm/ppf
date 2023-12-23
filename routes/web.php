@@ -41,6 +41,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::controller(MembershipController::class)->group(function () {
         Route::get('/membership', 'create')->name('membership');
+        Route::get('/membership/{type}', 'type')->name('membership.type');
         Route::post('/membership', 'store')->name('apply.membership');
     });
 

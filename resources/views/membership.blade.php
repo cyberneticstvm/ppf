@@ -31,113 +31,71 @@
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="pd_top_80"></div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-lg-12">
-                        {{ html()->form('POST', route('apply.membership'))->open() }}
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label class="req">Membership Type</label>
-                                {{ html()->select('type', membershipTypes())->class('form-control')->placeholder('Select') }}
-                                @error('type')
-                                <small class="text-danger">{{ $errors->first('type') }}</small>
-                                @enderror
+                <section class="price_plan_with_tab price_tb_style_one">
+                    <div class="tab-content price_tab_content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="price_plan_box style_one tag_enables ">
+                                        <div class="tag">Primary</div>
+                                        <div class="inner_box">
+                                            <div class="top">
+                                                <h2>Primary Member</h2>
+                                            </div>
+                                            <div class="mid">
+                                                <p>Kindly requested to register here to become Primary Member of PPF
+                                                </p>
+                                            </div>
+                                            <div class="bottom">
+                                                <a href="{{ route('membership.type', encrypt('primary')) }}" rel="&quot;nofollow&quot;" class="theme-btn two">
+                                                    Register Here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="price_plan_box style_one  tag_enables ">
+                                        <div class="tag">Associate</div>
+                                        <div class="inner_box">
+                                            <div class="top">
+                                                <h2>Associate Member</h2>
+                                            </div>
+                                            <div class="mid">
+                                                <p>Kindly requested to register here to become Associate Member of PPF
+                                                </p>
+                                            </div>
+                                            <div class="bottom">
+                                                <a href="{{ route('membership.type', encrypt('associate')) }}" rel="&quot;nofollow&quot;" class="theme-btn two">
+                                                    Register Here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="price_plan_box style_one  tag_enables ">
+                                        <div class="tag">Overseas</div>
+                                        <div class="inner_box">
+                                            <div class="top">
+                                                <h2>Overseas Member</h2>
+                                            </div>
+                                            <div class="mid">
+                                                <p>Kindly requested to register here to become Overseas Member of PPF
+                                                </p>
+                                            </div>
+                                            <div class="bottom">
+                                                <a href="{{ route('membership.type', encrypt('overseas')) }}" rel="&quot;nofollow&quot;" class="theme-btn two">
+                                                    Register Here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Passport Number</label>
-                                {{ html()->text('passport_number', old('passport_number'))->class('form-control')->placeholder('Passport Number') }}
-                                @error('passport_number')
-                                <small class="text-danger">{{ $errors->first('passport_number') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Full Name</label>
-                                {{ html()->text('name', old('name'))->class('form-control')->placeholder('Full Name') }}
-                                @error('name')
-                                <small class="text-danger">{{ $errors->first('name') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Date of Birth</label>
-                                {{ html()->date('dob', old('Y-m-d') ?? date('Y-m-d'))->class('form-control') }}
-                                @error('dob')
-                                <small class="text-danger">{{ $errors->first('dob') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="req">Email ID</label>
-                                {{ html()->email('email', old('email'))->class('form-control')->placeholder('Email ID') }}
-                                @error('email')
-                                <small class="text-danger">{{ $errors->first('email') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Civil ID Number</label>
-                                {{ html()->text('civil_id', old('civil_id'))->class('form-control')->maxlength('20')->placeholder('Civil ID Number') }}
-                                @error('civil_id')
-                                <small class="text-danger">{{ $errors->first('civil_id') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Qualification</label>
-                                {{ html()->text('qualification', old('qualification'))->class('form-control')->placeholder('Qualification') }}
-                                @error('qualification')
-                                <small class="text-danger">{{ $errors->first('qualification') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Profession</label>
-                                {{ html()->text('profession', old('profession'))->class('form-control')->placeholder('Profession') }}
-                                @error('profession')
-                                <small class="text-danger">{{ $errors->first('profession') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Institute</label>
-                                {{ html()->text('institute', old('institute'))->class('form-control')->placeholder('Institute') }}
-                                @error('institute')
-                                <small class="text-danger">{{ $errors->first('institute') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="">Organization</label>
-                                {{ html()->text('organization', old('organization'))->class('form-control')->placeholder('Organization') }}
-                                @error('organization')
-                                <small class="text-danger">{{ $errors->first('organization') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-2 col-5">
-                                <label class="req">Country Code</label>
-                                {{ html()->select('kw_primary_contact_number_country', countrycodes())->class('form-control')->placeholder('Select') }}
-                                @error('kw_primary_contact_number_country')
-                                <small class="text-danger">{{ $errors->first('kw_primary_contact_number_country') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-4 col-7">
-                                <label class="req">Primary Contact Number</label>
-                                {{ html()->text('kw_primary_contact_number', old('kw_primary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
-                                @error('kw_primary_contact_number')
-                                <small class="text-danger">{{ $errors->first('kw_primary_contact_number') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-2 col-4">
-                                <label class="">Country Code</label>
-                                {{ html()->select('kw_secondary_contact_number_country', countrycodes())->class('form-control')->placeholder('Select') }}
-                                @error('kw_secondary_contact_number_country')
-                                <small class="text-danger">{{ $errors->first('kw_secondary_contact_number_country') }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-4 col-8">
-                                <label class="">Secondary Contact Number</label>
-                                {{ html()->text('kw_secondary_contact_number', old('kw_secondary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
-                                @error('kw_secondary_contact_number')
-                                <small class="text-danger">{{ $errors->first('kw_secondary_contact_number') }}</small>
-                                @enderror
-                            </div>
-                            <button type="submit" class="btn-submit theme-btn one">Submit</button>
                         </div>
-                        {{ html()->form()->close() }}
                     </div>
-                </div>
+                </section>
                 <!--===============spacing==============-->
                 <div class="pd_bottom_70"></div>
                 <!--===============spacing==============-->

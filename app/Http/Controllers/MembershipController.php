@@ -48,6 +48,13 @@ class MembershipController extends Controller
         return view('membership', compact('title'));
     }
 
+    public function type(string $type)
+    {
+        $type = decrypt($type);
+        $title = "Progressive Professional Forum - Membership";
+        return view('memberships', compact('type', 'title'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */

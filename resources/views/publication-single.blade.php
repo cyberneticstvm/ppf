@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a href="{{ url($publication->url) }}" target="_blank">{!! $publication->url !!}</a>
+                            <a href="{{ ($publication->url) ? $publication->url : '#' }}" target="_blank">{!! $publication->url !!}</a>
                         </div>
                         <div class="related_post">
                             <div class="title_sections_inner">

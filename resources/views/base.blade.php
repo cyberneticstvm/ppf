@@ -96,7 +96,7 @@
                      <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2 col-md-12">
                            <div class="logo mid_logo_icon">
-                              <a href="index.html" class="logo_mid">
+                              <a href="/" class="logo_mid">
                                  <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" alt="PPF Logo" class="logo_default">
                               </a>
                            </div>

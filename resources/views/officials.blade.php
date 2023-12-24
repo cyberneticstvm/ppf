@@ -34,6 +34,16 @@
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="title_all_box style_one text-center dark_color">
+                        <div class="title_sections">
+                            <div class="before_title">OFFICE BEARERS</div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_20"></div>
+                        <!--===============spacing==============-->
+                    </div>
+                </div>
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
                 <div class="col-lg-3">
                     <div class="team_box style_two">

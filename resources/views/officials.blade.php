@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
-                <div class="col-lg-3">
+                <div class="col-sm-3">
                     <div class="team_box style_three">
                         <div class="team_box_outer">
                             <div class="member_image">

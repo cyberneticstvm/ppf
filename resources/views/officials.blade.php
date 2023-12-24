@@ -47,7 +47,7 @@
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
                 <div class="col-lg-3">
                     <div class="team_box style_two">
-                        <div class="team_box_outer" style="padding: 15%;">
+                        <div class="team_box_outer" style="padding: 10%;">
                             <div class="member_image">
                                 <img src="{{ asset($item->image) }}" alt="Official image" />
                             </div>
@@ -101,7 +101,7 @@
                 @forelse($officials->where('panel', 'executive_member') as $key => $item)
                 <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                     <div class="team_box style_two">
-                        <div class="team_box_outer" style="padding: 15%;">
+                        <div class="team_box_outer" style="padding: 10%;">
                             <div class="member_image">
                                 <img src="{{ asset($item->image) }}" alt="Official image" />
                             </div>
@@ -155,7 +155,7 @@
                 @forelse($officials->where('panel', 'auditor') as $key => $item)
                 <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                     <div class="team_box style_two">
-                        <div class="team_box_outer" style="padding: 15%;">
+                        <div class="team_box_outer" style="padding: 10%;">
                             <div class="member_image">
                                 <img src="{{ asset($item->image) }}" alt="Official image" />
                             </div>

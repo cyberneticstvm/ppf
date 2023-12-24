@@ -35,8 +35,8 @@
         <div class="container">
             <div class="row">
                 @forelse($officials->where('panel', 'office_bearer') as $key => $item)
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <div class="team_box style_one">
+                <div class="col-lg-3">
+                    <div class="team_box style_two">
                         <div class="team_box_outer">
                             <div class="member_image">
                                 <img src="{{ asset($item->image) }}" alt="Official image" />

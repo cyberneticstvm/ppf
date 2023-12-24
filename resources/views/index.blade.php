@@ -46,7 +46,7 @@
                 <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/organization.jpg') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/upcom.jpg') }}" class="img" alt="image">
                             <a href="{{ route('events.all', encrypt(11)) }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
@@ -60,14 +60,14 @@
                 <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/organization.jpg') }}" class="img" alt="image">
-                            <a href="{{ route('events') }}" class="ab_link">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/benevolent.jpg') }}" class="img" alt="image">
+                            <a href="{{ route('events.all', encrypt(15)) }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events') }}">View</a></h2>
-                            <div class="tag">Recently Completed Events</div>
+                            <h2><a href="{{ route('events.all', encrypt(15)) }}">View</a></h2>
+                            <div class="tag">Benevolent Activities</div>
                         </div>
                     </div>
                 </div>

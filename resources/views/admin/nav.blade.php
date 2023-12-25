@@ -54,11 +54,11 @@
                             <li><a href="{{ route('gallery') }}">Manage Gallery</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Committee Management</span></a>
+                    <!--<li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Committee Management</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="">Manage Committee</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user-plus"></i><span>Member Management</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('member') }}">Registered Members</a></li>
@@ -72,14 +72,14 @@
                             <li><a href="{{ route('thought') }}">Manage Thoughts</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file"></i><span>Reports</span></a>
+                    <!--<li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file"></i><span>Reports</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="">Reports</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Site Management</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="">Import Members</a></li>
+                            <!--<li><a href="">Import Members</a></li>-->
                             <li><a href="{{ route('category') }}">Manage Category</a></li>
                             <li><a href="{{ route('logo') }}">Manage Logo</a></li>
                             <li><a href="{{ route('slider') }}">Manage Home Sliders</a></li>

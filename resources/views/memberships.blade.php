@@ -115,7 +115,7 @@
                             </div>
                             <div class="form-group col-md-4 col-7">
                                 <label class="req">Primary Contact Number</label>
-                                {{ html()->text('kw_primary_contact_number', old('kw_primary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
+                                {{ html()->text('kw_primary_contact_number', old('kw_primary_contact_number'))->class('form-control')->maxlength(15)->placeholder('+965 xxxx xxxx') }}
                                 @error('kw_primary_contact_number')
                                 <small class="text-danger">{{ $errors->first('kw_primary_contact_number') }}</small>
                                 @enderror
@@ -129,7 +129,7 @@
                             </div>
                             <div class="form-group col-md-4 col-8">
                                 <label class="">Secondary Contact Number</label>
-                                {{ html()->text('kw_secondary_contact_number', old('kw_secondary_contact_number'))->class('form-control')->placeholder('+965 xxxx xxxx') }}
+                                {{ html()->text('kw_secondary_contact_number', old('kw_secondary_contact_number'))->class('form-control')->maxlength('15')->placeholder('+965 xxxx xxxx') }}
                                 @error('kw_secondary_contact_number')
                                 <small class="text-danger">{{ $errors->first('kw_secondary_contact_number') }}</small>
                                 @enderror

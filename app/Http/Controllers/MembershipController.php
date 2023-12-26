@@ -66,9 +66,9 @@ class MembershipController extends Controller
             'email' => 'required|email:rfs,dns|unique:memberships,email',
             'type' => 'required',
             'kw_primary_contact_number_country' => 'required',
-            'kw_primary_contact_number' => 'required',
+            'kw_primary_contact_number' => 'required|numeric',
             'passport_number' => 'required_if:type,==,overseas',
-            'civil_id' => 'required_if:type,==,primary|required_if:type,==,associate',
+            'civil_id' => 'required_if:type,==,primary|required_if:type,==,associate|numeric|digits:12',
             'profession' => 'required_if:type,==,primary|required_if:type,==,overseas',
             'qualification' => 'required_if:type,==,primary|required_if:type,==,overseas',
         ]);

@@ -165,6 +165,17 @@
                      </div>
                   </div>
                </div>
+               @if(scrollMessage())
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-12 p-3 bg-info text-white">
+                        <marquee>
+                           <a href="{{ (scrollMessage()->url) ?? '#' }}">{!! scrollMessage()->message !!}</a>
+                        </marquee>
+                     </div>
+                  </div>
+               </div>
+               @endif
                @include("nav")
             </header>
          </div>

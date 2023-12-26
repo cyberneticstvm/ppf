@@ -1,9 +1,16 @@
 <?php
 
 use App\Models\Membership;
+use App\Models\ScrollingMessage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+
+
+function scrollMessage()
+{
+    return ScrollingMessage::where('status', 'active')->latest()->first();
+}
 
 function status()
 {

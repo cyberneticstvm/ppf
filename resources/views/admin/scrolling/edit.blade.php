@@ -27,7 +27,7 @@
                                 <div class="row g-3">
                                     <div class="col-md-12">
                                         <label class="col-form-label pt-0 req" for="message">Message </label>
-                                        {{ html()->textarea('message', $message->message)->class('form-control editor')->placeholder('Message') }}
+                                        {{ html()->textarea('message', $message->message)->class('form-control')->placeholder('Message') }}
                                         @error('message')
                                         <small class="text-danger">{{ $errors->first('message') }}</small>
                                         @enderror

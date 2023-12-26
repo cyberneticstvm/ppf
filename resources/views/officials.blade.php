@@ -151,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 @forelse($officials->where('panel', 'auditor') as $key => $item)
                 <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
                     <div class="team_box style_two">

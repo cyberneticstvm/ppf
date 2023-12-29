@@ -28,7 +28,7 @@
                                     <h4>Personal Details</h4>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="approval_status">Approval Status </label>
-                                        {{ html()->select('approval_status', array('approved' => 'Approved', 'rejected' => 'Rejected', 'pending' => 'Pending'), $member->approval_status)->class('form-control')->if(($member->approval_status == 'approved'), function($q){
+                                        {{ html()->select('approval_status', (Auth::user()->type == 'admin') ? array('approved' => 'Approved', 'rejected' => 'Rejected', 'pending' => 'Pending') : array($member->approval_status => ucfirst($member->approval_status)), $member->approval_status)->class('form-control')->if(($member->approval_status == 'approved'), function($q){
                                             return $q;
                                         })->placeholder('Select') }}
                                         @error('approval_status')

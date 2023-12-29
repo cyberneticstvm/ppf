@@ -33,11 +33,11 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="col-form-label pt-0 req" for="image">Gallery Image </label>
-                                        {{ html()->file('image', old('image'))->class('form-control') }}
-                                        <small class="form-text text-muted">Max file size should be less than 1MB</small>
-                                        @error('image')
-                                        <small class="text-danger">{{ $errors->first('image') }}</small>
+                                        <label class="col-form-label pt-0 req" for="images">Gallery Image (Multiple images upload enabled)</label>
+                                        {{ html()->file('images[]')->class('form-control')->multiple() }}
+                                        <small class="form-text text-muted">Max file size should be less than 250KB for each image</small>
+                                        @error('images')
+                                        <small class="text-danger">{{ $errors->first('images') }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
@@ -88,7 +88,7 @@
                                         @forelse($images as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td class="text-center"><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td class="text-center"><a href="{{ asset($item->image) }}" target="_blank"><img src="{{ asset($item->image) }}" width="5%" class="img-fluid" /></a></td>
                                             <td class="text-center">{{ $item->display_order }}</td>
                                             <td>{!! $item->imageStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>

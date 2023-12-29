@@ -32,16 +32,19 @@ class GalleryImageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
+            'images' => 'required',
             'display_order' => 'required|numeric',
             'status' => 'required',
         ]);
-        $input = $request->except(array('name'));
-        $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/gallery/images/' . $request->gallery_id);
-        $input['image'] = $url;
-        $input['created_by'] = $request->user()->id;
-        $input['updated_by'] = $request->user()->id;
-        GalleryImage::create($input);
+        $input = $request->except(array('name', 'images'));
+        $images = $request->file('images');
+        foreach ($images as $key => $item) :
+            $url = uploadFile($item, $path = 'ppf-kuwait/website/gallery/images/' . $request->gallery_id);
+            $input['image'] = $url;
+            $input['created_by'] = $request->user()->id;
+            $input['updated_by'] = $request->user()->id;
+            GalleryImage::create($input);
+        endforeach;
         return redirect()->back()->with("success", "Gallery image saved successfully!");
     }
 

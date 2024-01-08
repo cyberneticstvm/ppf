@@ -71,17 +71,19 @@
                                         <th>SL No</th>
                                         <th>Member Name</th>
                                         <th>Membership ID</th>
-                                        <th>Type</th>
                                         <th>Email</th>
                                         <th>Primary Contact</th>
                                         <th>Qualification</th>
                                         <th>Specialization</th>
                                         <th>Profession</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
                                     </thead>
                                     <tbody>
-                                        @forelse($records as $key => $item)
+                                        @forelse($members as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>

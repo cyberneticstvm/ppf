@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Membership;
 use App\Models\User;
 use App\Models\Profession;
 use App\Models\Qualification;
@@ -69,13 +70,19 @@ class UserController extends Controller
         $specs = Specialization::all();
         $quals = Qualification::all();
         $profs = Profession::all();
-        $records = [];
-        return view('admin.search.index', compact('specs', 'quals', 'profs', 'records'));
+        $members = [];
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
     }
 
     public function searchMemberUpdate(Request $request)
     {
-        //
+        $specs = Specialization::all();
+        $quals = Qualification::all();
+        $profs = Profession::all();
+        $members = Membership::when($request->qualification, function ($q) use ($request) {
+            return $q->where('qualification', $request->qualification);
+        })->get();
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
     }
 
     public function createuser()

@@ -152,6 +152,7 @@ class WebController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
+        return redirect()->back()->with('success', "Password reset link has been sent to your registered email.");
     }
 
     public function resetPassword($token)

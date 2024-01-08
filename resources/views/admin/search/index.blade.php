@@ -38,10 +38,6 @@
                                         {{ html()->select('specialization', $quals->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0" for="status">Qualification </label>
-                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), old('qualification'))->class('form-control')->placeholder('Select') }}
-                                    </div>
-                                    <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Status </label>
                                         {{ html()->select('status', membershipStatus(), old('status'))->class('form-control')->placeholder('Select') }}
                                     </div>

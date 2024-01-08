@@ -53,7 +53,7 @@
                 <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{{ asset('/backend/assets/images/login/login-bg.webp') }}" alt="looginpage"></div>
                 <div class="col-xl-5 p-0">
                     <div class="login-card">
-                        {{ html()->form('POST', route('forgot.password.update'))->class('theme-form login-form')->open() }}
+                        {{ html()->form('POST', route('forgot.password.update', $user->token))->class('theme-form login-form')->open() }}
                         @csrf
                         <input type="hidden" name="user_id" value="{{ encrypt($user->id) }}" />
                         <div class="text-center mb-3">

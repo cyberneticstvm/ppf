@@ -158,7 +158,7 @@ class WebController extends Controller
     public function resetPassword($token)
     {
         $user = User::where('password_reset_token', $token)->firstOrFail();
-        return view('admin.reset-password', compact('user'));
+        return view('admin.password-reset', compact('user'));
     }
 
     public function resetPasswordUpdate(Request $request)

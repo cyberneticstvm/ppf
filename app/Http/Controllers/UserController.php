@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Profession;
+use App\Models\Qualification;
+use App\Models\Specialization;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,12 +66,16 @@ class UserController extends Controller
 
     public function searchMember()
     {
-
-        return view('admin.search.index');
+        $specs = Specialization::all();
+        $quals = Qualification::all();
+        $profs = Profession::all();
+        $records = [];
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'records'));
     }
 
     public function searchMemberUpdate(Request $request)
     {
+        //
     }
 
     public function createuser()

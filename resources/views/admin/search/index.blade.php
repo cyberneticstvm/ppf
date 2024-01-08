@@ -25,23 +25,29 @@
                             {{ html()->form('POST', route('search.member.update'))->class('theme-form')->open() }}
                             <div class="card-body">
                                 <div class="row g-3">
-                                    <div class="col-md-12">
-                                        <label class="col-form-label pt-0 req" for="message">Message </label>
-                                        {{ html()->textarea('message', old('message'))->class('form-control')->placeholder('Message') }}
-                                        @error('message')
-                                        <small class="text-danger">{{ $errors->first('message') }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="col-form-label pt-0" for="url">Redirect URL </label>
-                                        {{ html()->text('url', old('url'))->class('form-control')->placeholder('Redirect URL') }}
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="status">Qualification </label>
+                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), old('qualification'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0 req" for="status">Status </label>
-                                        {{ html()->select('status', status(), old('status'))->class('form-control')->placeholder('Select') }}
-                                        @error('status')
-                                        <small class="text-danger">{{ $errors->first('status') }}</small>
-                                        @enderror
+                                        <label class="col-form-label pt-0" for="status">Profession </label>
+                                        {{ html()->select('profession', $quals->pluck('name', 'name'), old('profession'))->class('form-control')->placeholder('Select') }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="status">Specialization </label>
+                                        {{ html()->select('specialization', $quals->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="status">Qualification </label>
+                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), old('qualification'))->class('form-control')->placeholder('Select') }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="status">Membership Status </label>
+                                        {{ html()->select('status', membershipStatus(), old('status'))->class('form-control')->placeholder('Select') }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0" for="status">Membership Type </label>
+                                        {{ html()->select('type', membershipTypes(), old('type'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                 </div>
                             </div>
@@ -57,5 +63,48 @@
         </div>
     </div>
     <!-- Container-fluid Ends-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-xl-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <table class="display table table-sm table-striped" id="basic-2">
+                                    <thead>
+                                        <th>SL No</th>
+                                        <th>Member Name</th>
+                                        <th>Membership ID</th>
+                                        <th>Type</th>
+                                        <th>Email</th>
+                                        <th>Primary Contact</th>
+                                        <th>Qualification</th>
+                                        <th>Specialization</th>
+                                        <th>Profession</th>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($records as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        @empty
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

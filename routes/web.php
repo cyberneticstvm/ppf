@@ -97,8 +97,8 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::get('/change/password', 'changePassword')->name('change.password');
         Route::post('/change/password', 'updatePassword')->name('change.password.update');
 
-        Route::get('/search', 'searchMember')->name('search.member');
-        Route::post('/search', 'searchMemberUpdate')->name('search.member.update');
+        /*Route::get('/search', 'searchMember')->name('search.member');
+        Route::post('/search', 'searchMemberUpdate')->name('search.member.update');*/
     });
 
     Route::prefix('/category')->controller(CategoryController::class)->group(function () {

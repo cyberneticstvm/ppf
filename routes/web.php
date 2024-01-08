@@ -30,7 +30,6 @@ Route::get('/login', function () {
     return view('admin.login');
 })->name('login');
 
-
 Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::post('/', 'index')->name('index');
@@ -61,6 +60,10 @@ Route::middleware(['web'])->group(function () {
         Route::get('/gallery/single/{id}', 'gallerySingle')->name('gallery.single');
         Route::get('/community', 'community')->name('community');
         Route::get('/contact', 'contact')->name('contact');
+        Route::get('/forgot-password', 'forgotPassword')->name('forgot.password');
+        Route::post('/forgot-password', 'forgotPasswordEmail')->name('forgot.password.email');
+        Route::get('/reset-password/{token}', 'resetPassword')->name('reset.password');
+        Route::post('/reset-password/{token}', 'resetPasswordUpdate')->name('forgot.password.update');
     });
 
     Route::prefix('/user/thoughts')->controller(ThoughtController::class)->group(function () {

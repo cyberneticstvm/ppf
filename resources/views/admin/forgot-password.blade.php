@@ -53,40 +53,25 @@
                 <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{{ asset('/backend/assets/images/login/login-bg.webp') }}" alt="looginpage"></div>
                 <div class="col-xl-5 p-0">
                     <div class="login-card">
-                        {{ html()->form('POST', route('signin'))->class('theme-form login-form')->open() }}
+                        {{ html()->form('POST', route('forgot.password.email'))->class('theme-form login-form')->open() }}
                         @csrf
                         <div class="text-center mb-3">
                             <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" class="img-fluid" />
-                            <h4 class="mt-3">Admin / Member Login</h4>
-                            <h6>Welcome back! Log in to your account.</h6>
+                            <h4 class="mt-3">Forgot Password?</h4>
+                            <h6>Request password reset link.</h6>
                         </div>
                         <div class="form-group">
-                            <label>Username</label>
-                            <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
-                                {{ html()->text('username', old('username'))->class('form-control')->placeholder('Username') }}
+                            <label>Registered Email</label>
+                            <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
+                                {{ html()->email('email', old('email'))->class('form-control')->placeholder('Registered Email') }}
                             </div>
-                            @error('username')
-                            <small class="text-danger">{{ $errors->first('username') }}</small>
+                            @error('email')
+                            <small class="text-danger">{{ $errors->first('email') }}</small>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                {{ html()->password('password')->class('form-control')->placeholder('******') }}
-                                <div class="show-hide"><span class="show"> </span></div>
-                            </div>
-                            @error('password')
-                            <small class="text-danger">{{ $errors->first('password') }}</small>
-                            @enderror
+                            <button class="btn btn-primary btn-block btn-submit" type="submit">Request</button>
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block btn-submit" type="submit">Sign in</button>
-                        </div>
-                        <div class="login-social-title">
-                            <h5>Change Password</h5>
-                        </div>
-
-                        <p>Forgot Passwordt?<a class="ms-2" href="{{ route('forgot.password') }}">Request Password Reset Link</a></p>
                         {{ html()->form()->close() }}
                     </div>
                 </div>

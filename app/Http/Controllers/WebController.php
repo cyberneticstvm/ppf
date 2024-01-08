@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ForgotPasswordEmail;
 use App\Models\About;
 use App\Models\Advertisement;
 use App\Models\Benevolent;
@@ -11,7 +12,11 @@ use App\Models\Gallery;
 use App\Models\Official;
 use App\Models\Publication;
 use App\Models\Slider;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class WebController extends Controller
 {
@@ -127,5 +132,45 @@ class WebController extends Controller
         $title = "Progressive Professional Forum Kuwait Contact";
         $officials = Official::all();
         return view('contact', compact('title', 'officials'));
+    }
+
+    public function forgotPassword()
+    {
+        return view('admin.forgot-password');
+    }
+
+    public function forgotPasswordEmail(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email'
+        ]);
+        try {
+            $user = User::where('email', $request->email)->firstOrFail();
+            $token = Str::random(25);
+            $user->update(['password_reset_token' => $token]);
+            Mail::to($request->email)->send(new ForgotPasswordEmail($request, $token));
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
+        }
+    }
+
+    public function resetPassword($token)
+    {
+        $user = User::where('password_reset_token', $token)->firstOrFail();
+        return view('admin.reset-password', compact('user'));
+    }
+
+    public function resetPasswordUpdate(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
+        ]);
+        try {
+            User::findOrFail(decrypt($request->user_id))->update(['password' => bcrypt($request->password), 'password_reset_token' => NULL]);
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
+        }
+        return redirect()->back()->with("success", "Password has been reset successfully");
     }
 }

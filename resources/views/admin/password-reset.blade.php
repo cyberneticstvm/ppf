@@ -53,21 +53,12 @@
                 <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{{ asset('/backend/assets/images/login/login-bg.webp') }}" alt="looginpage"></div>
                 <div class="col-xl-5 p-0">
                     <div class="login-card">
-                        {{ html()->form('POST', route('signin'))->class('theme-form login-form')->open() }}
+                        {{ html()->form('POST', route('forgot.password.update'))->class('theme-form login-form')->open() }}
                         @csrf
+                        <input type="hidden" name="user_id" value="{{ encrypt($user->id) }}" />
                         <div class="text-center mb-3">
                             <img src="{{ asset('/backend/assets/images/logo/logo-ppf.png') }}" class="img-fluid" />
-                            <h4 class="mt-3">Admin / Member Login</h4>
-                            <h6>Welcome back! Log in to your account.</h6>
-                        </div>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
-                                {{ html()->text('username', old('username'))->class('form-control')->placeholder('Username') }}
-                            </div>
-                            @error('username')
-                            <small class="text-danger">{{ $errors->first('username') }}</small>
-                            @enderror
+                            <h4 class="mt-3">Reset Password</h4>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
@@ -80,13 +71,18 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary btn-block btn-submit" type="submit">Sign in</button>
+                            <label>Confirm Password</label>
+                            <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
+                                {{ html()->password('password_confirmation')->class('form-control')->placeholder('******') }}
+                                <div class="show-hide"><span class="show"> </span></div>
+                            </div>
+                            @error('password_confirmation')
+                            <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+                            @enderror
                         </div>
-                        <div class="login-social-title">
-                            <h5>Change Password</h5>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block btn-submit" type="submit">Update</button>
                         </div>
-
-                        <p>Forgot Passwordt?<a class="ms-2" href="{{ route('forgot.password') }}">Request Password Reset Link</a></p>
                         {{ html()->form()->close() }}
                     </div>
                 </div>

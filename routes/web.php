@@ -71,12 +71,15 @@ Route::middleware(['web'])->group(function () {
     });
 });
 
-Route::prefix('/user')->middleware(['web', 'auth', 'user'])->group(function () {
+Route::prefix('/user')->middleware(['web', 'auth', 'user', 'active'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/logout', 'logout')->name('user.logout');
         Route::get('/change/password', 'changePassword')->name('change.password.user');
         Route::post('/change/password', 'updatePassword')->name('change.password.user.update');
+
+        Route::get('/search', 'searchMember')->name('search.member');
+        Route::post('/search', 'searchMemberUpdate')->name('search.member.update');
     });
 
     Route::controller(MembershipController::class)->group(function () {
@@ -87,11 +90,15 @@ Route::prefix('/user')->middleware(['web', 'auth', 'user'])->group(function () {
 });
 
 Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function () {
+
     Route::controller(UserController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/logout', 'logout')->name('logout');
         Route::get('/change/password', 'changePassword')->name('change.password');
         Route::post('/change/password', 'updatePassword')->name('change.password.update');
+
+        Route::get('/search', 'searchMember')->name('search.member');
+        Route::post('/search', 'searchMemberUpdate')->name('search.member.update');
     });
 
     Route::prefix('/category')->controller(CategoryController::class)->group(function () {

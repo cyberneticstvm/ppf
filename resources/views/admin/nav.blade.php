@@ -112,6 +112,16 @@
                             <li><a href="{{ route('user.profile.edit', encrypt(member()->id)) }}">Edit Profile</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Search </h6>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Search Member</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a href="{{ route('search.member') }}">Search</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

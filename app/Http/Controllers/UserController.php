@@ -61,6 +61,15 @@ class UserController extends Controller
         return redirect()->back()->with("success", "Password has been reset successfully");
     }
 
+    public function searchMember()
+    {
+        return view('admin.search.index');
+    }
+
+    public function searchMemberUpdate(Request $request)
+    {
+    }
+
     public function createuser()
     {
         User::create([

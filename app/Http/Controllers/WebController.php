@@ -147,7 +147,7 @@ class WebController extends Controller
         try {
             $user = User::where('email', $request->email)->firstOrFail();
             $token = Str::random(25);
-            User::findOrFail($user->id)->update(['password_reset_token' => $token]);
+            User::where($user->id)->update(['password_reset_token' => $token]);
             Mail::to($request->email)->send(new ForgotPasswordEmail($user, $token));
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());

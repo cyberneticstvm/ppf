@@ -40,7 +40,7 @@ class ForgotPasswordEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.forgot-password',
+            view: 'admin.email.forgot-password',
             with: ['user' => $this->user, 'token' => $this->token],
         );
     }

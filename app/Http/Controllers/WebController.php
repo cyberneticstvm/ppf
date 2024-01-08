@@ -172,6 +172,6 @@ class WebController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
-        return redirect()->back()->with("success", "Password has been reset successfully");
+        return redirect()->route('login')->with("success", "Password has been reset successfully");
     }
 }

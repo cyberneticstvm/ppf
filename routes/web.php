@@ -63,7 +63,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/forgot-password', 'forgotPassword')->name('forgot.password');
         Route::post('/forgot-password', 'forgotPasswordEmail')->name('forgot.password.email');
         Route::get('/reset-password/{token}', 'resetPassword')->name('reset.password');
-        Route::post('/reset-password/{token}', 'resetPasswordUpdate')->name('forgot.password.update');
+        Route::post('/reset-password', 'resetPasswordUpdate')->name('forgot.password.update');
     });
 
     Route::prefix('/user/thoughts')->controller(ThoughtController::class)->group(function () {

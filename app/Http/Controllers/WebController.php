@@ -168,7 +168,7 @@ class WebController extends Controller
             'password_confirmation' => 'required',
         ]);
         try {
-            User::findOrFail(decrypt($request->user_id))->update(['password' => bcrypt($request->password), 'password_reset_token' => 'NULL']);
+            User::findOrFail(decrypt($request->user_id))->update(['password' => bcrypt($request->password), 'password_reset_token' => '']);
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }

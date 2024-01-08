@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            {{ html()->form('POST', route('search.member.update'))->class('theme-form')->open() }}
+                            {{ html()->form('POST', (Auth::user()->type == 'admin') ? route('admin.search.member.update', $member->id) : route('search.member.update', $member->id))->class('theme-form')->open() }}
                             <div class="card-body">
                                 <div class="row g-3">
                                     <div class="col-md-3">

@@ -81,6 +81,14 @@ class UserController extends Controller
         $profs = Profession::all();
         $members = Membership::when($request->qualification, function ($q) use ($request) {
             return $q->where('qualification', $request->qualification);
+        })->when($request->profession, function ($q) use ($request) {
+            return $q->where('profession', $request->profession);
+        })->when($request->specialization, function ($q) use ($request) {
+            return $q->where('specialization', $request->specialization);
+        })->when($request->approval_status, function ($q) use ($request) {
+            return $q->where('approval_status', $request->approval_status);
+        })->when($request->type, function ($q) use ($request) {
+            return $q->where('type', $request->type);
         })->get();
         return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
     }

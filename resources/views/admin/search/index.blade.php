@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Status </label>
-                                        {{ html()->select('status', membershipStatus(), old('status'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('approval_status', membershipStatus(), old('approval_status'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Type </label>

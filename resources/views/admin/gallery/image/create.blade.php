@@ -88,7 +88,7 @@
                                         @forelse($images as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td class="text-center"><a href="{{ asset($item->image) }}" target="_blank"><img src="{{ asset($item->image) }}" width="5%" class="img-fluid" /></a></td>
+                                            <td class="text-center"><a href="{{ asset($item->image) }}" target="_blank"><img src="{{ asset($item->image) }}" width="10%" class="img-fluid" /></a></td>
                                             <td class="text-center">{{ $item->display_order }}</td>
                                             <td>{!! $item->imageStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mail\RegistrationConfirmationEmail;
 use App\Models\Membership;
+use App\Models\Profession;
+use App\Models\Qualification;
+use App\Models\Specialization;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -51,8 +54,11 @@ class MembershipController extends Controller
     public function type(string $type)
     {
         $type = decrypt($type);
+        $specs = Specialization::all();
+        $quals = Qualification::all();
+        $profs = Profession::all();
         $title = "Progressive Professional Forum - Membership";
-        return view('memberships', compact('type', 'title'));
+        return view('memberships', compact('type', 'title', 'specs', 'quals', 'profs'));
     }
 
     /**
@@ -107,7 +113,10 @@ class MembershipController extends Controller
     public function edit(string $id)
     {
         $member = Membership::findOrFail(decrypt($id));
-        return view('admin.member.edit', compact('member'));
+        $specs = Specialization::all();
+        $quals = Qualification::all();
+        $profs = Profession::all();
+        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs'));
     }
 
     /**

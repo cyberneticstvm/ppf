@@ -80,14 +80,14 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="">Qualification</label>
-                                {{ html()->text('qualification', old('qualification'))->class('form-control')->placeholder('Qualification') }}
+                                {{ html()->select('qualification', $quals->pluck('name', 'name'), old('qualification'))->class('form-control')->placeholder('Select') }}
                                 @error('qualification')
                                 <small class="text-danger">{{ $errors->first('qualification') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="">Profession</label>
-                                {{ html()->text('profession', old('profession'))->class('form-control')->placeholder('Profession') }}
+                                {{ html()->select('profession', $profs->pluck('name', 'name'), old('profession'))->class('form-control')->placeholder('Select') }}
                                 @error('profession')
                                 <small class="text-danger">{{ $errors->first('profession') }}</small>
                                 @enderror
@@ -97,6 +97,13 @@
                                 {{ html()->text('institute', old('institute'))->class('form-control')->placeholder('Institute') }}
                                 @error('institute')
                                 <small class="text-danger">{{ $errors->first('institute') }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="">Specialization</label>
+                                {{ html()->select('specialization', $specs->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
+                                @error('specialization')
+                                <small class="text-danger">{{ $errors->first('specialization') }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">

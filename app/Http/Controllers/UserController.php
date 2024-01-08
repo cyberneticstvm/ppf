@@ -63,6 +63,7 @@ class UserController extends Controller
 
     public function searchMember()
     {
+
         return view('admin.search.index');
     }
 

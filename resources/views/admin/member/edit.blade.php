@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="qualification">Qualification </label>
-                                        {{ html()->text('qualification', $member->qualification)->class('form-control')->placeholder('Qualification') }}
+                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), $member->qualification)->class('form-control')->placeholder('Select') }}
                                         @error('qualification')
                                         <small class="text-danger">{{ $errors->first('qualification') }}</small>
                                         @enderror
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="profession">Profession </label>
-                                        {{ html()->text('profession', $member->qualification)->class('form-control')->placeholder('Profession') }}
+                                        {{ html()->select('profession', $profs->pluck('name', 'name'), $member->profession)->class('form-control')->placeholder('Select') }}
                                         @error('profession')
                                         <small class="text-danger">{{ $errors->first('profession') }}</small>
                                         @enderror
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="specialization">Specialization </label>
-                                        {{ html()->text('specialization', $member->specialization)->class('form-control')->placeholder('Specialization') }}
+                                        {{ html()->select('specialization', $specs->pluck('name', 'name'), $member->specialization)->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0" for="doj">Date of Joining </label>

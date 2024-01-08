@@ -117,7 +117,7 @@
                             <h6>Search </h6>
                         </div>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Search Member</span></a>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user"></i><span>Search Member</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('search.member') }}">Search</a></li>
                         </ul>

@@ -80,18 +80,18 @@
                                         <th>Status</th>
                                     </thead>
                                     <tbody>
-                                        @forelse($members as $key => $item)
+                                        @forelse($members as $key => $member)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{ $member->name }}</td>
+                                            <td>{{ $member->membership_number }}</td>
+                                            <td>{{ $member->email }}</td>
+                                            <td>{{ $member->kw_primary_contact_number }}</td>
+                                            <td>{{ $member->qualification }}</td>
+                                            <td>{{ $member->specialization }}</td>
+                                            <td>{{ $member->profession }}</td>
+                                            <td>{{ $member->type }}</td>
+                                            <td>{{ $member->approval_status }}</td>
                                         </tr>
                                         @empty
                                         @endforelse

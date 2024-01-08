@@ -89,7 +89,7 @@ class UserController extends Controller
             return $q->where('approval_status', $request->approval_status);
         })->when($request->type, function ($q) use ($request) {
             return $q->where('type', $request->type);
-        })->get();
+        })->orderBy('name')->get();
         return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
     }
 

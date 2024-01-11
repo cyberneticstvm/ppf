@@ -17,7 +17,7 @@
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/bootstrap.min.css') }}" type='text/css' media='all' />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/owl.css') }}" type='text/css' media='all' />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/swiper.min.css') }}" type='text/css' media='all' />
-   <link rel='stylesheet' href="{{ asset('/frontend/assets/css/jquery.fancybox.min.css') }}" type='text/css' media='all' />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/icomoon.css') }}" type='text/css' media='all' />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/flexslider.css') }}" type='text/css' media='all' />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/font-awesome.min.css') }}" type='text/css' media='all' />
@@ -90,7 +90,7 @@
                   </div>
                </div>
             </div>-->
-            <header class="header header_default style_three">
+            <header class="header header_default style_three get_sticky_header">
                <div class="header_mid">
                   <div class="medium-container">
                      <div class="row align-items-center">
@@ -101,7 +101,7 @@
                               </a>
                            </div>
                         </div>
-                        <div class="col-xl-6 col-lg-10 col-md-12 hidden-sm">
+                        <div class="col-xl-6 col-lg-10 col-md-12">
                            <div class="row">
                               <div class="col-lg-6 same_column">
                                  <div class="mid_content one">
@@ -166,7 +166,7 @@
                   </div>
                </div>
                @if(scrollMessage())
-               <div class="container-fluid">
+               <div class="container-fluid hidden-sm scroolMsg">
                   <div class="row">
                      <div class="col-12 p-3 bg-info text-white">
                         <marquee>
@@ -499,7 +499,22 @@
    <!---========================== javascript ==========================-->
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/jquery-3.6.0.min.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/bootstrap.min.js') }}"></script>
-   <script type='text/javascript' src="{{ asset('/frontend/assets/js/jquery.fancybox.js') }}"></script>
+   <script type="module">
+      import {
+         Fancybox
+      } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.esm.js";
+
+      Fancybox.bind('[data-fancybox="gallery"]', {
+         on: {
+            "loading": (fancybox, evt) => {
+               $(".header").css('display', 'none')
+            },
+            "close": (fancybox, evt) => {
+               $(".header").css('display', 'block')
+            },
+         },
+      });
+   </script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/jQuery.style.switcher.min.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/jquery.flexslider-min.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/color-scheme.js') }}"></script>
@@ -513,6 +528,7 @@
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/sharer.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/validation.js') }}"></script>
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/creote-extension.js') }}"></script>
+   <script type='text/javascript' src="{{ asset('/frontend/assets/js/main.js') }}"></script>
    <!---========================== javascript ==========================-->
    @include("admin.message")
 </body>

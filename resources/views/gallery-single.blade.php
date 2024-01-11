@@ -41,7 +41,10 @@
                             @forelse($gallery->images as $key => $item)
                             <div class="mg_image_box">
                                 <div class="image_box">
-                                    <a href="{{ asset($item->image) }}" data-fancybox="gallery"><img decoding="async" src="{{ asset($item->image) }}" class="img" alt="image"></a>
+                                    <!--<a href="{{ asset($item->image) }}" data-fancybox="gallery"><img decoding="async" src="{{ asset($item->image) }}" class="img" alt="image"></a>-->
+                                    <a data-fancybox="gallery" data-src="{{ asset($item->image) }}">
+                                        <img src="{{ asset($item->image) }}" class="img fBox" alt="image" />
+                                    </a>
                                 </div>
                             </div>
                             @empty

@@ -1,5 +1,5 @@
 <!--<header class="header header_default style_one get_sticky_header">-->
-<div class="navbar_outer mod_btn_enable get_sticky_header">
+<div class="navbar_outer mod_btn_enable">
     <div class="medium-container">
         <div class="row align-items-left">
             <!--<div class="col-lg-2 col-md-9 col-sm-9 col-xs-9 logo_column">

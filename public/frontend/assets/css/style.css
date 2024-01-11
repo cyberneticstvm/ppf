@@ -631,3 +631,7 @@ iframe {
 .default_sickty_heaad.style_three .header_mid {
   padding: 10px 0px !important;
 }
+
+.header.style_three .same_column {
+  width: 50% !important;
+}

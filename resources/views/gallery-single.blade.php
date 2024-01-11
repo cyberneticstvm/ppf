@@ -37,7 +37,7 @@
                 <!--===============spacing==============-->
                 <section class="image_box_carousel_content image_covered">
                     <div class="container">
-                        <div class="owl-carousel owl_nav_block owl_dots_none theme_carousel owl-theme" data-options='{"loop": true, "margin": 20, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 7000, "smartSpeed": 1800, "responsive":{ "0" :{ "items": "1" }, "768" :{ "items" : "2" } , "1000":{ "items" : "3" } , "1200":{ "items" : "4" }}}'>
+                        <div class="owl-carousel owl_nav_block owl_dots_none theme_carousel owl-theme" data-options='{"loop": false, "margin": 20, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 7000, "smartSpeed": 1800, "responsive":{ "0" :{ "items": "1" }, "768" :{ "items" : "2" } , "1000":{ "items" : "3" } , "1200":{ "items" : "4" }}}'>
                             @forelse($gallery->images as $key => $item)
                             <div class="mg_image_box">
                                 <div class="image_box">

@@ -21,7 +21,7 @@ class GalleryImageController extends Controller
      */
     public function create($id)
     {
-        $images = GalleryImage::where('gallery_id', decrypt($id))->withTrashed()->latest()->get();
+        $images = GalleryImage::where('gallery_id', decrypt($id))->latest()->get();
         $gallery = Gallery::findOrFail(decrypt($id));
         return view('admin.gallery.image.create', compact('images', 'gallery'));
     }

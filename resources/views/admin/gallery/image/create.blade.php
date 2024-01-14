@@ -70,7 +70,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-xl-12">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body table-responsive">
@@ -100,6 +100,28 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="file-content">
+                    <div class="card">
+                        <div class="card-body file-manager">
+                            <h4 class="mt-3">All Files</h4>
+                            <ul class="files">
+                                @forelse($images as $key => $item)
+                                <li class="file-box">
+                                    <div class="file-top">
+                                        <img src="{{ asset($item->image) }}" width="50%" class="img-fluid" />
+                                    </div>
+                                    <div class="file-bottom">
+                                        <h6><a href="{{ route('gallery.image.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></h6>
+                                        <p class="mb-1"><a href="{{ route('gallery.image.delete', encrypt($item->id)) }}" class="dlt"><i class="fa fa-trash text-danger fa-lg"></i></a></p>
+                                        <p> <b>Uploaded On: </b>{{ $item->created_at->format('d/M/Y') }}</p>
+                                    </div>
+                                </li>
+                                @empty
+                                @endforelse
+                            </ul>
                         </div>
                     </div>
                 </div>

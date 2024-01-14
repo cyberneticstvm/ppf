@@ -34,7 +34,7 @@ Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::post('/', 'index')->name('index');
         Route::post('/login', 'login')->name('signin');
-        Route::get('/createuser', 'createuser')->name('createuser');
+        //Route::get('/createuser', 'createuser')->name('createuser');
         Route::get('/membership', 'membership')->name('membership');
     });
 

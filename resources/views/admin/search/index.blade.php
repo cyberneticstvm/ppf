@@ -31,11 +31,11 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Profession </label>
-                                        {{ html()->select('profession', $quals->pluck('name', 'name'), old('profession'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('profession', $profs->pluck('name', 'name'), old('profession'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0" for="status">Specialization </label>
-                                        {{ html()->select('specialization', $quals->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
+                                        <label class="col-form-label pt-0" for="status">Industry / Specialization </label>
+                                        {{ html()->select('specialization', $specs->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Status </label>
@@ -71,7 +71,7 @@
                                         <th>SL No</th>
                                         <th>Member Name</th>
                                         <th>Qualification</th>
-                                        <th>Specialization</th>
+                                        <th>Industry</th>
                                         <th>Profession</th>
                                         <th>Type</th>
                                         <th>Status</th>

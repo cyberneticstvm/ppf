@@ -20,7 +20,6 @@ class SiteManagementController extends Controller
     public function logoUpdate(Request $request)
     {
         $this->validate($request, [
-            'logo' => 'required|mimes:jpg,jpeg,png,webp|max:1024',
             'alt_text' => 'required',
         ]);
         $input = $request->all();

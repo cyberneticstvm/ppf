@@ -39,7 +39,7 @@
                                         @forelse($sliders as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td><a href="{{ $item->image }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
                                             <td>{{ $item->display_order }}</td>
                                             <td>{{ $item->status }}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>

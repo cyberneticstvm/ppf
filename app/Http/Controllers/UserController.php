@@ -71,7 +71,8 @@ class UserController extends Controller
         $quals = Qualification::all();
         $profs = Profession::all();
         $members = [];
-        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
+        $inputs = array('Select', 'Select', 'Select', 'Select', 'Select');
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs'));
     }
 
     public function searchMemberUpdate(Request $request)
@@ -79,6 +80,7 @@ class UserController extends Controller
         $specs = Specialization::all();
         $quals = Qualification::all();
         $profs = Profession::all();
+        $inputs = array($request->qualification, $request->profession, $request->specialization, $request->approval_status, $request->type);
         $members = Membership::when($request->qualification, function ($q) use ($request) {
             return $q->where('qualification', $request->qualification);
         })->when($request->profession, function ($q) use ($request) {
@@ -90,15 +92,15 @@ class UserController extends Controller
         })->when($request->type, function ($q) use ($request) {
             return $q->where('type', $request->type);
         })->orderBy('name')->get();
-        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members'));
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs'));
     }
 
     public function createuser()
     {
         User::create([
-            'username' => 'admin',
-            'name' => 'Administrator',
-            'email' => 'ppfk@ppfkuwait.org',
+            'username' => 'editor',
+            'name' => 'Editor',
+            'email' => 'ppfk@ppfkuwait.com',
             'password' => bcrypt('ppf@2022###'),
         ]);
         echo "User created successfully";

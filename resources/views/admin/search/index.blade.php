@@ -27,7 +27,7 @@
                                 <div class="row g-3">
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Qualification </label>
-                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), old('qualification'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('qualification', $quals->pluck('name', 'name'), (old('qualification')) ?? $inputs[0])->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Profession </label>

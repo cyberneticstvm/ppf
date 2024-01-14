@@ -85,6 +85,9 @@
                             <li><a href="{{ route('slider') }}">Manage Home Sliders</a></li>
                             <li><a href="{{ route('about') }}">Manage About Us</a></li>
                             <li><a href="{{ route('official') }}">Manage Officials</a></li>
+                            <li><a href="{{ route('industry') }}">Manage Industry / Specialization</a></li>
+                            <li><a href="{{ route('profession') }}">Manage Profession</a></li>
+                            <li><a href="{{ route('qualification') }}">Manage Qualification</a></li>
                         </ul>
                     </li>
 

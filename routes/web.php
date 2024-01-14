@@ -179,6 +179,34 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::get('/delete/{id}', 'destroy')->name('thought.delete');
     });
 
+    Route::prefix('/industry')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'iindex')->name('industry');
+        Route::get('/create', 'icreate')->name('industry.create');
+        Route::post('/save', 'istore')->name('industry.save');
+        Route::get('/edit/{id}', 'iedit')->name('industry.edit');
+        Route::post('/edit/{id}', 'iupdate')->name('industry.update');
+        Route::get('/delete/{id}', 'idestroy')->name('industry.delete');
+    });
+
+    Route::prefix('/profession')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'pindex')->name('profession');
+        Route::get('/create', 'pcreate')->name('profession.create');
+        Route::post('/save', 'pstore')->name('profession.save');
+        Route::get('/edit/{id}', 'pedit')->name('profession.edit');
+        Route::post('/edit/{id}', 'pupdate')->name('profession.update');
+        Route::get('/delete/{id}', 'pdestroy')->name('profession.delete');
+    });
+
+    Route::prefix('/qualification')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'qindex')->name('qualification');
+        Route::get('/create', 'qcreate')->name('qualification.create');
+        Route::post('/save', 'qstore')->name('qualification.save');
+        Route::get('/edit/{id}', 'qedit')->name('qualification.edit');
+        Route::post('/edit/{id}', 'qupdate')->name('qualification.update');
+        Route::get('/delete/{id}', 'qdestroy')->name('qualification.delete');
+    });
+
+
     Route::prefix('/member')->controller(MembershipController::class)->group(function () {
         Route::get('/', 'index')->name('member');
         Route::get('/pending', 'pending')->name('member.pending');

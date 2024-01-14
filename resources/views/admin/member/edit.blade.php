@@ -129,7 +129,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0" for="specialization">Specialization </label>
+                                        <label class="col-form-label pt-0" for="specialization">Industry / Specialization </label>
                                         {{ html()->select('specialization', $specs->pluck('name', 'name'), $member->specialization)->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-2">

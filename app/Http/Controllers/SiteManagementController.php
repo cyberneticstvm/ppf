@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Logo;
 use App\Models\Official;
+use App\Models\Profession;
+use App\Models\Qualification;
 use App\Models\Slider;
+use App\Models\Specialization;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -162,5 +165,134 @@ class SiteManagementController extends Controller
     {
         Official::findOrFail(decrypt($id))->delete();
         return redirect()->route('official')->with("success", "Official deleted successfully!");
+    }
+
+    public function iindex()
+    {
+        $industries = Specialization::all();
+        return view('admin.misc.industry.index', compact('industries'));
+    }
+
+    public function icreate()
+    {
+        return view('admin.misc.industry.create');
+    }
+
+    public function istore(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:specializations,name',
+        ]);
+        Specialization::insert([
+            'name' => $request->name,
+        ]);
+        return redirect()->route('industry')->with("success", "Industry / Specialization created successfully!");
+    }
+
+    public function iedit(string $id)
+    {
+        $industry = Specialization::findOrFail(decrypt($id));
+        return view('admin.misc.industry.edit', compact('industry'));
+    }
+
+    public function iupdate(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:specializations,name,' . $id,
+        ]);
+        Specialization::where('id', $id)->update(['name' => $request->name]);
+        return redirect()->route('industry')->with("success", "Industry / Specialization updated successfully!");
+    }
+
+    public function idestroy(string $id)
+    {
+        Specialization::findOrFail(decrypt($id))->delete();
+        return redirect()->route('industry')->with("success", "Industry / Specialization deleted successfully!");
+    }
+
+    public function pindex()
+    {
+        $profession = Profession::all();
+        return view('admin.misc.profession.index', compact('profession'));
+    }
+
+    public function pcreate()
+    {
+        return view('admin.misc.profession.create');
+    }
+
+    public function pstore(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:professions,name',
+        ]);
+        Profession::insert([
+            'name' => $request->name,
+        ]);
+        return redirect()->route('profession')->with("success", "Profession created successfully!");
+    }
+
+    public function pedit(string $id)
+    {
+        $profession = Profession::findOrFail(decrypt($id));
+        return view('admin.misc.profession.edit', compact('profession'));
+    }
+
+    public function pupdate(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:professions,name,' . $id,
+        ]);
+        Profession::where('id', $id)->update(['name' => $request->name]);
+        return redirect()->route('profession')->with("success", "Profession updated successfully!");
+    }
+
+    public function pdestroy(string $id)
+    {
+        Profession::findOrFail(decrypt($id))->delete();
+        return redirect()->route('profession')->with("success", "Profession deleted successfully!");
+    }
+
+    public function qindex()
+    {
+        $qualifications = Qualification::all();
+        return view('admin.misc.qualification.index', compact('qualifications'));
+    }
+
+    public function qcreate()
+    {
+        return view('admin.misc.qualification.create');
+    }
+
+    public function qstore(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:qualifications,name',
+        ]);
+        Qualification::insert([
+            'name' => $request->name,
+        ]);
+        return redirect()->route('qualification')->with("success", "Qualification created successfully!");
+    }
+
+    public function qedit(string $id)
+    {
+        $qualification = Qualification::findOrFail(decrypt($id));
+        return view('admin.misc.qualification.edit', compact('qualification'));
+    }
+
+    public function qupdate(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:qualifications,name,' . $id,
+        ]);
+        Qualification::where('id', $id)->update(['name' => $request->name]);
+        return redirect()->route('qualification')->with("success", "Qualification updated successfully!");
+    }
+
+    public function qdestroy(string $id)
+    {
+        Qualification::findOrFail(decrypt($id))->delete();
+        return redirect()->route('qualification')->with("success", "Qualification deleted successfully!");
     }
 }

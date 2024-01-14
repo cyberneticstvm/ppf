@@ -100,7 +100,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="">Specialization</label>
+                                <label class="">Industry / Specialization</label>
                                 {{ html()->select('specialization', $specs->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
                                 @error('specialization')
                                 <small class="text-danger">{{ $errors->first('specialization') }}</small>

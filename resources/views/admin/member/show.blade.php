@@ -119,7 +119,7 @@
                                         <div class="row details-about">
                                             <div class="col-sm-6">
                                                 <div class="your-details">
-                                                    <h6 class="f-w-600">Specialization:</h6>
+                                                    <h6 class="f-w-600">Industry / Specialization:</h6>
                                                     <p>{{ $member->specialization }}</p>
                                                 </div>
                                             </div>

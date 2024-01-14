@@ -5,10 +5,10 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Manage Logo</h3>
+                    <h3>Manage Logo & Header</h3>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Manage Logo</li>
+                        <li class="breadcrumb-item active">Manage Logo & Header</li>
                     </ol>
                 </div>
 
@@ -40,6 +40,20 @@
                                         {{ html()->text('alt_text', $logo->alt_text)->class('form-control')->placeholder('Alt Text') }}
                                         @error('alt_text')
                                         <small class="text-danger">{{ $errors->first('alt_text') }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0 req" for="mobile">Mobile </label>
+                                        {{ html()->text('mobile', $logo->mobile)->class('form-control')->placeholder('Mobile')->maxlength('15') }}
+                                        @error('mobile')
+                                        <small class="text-danger">{{ $errors->first('mobile') }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="col-form-label pt-0 req" for="email">Email </label>
+                                        {{ html()->email('email', $logo->email)->class('form-control')->placeholder('Email') }}
+                                        @error('email')
+                                        <small class="text-danger">{{ $errors->first('email') }}</small>
                                         @enderror
                                     </div>
                                 </div>

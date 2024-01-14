@@ -108,7 +108,7 @@
                                     <span class=" icon-phone mid_icon"></span>
                                     <div class="text">
                                        <h4>Requesting a call:</h4>
-                                       <p><a href="tel:+96566935862">+965 66935862</a></p>
+                                       <p><a href="tel:{{ logo()->mobile }}">{{ logo()->mobile }}</a></p>
                                     </div>
                                  </div>
                               </div>
@@ -117,7 +117,7 @@
                                     <span class="icon-email mid_icon"></span>
                                     <div class="text">
                                        <h4>Email us:</h4>
-                                       <p><a href="mailto:ppfk@ppfkuwait.org">ppfk@ppfkuwait.org</a></p>
+                                       <p><a href="mailto:{{ logo()->email }}">{{ logo()->email }}</a></p>
                                     </div>
                                  </div>
                               </div>

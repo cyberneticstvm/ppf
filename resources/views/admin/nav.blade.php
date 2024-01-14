@@ -81,7 +81,7 @@
                         <ul class="nav-submenu menu-content">
                             <!--<li><a href="">Import Members</a></li>-->
                             <li><a href="{{ route('category') }}">Manage Category</a></li>
-                            <li><a href="{{ route('logo') }}">Manage Logo</a></li>
+                            <li><a href="{{ route('logo') }}">Manage Logo & Header</a></li>
                             <li><a href="{{ route('slider') }}">Manage Home Sliders</a></li>
                             <li><a href="{{ route('about') }}">Manage About Us</a></li>
                             <li><a href="{{ route('official') }}">Manage Officials</a></li>

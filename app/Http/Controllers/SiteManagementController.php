@@ -20,15 +20,19 @@ class SiteManagementController extends Controller
     public function logoUpdate(Request $request)
     {
         $this->validate($request, [
-            'alt_text' => 'required',
+            'logo' => 'nullable|mimes:jpg,jpeg,png,webp|max:1024',
+            'alt_text' => 'nullable',
+            'mobile' => 'nullable',
+            'email' => 'nullable|email',
         ]);
         $input = $request->all();
+        $input['logo'] = logo()->logo;
         if ($request->file('logo')) :
             $url = uploadFile($request->file('logo'), $path = 'ppf-kuwait/website/logo');
             $input['logo'] = $url;
         endif;
-        Logo::findOrFail(decrypt($request->logo_id))->update(['logo' => $input['logo'], 'alt_text' => $input['alt_text'], 'updated_at' => Carbon::now()]);
-        return redirect()->route('logo')->with("success", "Logo updated successfully");
+        Logo::findOrFail(decrypt($request->logo_id))->update(['logo' => $input['logo'], 'alt_text' => $input['alt_text'], 'mobile' => $request->mobile, 'email' => $request->email, 'updated_at' => Carbon::now()]);
+        return redirect()->route('logo')->with("success", "Logo and header updated successfully");
     }
 
     public function slider()

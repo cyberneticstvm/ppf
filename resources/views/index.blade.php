@@ -34,6 +34,20 @@
         </div>
     </section>
     <!---slider-end--->
+    @if($adt)
+    <!--===============spacing==============-->
+    <div class="pd_top_80"></div>
+    <!--===============spacing==============-->
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <a href="{{ $adt->url ?? '#' }}" target="_blank"><img src="{{ ($adt && $adt->image) ? asset($adt->image) : '' }}" class="img-fluid" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
     <!--===============spacing==============-->
     <div class="pd_top_80"></div>
     <!--===============spacing==============-->
@@ -52,8 +66,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events.all', encrypt(11)) }}">View</a></h2>
-                            <div class="tag">Upcoming Events</div>
+                            <h2><a href="{{ route('events.all', encrypt(11)) }}">Upcoming Events</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>
@@ -66,8 +80,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events.all', encrypt(15)) }}">View</a></h2>
-                            <div class="tag">Benevolent Activities</div>
+                            <h2><a href="{{ route('events.all', encrypt(15)) }}">Benevolent Activities</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>
@@ -80,8 +94,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events') }}">View</a></h2>
-                            <div class="tag">Completed Events</div>
+                            <h2><a href="{{ route('events') }}">Completed Events</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>
@@ -99,8 +113,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('galleries') }}">View</a></h2>
-                            <div class="tag">Galleries</div>
+                            <h2><a href="{{ route('galleries') }}">Galleries</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>
@@ -116,8 +130,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('publications') }}">View</a></h2>
-                            <div class="tag">Publications</div>
+                            <h2><a href="{{ route('publications') }}">Publications</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>
@@ -133,8 +147,8 @@
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events.all', encrypt(4)) }}">View</a></h2>
-                            <div class="tag">Competitions</div>
+                            <h2><a href="{{ route('events.all', encrypt(4)) }}">Competitions</a></h2>
+                            <div class="tag"></div>
                         </div>
                     </div>
                 </div>

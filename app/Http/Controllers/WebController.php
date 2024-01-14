@@ -9,6 +9,7 @@ use App\Models\Benevolent;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
+use App\Models\Logo;
 use App\Models\Official;
 use App\Models\Publication;
 use App\Models\Slider;
@@ -29,7 +30,8 @@ class WebController extends Controller
         $category = Category::where('status', 'active')->get();
         $ads = Advertisement::where('position', 'floating')->where('status', 'active')->latest()->get();
         $adb = Advertisement::where('position', 'bottom')->where('status', 'active')->first();
-        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category', 'ads', 'adb'));
+        $adt = Advertisement::where('position', 'top')->where('status', 'active')->first();
+        return view('index', compact('title', 'sliders', 'events', 'gallery', 'category', 'ads', 'adb', 'adt'));
     }
 
     public function about()

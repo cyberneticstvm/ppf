@@ -1,11 +1,17 @@
 <?php
 
+use App\Models\Logo;
 use App\Models\Membership;
 use App\Models\ScrollingMessage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
+
+function logo()
+{
+    return Logo::findOrFail(1);
+}
 
 function scrollMessage()
 {
@@ -34,7 +40,7 @@ function renewalStatus()
 
 function positions()
 {
-    return array('top' => 'Top', 'right' => 'Right', 'bottom' => 'Bottom', 'left' => 'Left', 'floating' => 'Floating');
+    return array('top' => 'Top', 'bottom' => 'Bottom', 'floating' => 'Floating');
 }
 
 function membershipStatus()

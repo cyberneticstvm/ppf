@@ -97,7 +97,7 @@
                         <div class="col-xl-3 col-lg-2 col-md-12">
                            <div class="logo mid_logo_icon">
                               <a href="/" class="logo_mid">
-                                 <img src="{{ logo()->logo }}" alt="{{ logo()->alt_text }}" class="logo_default">
+                                 <img src="{{ asset(logo()->logo) }}" alt="{{ logo()->alt_text }}" class="logo_default">
                               </a>
                            </div>
                         </div>

@@ -14,14 +14,11 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                 <div class="slider_content pd_top_180 pd_bottom_200">
-                                    <h6 class="animate_up d-inline-block"> Our Vision to Grow Better </h6>
-                                    <h1 class="animate_left"> Inspired <br> Performance </h1>
-                                    <p class="description animate_right"> Duty obligations of business it will
-                                        frequently occur that pleasures <br> have to be repudiated and annoyances
-                                        accepted. </p>
+                                    <h6 class="animate_up d-inline-block"> {!! $item->top_label !!} </h6>
+                                    <h1 class="animate_left"> {!! $item->heading !!} </h1>
+                                    <p class="description animate_right"> {!! $item->description !!} </p>
                                     <div class="button_all animate_down">
-                                        <a href="{{ route('aboutus') }}" rel="nofollow" class="theme-btn one  animated">Read
-                                            More</a>
+                                        <a href="{{ $item->button_url }}" rel="nofollow" class="theme-btn one  animated" target="{{ $item->target }}">{{ $item->button_label }}</a>
                                     </div>
                                 </div>
                             </div>

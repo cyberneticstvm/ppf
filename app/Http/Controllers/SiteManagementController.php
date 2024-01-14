@@ -20,7 +20,7 @@ class SiteManagementController extends Controller
     public function logoUpdate(Request $request)
     {
         $this->validate($request, [
-            'logo' => 'nullable|mimes:jpg,jpeg,png,webp|max:1024',
+            'logo' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
             'alt_text' => 'nullable',
             'mobile' => 'nullable',
             'email' => 'nullable|email',

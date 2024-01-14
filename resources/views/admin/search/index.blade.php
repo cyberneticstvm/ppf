@@ -31,19 +31,19 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Profession </label>
-                                        {{ html()->select('profession', $profs->pluck('name', 'name'), old('profession'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('profession', $profs->pluck('name', 'name'), (old('profession')) ?? $inputs[1])->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Industry / Specialization </label>
-                                        {{ html()->select('specialization', $specs->pluck('name', 'name'), old('specialization'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('specialization', $specs->pluck('name', 'name'), (old('specialization')) ?? $inputs[2])->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Status </label>
-                                        {{ html()->select('approval_status', membershipStatus(), old('approval_status'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('approval_status', membershipStatus(), (old('approval_status')) ?? $inputs[3])->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="status">Membership Type </label>
-                                        {{ html()->select('type', membershipTypes(), old('type'))->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('type', membershipTypes(), (old('type')) ?? $inputs[4])->class('form-control')->placeholder('Select') }}
                                     </div>
                                 </div>
                             </div>

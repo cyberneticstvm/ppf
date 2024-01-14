@@ -16,8 +16,8 @@ class Active
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $status = Membership::where('user_id', $request->user()->id)->first()->approval_status;
-        if ($request->user()->type == 'admin' || ($request->user()->type != 'admin' && $status == 'approved'))
+        $status = (Membership::where('user_id', $request->user()->id)->first()->approval_status) ?? '';
+        if ($request->user()->type == 'admin' || $request->user()->type == 'editor' || (($request->user()->type != 'admin' && $request->user()->type != 'editor') && $status == 'approved'))
             return $next($request);
         else
             return redirect()->back()->withError('User status is ' . $status);

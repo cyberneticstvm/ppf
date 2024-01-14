@@ -107,7 +107,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('category.save');
         Route::get('/edit/{id}', 'edit')->name('category.edit');
         Route::post('/edit/{id}', 'update')->name('category.update');
-        Route::get('/delete/{id}', 'destroy')->name('category.delete');
+        Route::get('/delete/{id}', 'destroy')->name('category.delete')->middleware('delete');
     });
 
     Route::prefix('/gallery')->controller(GalleryController::class)->group(function () {
@@ -116,7 +116,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('gallery.save');
         Route::get('/edit/{id}', 'edit')->name('gallery.edit');
         Route::post('/edit/{id}', 'update')->name('gallery.update');
-        Route::get('/delete/{id}', 'destroy')->name('gallery.delete');
+        Route::get('/delete/{id}', 'destroy')->name('gallery.delete')->middleware('delete');
     });
 
     Route::prefix('/gallery/image')->controller(GalleryImageController::class)->group(function () {
@@ -124,7 +124,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('gallery.image.save');
         Route::get('/edit/{id}', 'edit')->name('gallery.image.edit');
         Route::post('/edit/{id}', 'update')->name('gallery.image.update');
-        Route::get('/delete/{id}', 'destroy')->name('gallery.image.delete');
+        Route::get('/delete/{id}', 'destroy')->name('gallery.image.delete')->middleware('delete');
     });
 
     Route::prefix('/event')->controller(EventController::class)->group(function () {
@@ -133,7 +133,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('event.save');
         Route::get('/edit/{id}', 'edit')->name('event.edit');
         Route::post('/edit/{id}', 'update')->name('event.update');
-        Route::get('/delete/{id}', 'destroy')->name('event.delete');
+        Route::get('/delete/{id}', 'destroy')->name('event.delete')->middleware('delete');
     });
 
     Route::prefix('/benevolent')->controller(BenevolentController::class)->group(function () {
@@ -142,7 +142,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('benevolent.save');
         Route::get('/edit/{id}', 'edit')->name('benevolent.edit');
         Route::post('/edit/{id}', 'update')->name('benevolent.update');
-        Route::get('/delete/{id}', 'destroy')->name('benevolent.delete');
+        Route::get('/delete/{id}', 'destroy')->name('benevolent.delete')->middleware('delete');
     });
 
     Route::prefix('/scrolling')->controller(ScrollingMessageController::class)->group(function () {
@@ -151,7 +151,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('scrolling.save');
         Route::get('/edit/{id}', 'edit')->name('scrolling.edit');
         Route::post('/edit/{id}', 'update')->name('scrolling.update');
-        Route::get('/delete/{id}', 'destroy')->name('scrolling.delete');
+        Route::get('/delete/{id}', 'destroy')->name('scrolling.delete')->middleware('delete');
     });
 
     Route::prefix('/publication')->controller(Publicationcontroller::class)->group(function () {
@@ -160,7 +160,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('publication.save');
         Route::get('/edit/{id}', 'edit')->name('publication.edit');
         Route::post('/edit/{id}', 'update')->name('publication.update');
-        Route::get('/delete/{id}', 'destroy')->name('publication.delete');
+        Route::get('/delete/{id}', 'destroy')->name('publication.delete')->middleware('delete');
     });
 
     Route::prefix('/advertisement')->controller(AdvertisementController::class)->group(function () {
@@ -169,14 +169,14 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'store')->name('advertisement.save');
         Route::get('/edit/{id}', 'edit')->name('advertisement.edit');
         Route::post('/edit/{id}', 'update')->name('advertisement.update');
-        Route::get('/delete/{id}', 'destroy')->name('advertisement.delete');
+        Route::get('/delete/{id}', 'destroy')->name('advertisement.delete')->middleware('delete');
     });
 
     Route::prefix('/thought')->controller(ThoughtController::class)->group(function () {
         Route::get('/', 'index')->name('thought');
         Route::get('/edit/{id}', 'edit')->name('thought.edit');
         Route::post('/edit/{id}', 'update')->name('thought.update');
-        Route::get('/delete/{id}', 'destroy')->name('thought.delete');
+        Route::get('/delete/{id}', 'destroy')->name('thought.delete')->middleware('delete');
     });
 
     Route::prefix('/industry')->controller(SiteManagementController::class)->group(function () {
@@ -185,7 +185,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'istore')->name('industry.save');
         Route::get('/edit/{id}', 'iedit')->name('industry.edit');
         Route::post('/edit/{id}', 'iupdate')->name('industry.update');
-        Route::get('/delete/{id}', 'idestroy')->name('industry.delete');
+        Route::get('/delete/{id}', 'idestroy')->name('industry.delete')->middleware('delete');
     });
 
     Route::prefix('/profession')->controller(SiteManagementController::class)->group(function () {
@@ -194,7 +194,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'pstore')->name('profession.save');
         Route::get('/edit/{id}', 'pedit')->name('profession.edit');
         Route::post('/edit/{id}', 'pupdate')->name('profession.update');
-        Route::get('/delete/{id}', 'pdestroy')->name('profession.delete');
+        Route::get('/delete/{id}', 'pdestroy')->name('profession.delete')->middleware('delete');
     });
 
     Route::prefix('/qualification')->controller(SiteManagementController::class)->group(function () {
@@ -203,7 +203,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'qstore')->name('qualification.save');
         Route::get('/edit/{id}', 'qedit')->name('qualification.edit');
         Route::post('/edit/{id}', 'qupdate')->name('qualification.update');
-        Route::get('/delete/{id}', 'qdestroy')->name('qualification.delete');
+        Route::get('/delete/{id}', 'qdestroy')->name('qualification.delete')->middleware('delete');
     });
 
 
@@ -215,7 +215,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::get('/edit/{id}', 'edit')->name('member.edit');
         Route::post('/edit/{id}', 'update')->name('member.update');
         Route::get('/show/{id}', 'show')->name('member.show');
-        Route::get('/delete/{id}', 'destroy')->name('member.delete');
+        Route::get('/delete/{id}', 'destroy')->name('member.delete')->middleware('delete');
     });
 
     Route::prefix('/logo')->controller(SiteManagementController::class)->group(function () {
@@ -229,7 +229,7 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'sliderStore')->name('slider.save');
         Route::get('/edit/{id}', 'sliderEdit')->name('slider.edit');
         Route::post('/edit/{id}', 'sliderUpdate')->name('slider.update');
-        Route::get('/delete/{id}', 'sliderDestroy')->name('slider.delete');
+        Route::get('/delete/{id}', 'sliderDestroy')->name('slider.delete')->middleware('delete');
     });
 
     Route::prefix('/about')->controller(SiteManagementController::class)->group(function () {
@@ -243,6 +243,6 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/save', 'officialStore')->name('official.save');
         Route::get('/edit/{id}', 'officialEdit')->name('official.edit');
         Route::post('/edit/{id}', 'officialUpdate')->name('official.update');
-        Route::get('/delete/{id}', 'officialDestroy')->name('official.delete');
+        Route::get('/delete/{id}', 'officialDestroy')->name('official.delete')->middleware('delete');
     });
 });

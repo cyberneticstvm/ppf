@@ -70,9 +70,6 @@
                                     <thead>
                                         <th>SL No</th>
                                         <th>Member Name</th>
-                                        <th>Membership ID</th>
-                                        <th>Email</th>
-                                        <th>Primary Contact</th>
                                         <th>Qualification</th>
                                         <th>Specialization</th>
                                         <th>Profession</th>
@@ -84,9 +81,6 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $member->name }}</td>
-                                            <td>{{ $member->membership_number }}</td>
-                                            <td>{{ $member->email }}</td>
-                                            <td>{{ $member->kw_primary_contact_number }}</td>
                                             <td>{{ $member->qualification }}</td>
                                             <td>{{ $member->specialization }}</td>
                                             <td>{{ $member->profession }}</td>

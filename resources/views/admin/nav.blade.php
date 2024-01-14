@@ -3,9 +3,9 @@
         <div class="badge-bottom"><span class="badge badge-primary">New</span></div><a href="javascript:void(0)">
             <h6 class="mt-3 f-14 f-w-600">{{ Auth::user()->name }}</h6>
         </a>
-        <p class="mb-0 font-roboto"><a href="{{ (Auth::user()->type == 'admin') ? route('change.password') : route('change.password.user') }}">Change Password</a></p>
+        <p class="mb-0 font-roboto"><a href="{{ (Auth::user()->type == 'admin' || Auth::user()->type == 'editor') ? route('change.password') : route('change.password.user') }}">Change Password</a></p>
     </div>
-    @if(Auth::user()->type == 'admin')
+    @if(Auth::user()->type == 'admin' || Auth::user()->type == 'editor')
     <nav>
         <div class="main-navbar">
             <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
@@ -59,6 +59,7 @@
                             <li><a href="">Manage Committee</a></li>
                         </ul>
                     </li>-->
+                    @if(Auth::user()->type == 'admin')
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user-plus"></i><span>Member Management</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('member') }}">Registered Members</a></li>
@@ -67,6 +68,7 @@
                             <li><a href="{{ route('member.renewal') }}">Renewed Applications</a></li>
                         </ul>
                     </li>
+                    @endif
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="bell"></i><span>Thoughts</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('thought') }}">Manage Thoughts</a></li>

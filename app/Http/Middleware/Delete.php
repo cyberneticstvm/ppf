@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Admin
+class Delete
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user()->type == 'admin' || $request->user()->type == 'editor')
+        if ($request->user()->type == 'admin')
             return $next($request);
         else
             return redirect()->back()->withError('Info! This feature is permitted to admin members only');

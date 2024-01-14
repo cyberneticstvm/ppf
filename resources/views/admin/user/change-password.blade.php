@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
-                            {{ html()->form('POST', (Auth::user()->type == 'admin') ? route('change.password.update') : route('change.password.user.update') )->class('theme-form')->open() }}
+                            {{ html()->form('POST', (Auth::user()->type == 'admin' || Auth::user()->type == 'editor') ? route('change.password.update') : route('change.password.user.update') )->class('theme-form')->open() }}
                             <div class="card-body">
                                 <div class="row g-3">
                                     <div class="col-md-4">

@@ -33,7 +33,7 @@
                                         @error('logo')
                                         <small class="text-danger">{{ $errors->first('logo') }}</small>
                                         @enderror
-                                        <div class=""><img src="{{ ($logo->logo) ?? '' }}" class="img-fluid" width="25%" alt="{{ $logo->alt_text }}" /></div>
+                                        <div class=""><img src="{{ ($logo->logo) ? asset($logo->logo) : '' }}" class="img-fluid" width="25%" alt="{{ $logo->alt_text }}" /></div>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="alt_text">Alt Text </label>

@@ -635,3 +635,12 @@ iframe {
 .header.style_three .same_column {
   width: 50% !important;
 }
+
+.fixed-header .get_sticky_header {
+  padding: 0px !important;
+}
+
+.header.style_three .header_mid,
+.default_sickty_heaad.style_three .header_mid {
+  border-top: none !important;
+}

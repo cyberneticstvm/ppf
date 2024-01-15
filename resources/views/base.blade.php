@@ -165,6 +165,7 @@
                      </div>
                   </div>
                </div>
+               @include("nav")
                @if(scrollMessage())
                <div class="container-fluid hidden-sm scroolMsg">
                   <div class="row">
@@ -176,7 +177,6 @@
                   </div>
                </div>
                @endif
-               @include("nav")
             </header>
          </div>
          <!----header end----->

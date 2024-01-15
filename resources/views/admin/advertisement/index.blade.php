@@ -30,6 +30,7 @@
                                         <th>SL No</th>
                                         <th>Event Name</th>
                                         <th>Image</th>
+                                        <th>position</th>
                                         <th>Status</th>
                                         <th>Deleted?</th>
                                         <th>Edit</th>
@@ -40,7 +41,8 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td><a href="{{ $item->image }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
+                                            <td>{{ $item->position }}</td>
                                             <td>{!! $item->adStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>
                                             <td class="text-center"><a href="{{ route('advertisement.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>

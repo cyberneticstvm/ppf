@@ -107,7 +107,7 @@
                                  <div class="mid_content one">
                                     <span class=" icon-phone mid_icon"></span>
                                     <div class="text">
-                                       <h4>Requesting a call:</h4>
+                                       <h4>Call Us:</h4>
                                        <p><a href="tel:{{ logo()->mobile }}">{{ logo()->mobile }}</a></p>
                                     </div>
                                  </div>
@@ -116,7 +116,7 @@
                                  <div class="mid_content one">
                                     <span class="icon-email mid_icon"></span>
                                     <div class="text">
-                                       <h4>Email us:</h4>
+                                       <h4>Email Us:</h4>
                                        <p><a href="mailto:{{ logo()->email }}">{{ logo()->email }}</a></p>
                                     </div>
                                  </div>

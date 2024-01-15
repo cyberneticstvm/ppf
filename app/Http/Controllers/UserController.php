@@ -102,6 +102,7 @@ class UserController extends Controller
             'name' => 'Editor',
             'email' => 'ppfk@ppfkuwait.com',
             'password' => bcrypt('ppf@2022###'),
+            'type' => 'editor',
         ]);
         echo "User created successfully";
     }

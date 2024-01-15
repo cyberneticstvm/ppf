@@ -586,7 +586,7 @@ iframe {
 }*/
 .page_header_default {
   min-height: 0 !important;
-  padding: 50px 0 50px !important;
+  padding: 20px 0 20px !important;
 }
 
 .page_header_default .page_header_content .banner_title_inner .title_page {

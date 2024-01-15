@@ -636,7 +636,9 @@ iframe {
   width: 50% !important;
 }
 
-.fixed-header .get_sticky_header {
+.fixed-header .get_sticky_header,
+.header.style_three .navbar_outer,
+.default_sickty_heaad.style_three .navbar_outer {
   padding: 0px !important;
 }
 

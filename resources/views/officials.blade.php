@@ -30,7 +30,7 @@
 <div id="content" class="site-content">
     <section class="team-section bg_light_1">
         <!--===============spacing==============-->
-        <div class="pd_top_90"></div>
+        <div class="pd_top_20"></div>
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">

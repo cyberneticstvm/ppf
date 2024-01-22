@@ -84,7 +84,7 @@
             </div>
         </div>
         <!--===============spacing==============-->
-        <div class="pd_bottom_70"></div>
+        <div class="pd_bottom_20"></div>
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">
@@ -138,7 +138,7 @@
             </div>
         </div>
         <!--===============spacing==============-->
-        <div class="pd_bottom_70"></div>
+        <div class="pd_bottom_20"></div>
         <!--===============spacing==============-->
         <div class="container">
             <div class="row">

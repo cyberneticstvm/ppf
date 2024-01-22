@@ -47,7 +47,27 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                @forelse($officials->where('region', $region->region) as $key => $item)
+                @forelse($officials->where('region', $region->region)->take(3) as $key => $item)
+                <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                    <div class="team_box style_two">
+                        <div class="team_box_outer">
+                            <div class="member_image">
+                                <img src="{{ ($item->image) ? asset($item->image) : asset('/frontend/assets/images/team/avatar.png') }}" alt="Official image" />
+                            </div>
+                            <div class="about_member">
+                                <div class="authour_details">
+                                    <h6>{{ $item->name }}</h6>
+                                    <span>{{ ucwords(str_replace('_', ' ', $item->panel)) }} </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                @endforelse
+            </div>
+            <div class="row justify-content-center">
+                @forelse($officials->where('region', $region->region)->take(3) as $key => $item)
                 <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
                     <div class="team_box style_two">
                         <div class="team_box_outer">

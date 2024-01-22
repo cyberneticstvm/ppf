@@ -52,7 +52,7 @@
                     <div class="team_box style_two">
                         <div class="team_box_outer">
                             <div class="member_image">
-                                <img src="{{ asset($item->image) }}" alt="Official image" />
+                                <img src="{{ ($item->image) ? asset($item->image) : asset('/frontend/images/team/avatar.png') }}" alt="Official image" />
                             </div>
                             <div class="about_member">
                                 <div class="authour_details">

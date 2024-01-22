@@ -48,6 +48,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/about', 'about')->name('aboutus');
         Route::get('/officials', 'officials')->name('officials');
+        Route::get('/unitofficials', 'unitOfficials')->name('unit.officials');
         Route::get('/benevolent', 'benevolent')->name('benevolent');
         Route::get('/events', 'events')->name('events');
         Route::get('/events/all/{id}', 'eventsAll')->name('events.all');
@@ -244,5 +245,14 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::get('/edit/{id}', 'officialEdit')->name('official.edit');
         Route::post('/edit/{id}', 'officialUpdate')->name('official.update');
         Route::get('/delete/{id}', 'officialDestroy')->name('official.delete')->middleware('delete');
+    });
+
+    Route::prefix('/region')->controller(SiteManagementController::class)->group(function () {
+        Route::get('/', 'region')->name('region');
+        Route::get('/create', 'regionCreate')->name('region.create');
+        Route::post('/save', 'regionStore')->name('region.save');
+        Route::get('/edit/{id}', 'regionEdit')->name('region.edit');
+        Route::post('/edit/{id}', 'regionUpdate')->name('region.update');
+        Route::get('/delete/{id}', 'regionDestroy')->name('region.delete')->middleware('delete');
     });
 });

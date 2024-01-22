@@ -35,6 +35,11 @@
                                         <span>Officials</span>
                                     </a>
                                 </li>
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
+                                    <a href="/unitofficials" class="nav-link">
+                                        <span>Unit Officials</span>
+                                    </a>
+                                </li>
                                 <li class="menu-item nav-item {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
                                     <a href="{{ route('membership') }}" class="nav-link">
                                         <span>Membership</span>

@@ -7,6 +7,7 @@ use App\Models\Logo;
 use App\Models\Official;
 use App\Models\Profession;
 use App\Models\Qualification;
+use App\Models\Region;
 use App\Models\Slider;
 use App\Models\Specialization;
 use Carbon\Carbon;
@@ -294,5 +295,62 @@ class SiteManagementController extends Controller
     {
         Qualification::findOrFail(decrypt($id))->delete();
         return redirect()->route('qualification')->with("success", "Qualification deleted successfully!");
+    }
+
+    public function region()
+    {
+        $regions = Region::withTrashed()->latest()->get();
+        return view('admin.region.index', compact('regions'));
+    }
+
+    public function regionCreate()
+    {
+        return view('admin.region.create');
+    }
+
+    public function regionStore(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'panel' => 'required',
+            'region' => 'required',
+            'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
+        ]);
+        $input = $request->all();
+        if ($request->file('image')) :
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/region');
+            $input['image'] = $url;
+        endif;
+        Region::create($input);
+        return redirect()->route('region')->with("success", "Official saved successfully!");
+    }
+
+    public function regionEdit(string $id)
+    {
+        $region = Region::findOrFail(decrypt($id));
+        return view('admin.region.edit', compact('region'));
+    }
+
+    public function regionUpdate(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'panel' => 'required',
+            'region' => 'required',
+            'image' => 'sometimes|required|mimes:jpg,jpeg,png,webp|max:1024',
+        ]);
+        $input = $request->all();
+        if ($request->file('image')) :
+            $url = uploadFile($request->file('image'), $path = 'ppf-kuwait/website/region');
+            $input['image'] = $url;
+        endif;
+        Region::findOrFail($id)->update($input);
+        return redirect()->route('region')->with("success", "Official updated successfully!");
+    }
+
+    public function regionDestroy(string $id)
+    {
+        Region::findOrFail(decrypt($id))->delete();
+        return redirect()->route('region')->with("success", "Official deleted successfully!");
     }
 }

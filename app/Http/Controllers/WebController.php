@@ -12,6 +12,7 @@ use App\Models\Gallery;
 use App\Models\Logo;
 use App\Models\Official;
 use App\Models\Publication;
+use App\Models\Region;
 use App\Models\Slider;
 use App\Models\User;
 use Exception;
@@ -46,6 +47,14 @@ class WebController extends Controller
         $title = "Progressive Professional Forum Kuwait Officials";
         $officials = Official::orderBy('display_order')->get();
         return view('officials', compact('title', 'officials'));
+    }
+
+    public function unitOfficials()
+    {
+        $title = "Progressive Professional Forum Kuwait Unit Officials";
+        $officials = Region::orderBy('display_order')->get();
+        $regions = Region::select('region')->groupBy('region')->get();
+        return view('region', compact('title', 'officials', 'regions'));
     }
 
     public function events()

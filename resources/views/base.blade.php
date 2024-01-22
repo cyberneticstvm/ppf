@@ -458,6 +458,10 @@
                <a href="/officials"> Officials </a>
             </li>
 
+            <li class="floating_menu_text {{ (request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
+               <a href="/unitofficials"> Unit Officials </a>
+            </li>
+
             <li class="floating_menu_text {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
                <a href="{{ route('membership') }}"> Membership </a>
             </li>

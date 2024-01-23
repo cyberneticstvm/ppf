@@ -35,7 +35,7 @@
                                         <span>Officials</span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li class="menu-item  nav-item">
+                                        <li class="menu-item nav-item">
                                             <a href="/officials" class="dropdown-item nav-link">
                                                 <span>Organization</span>
                                             </a>

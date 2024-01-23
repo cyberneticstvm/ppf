@@ -589,6 +589,10 @@ iframe {
   padding: 10px 10px !important;
 }
 
+.page_header_default .page_header_content .banner_title_inner {
+  margin-bottom: 0px !important;
+}
+
 .page_header_default .page_header_content .banner_title_inner .title_page {
   font-size: 35px !important;
 }

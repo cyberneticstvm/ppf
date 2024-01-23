@@ -25,12 +25,12 @@
                                         <span>Home</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item {{ (request()->segment(1) == 'about') ? 'active' : '' }} menu-item-has-children dropdown">
+                                <li class="menu-item nav-item {{ (request()->segment(1) == 'about') ? 'active' : '' }}">
                                     <a href="/about" class="nav-link">
                                         <span>About PPF</span>
                                     </a>
                                 </li>
-                                <li class="menu-item nav-item {{ (request()->segment(1) == 'officials' || request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
+                                <li class="menu-item menu-item-has-children dropdown nav-item {{ (request()->segment(1) == 'officials' || request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
                                     <a href="#" class="dropdown-toggle nav-link">
                                         <span>Officials</span>
                                     </a>

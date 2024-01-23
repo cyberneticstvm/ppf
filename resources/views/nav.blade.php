@@ -31,15 +31,27 @@
                                     </a>
                                 </li>
                                 <li class="menu-item nav-item {{ (request()->segment(1) == 'officials') ? 'active' : '' }}">
-                                    <a href="/officials" class="nav-link">
+                                    <a href="#" class="dropdown-toggle nav-link">
                                         <span>Officials</span>
                                     </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item  nav-item">
+                                            <a href="/officials" class="dropdown-item nav-link">
+                                                <span>Organization</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item  nav-item">
+                                            <a href="/unitofficials" class="dropdown-item nav-link">
+                                                <span>Unit</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="menu-item nav-item {{ (request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
+                                <!--<li class="menu-item nav-item {{ (request()->segment(1) == 'unitofficials') ? 'active' : '' }}">
                                     <a href="/unitofficials" class="nav-link">
                                         <span>Unit Officials</span>
                                     </a>
-                                </li>
+                                </li>-->
                                 <li class="menu-item nav-item {{ (request()->segment(1) == 'membership') ? 'active' : '' }}">
                                     <a href="{{ route('membership') }}" class="nav-link">
                                         <span>Membership</span>

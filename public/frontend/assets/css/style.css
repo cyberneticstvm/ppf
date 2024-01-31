@@ -650,3 +650,7 @@ iframe {
 .default_sickty_heaad.style_three .header_mid {
   border-top: none !important;
 }
+
+.blog_feature_image img {
+  height: 100% !important;
+}

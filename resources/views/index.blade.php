@@ -104,7 +104,7 @@
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/mk.jpg') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/gal.png') }}" class="img" alt="image">
                             <a href="{{ route('galleries') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>

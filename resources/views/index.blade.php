@@ -85,7 +85,7 @@
                 <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/1702523644_8.webp') }}" class="img" alt="image">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/comp-eve.png') }}" class="img" alt="image">
                             <a href="{{ route('events') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>

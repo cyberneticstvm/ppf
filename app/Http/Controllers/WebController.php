@@ -187,11 +187,11 @@ class WebController extends Controller
         return redirect()->route('login')->with("success", "Password has been reset successfully");
     }
 
-    public function test()
+    /*public function test()
     {
         $users = User::leftJoin('memberships as m', 'users.username', 'm.membership_number')->selectRaw("users.id, users.username, users.name, m.user_id")->get();
         foreach ($users as $key => $user) :
             Membership::where('membership_number', $user->username)->update(['user_id' => $user->id]);
         endforeach;
-    }
+    }*/
 }

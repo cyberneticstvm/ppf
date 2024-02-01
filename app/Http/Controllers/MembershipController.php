@@ -136,7 +136,9 @@ class MembershipController extends Controller
             $url = uploadFile($request->file('photo'), $path = 'member/photos');
             $input['photo'] = $url;
         endif;
-        Membership::findOrFail($id)->update($input);
+        $member = Membership::findOrFail($id);
+        $member->update($input);
+        User::where('username', $member->membership_number)->where('type', $request->type)->update(['email' => $request->email]);
         return redirect()->back()->with("success", "Member details updated successfully!");
     }
 

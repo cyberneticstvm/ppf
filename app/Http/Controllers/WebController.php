@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Logo;
+use App\Models\Membership;
 use App\Models\Official;
 use App\Models\Publication;
 use App\Models\Region;
@@ -190,7 +191,7 @@ class WebController extends Controller
     {
         $users = User::leftJoin('memberships as m', 'users.username', 'm.membership_number')->selectRaw("users.id, users.username, users.name, m.user_id")->get();
         foreach ($users as $key => $user) :
-            echo $user->name;
+            Membership::where('membership_number', $user->username)->update(['user_id' => $user->id]);
         endforeach;
     }
 }

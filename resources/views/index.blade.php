@@ -51,10 +51,10 @@
     <section class="image_grid_content style_one image_covered">
         <div class="container">
             <div class="row">
-                <div class="col-12 mb-3">
-                    <h4>Events</h4>
-                </div>
                 <div class="col-md-4">
+                    <div class="mb-3">
+                        <h4>Upcoming Events</h4>
+                    </div>
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/ue.webp') }}" class="img" alt="image">
@@ -69,20 +69,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="mg_image_box">
-                        <div class="image_box">
-                            <img decoding="async" src="{{ asset('frontend/assets/images/home/benevolent.jpg') }}" class="img" alt="image">
-                            <a href="{{ route('events.all', encrypt(15)) }}" class="ab_link">
-                                <span class="icon-right-arrow-long"></span>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h2><a href="{{ route('events.all', encrypt(15)) }}">Benevolent Activities</a></h2>
-                            <div class="tag"></div>
-                        </div>
+                    <div class="mb-3">
+                        <h4>completed Events</h4>
                     </div>
-                </div>
-                <div class="col-md-4">
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/comp-eve.png') }}" class="img" alt="image">
@@ -92,6 +81,23 @@
                         </div>
                         <div class="content">
                             <h2><a href="{{ route('events') }}">Completed Events</a></h2>
+                            <div class="tag"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <h4>Benevolent Activities</h4>
+                    </div>
+                    <div class="mg_image_box">
+                        <div class="image_box">
+                            <img decoding="async" src="{{ asset('frontend/assets/images/home/benevolent.jpg') }}" class="img" alt="image">
+                            <a href="{{ route('events.all', encrypt(15)) }}" class="ab_link">
+                                <span class="icon-right-arrow-long"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h2><a href="{{ route('events.all', encrypt(15)) }}">Benevolent Activities</a></h2>
                             <div class="tag"></div>
                         </div>
                     </div>

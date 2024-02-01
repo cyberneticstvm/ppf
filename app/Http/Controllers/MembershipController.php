@@ -138,7 +138,7 @@ class MembershipController extends Controller
         endif;
         $member = Membership::findOrFail($id);
         $member->update($input);
-        User::where('username', $member->membership_number)->where('type', $request->type)->update(['email' => $request->email]);
+        DB::table('users')->where('username', $member->membership_number)->where('type', $request->type)->update(['email' => $request->email]);
         return redirect()->back()->with("success", "Member details updated successfully!");
     }
 

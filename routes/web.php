@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GalleryImageController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\Publicationcontroller;
 use App\Http\Controllers\ScrollingMessageController;
@@ -66,6 +67,8 @@ Route::middleware(['web'])->group(function () {
         Route::post('/forgot-password', 'forgotPasswordEmail')->name('forgot.password.email');
         Route::get('/reset-password/{token}', 'resetPassword')->name('reset.password');
         Route::post('/reset-password', 'resetPasswordUpdate')->name('forgot.password.update');
+        Route::get('/job/all', 'allJobs')->name('job.all');
+        Route::get('/jobs/single/{id}', 'singleJob')->name('job.single');
     });
 
     Route::prefix('/user/thoughts')->controller(ThoughtController::class)->group(function () {
@@ -255,5 +258,14 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::get('/edit/{id}', 'regionEdit')->name('region.edit');
         Route::post('/edit/{id}', 'regionUpdate')->name('region.update');
         Route::get('/delete/{id}', 'regionDestroy')->name('region.delete')->middleware('delete');
+    });
+
+    Route::prefix('/job')->controller(JobController::class)->group(function () {
+        Route::get('/', 'index')->name('job');
+        Route::get('/create', 'create')->name('job.create');
+        Route::post('/save', 'store')->name('job.save');
+        Route::get('/edit/{id}', 'edit')->name('job.edit');
+        Route::post('/edit/{id}', 'update')->name('job.update');
+        Route::get('/delete/{id}', 'destroy')->name('job.delete')->middleware('delete');
     });
 });

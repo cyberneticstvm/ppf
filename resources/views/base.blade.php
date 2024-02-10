@@ -258,6 +258,7 @@
                                  <li><a href="/membership">Membership</a></li>
                                  <li><a href="/events">Events</a></li>
                                  <li><a href="/publications">Publications</a></li>
+                                 <li><a href="/job/all">Jobs / Community</a></li>
                               </ul>
 
                            </div>

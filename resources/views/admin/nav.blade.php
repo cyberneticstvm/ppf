@@ -44,6 +44,11 @@
                             <li><a href="{{ route('publication') }}">Manage Publications</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="book-open"></i><span>Jobs</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a href="{{ route('job') }}">Manage Jobs</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="bookmark"></i><span>Advertisements</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('advertisement') }}">Manage Advertisents</a></li>

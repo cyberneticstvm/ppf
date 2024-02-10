@@ -9,6 +9,7 @@ use App\Models\Benevolent;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
+use App\Models\Job;
 use App\Models\Logo;
 use App\Models\Membership;
 use App\Models\Official;
@@ -185,6 +186,21 @@ class WebController extends Controller
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
         return redirect()->route('login')->with("success", "Password has been reset successfully");
+    }
+
+    public function allJobs()
+    {
+        $jobs = Job::where('status', 'active')->latest()->get();
+        $title = "Progressive Professional Forum Kuwait Job / Community";
+        return view('jobs', compact('title', 'jobs'));
+    }
+
+    public function singleJob($id)
+    {
+        $job = Job::findOrFail(decrypt($id));
+        $recents = Job::where('id', '!=', $job->id)->latest()->limit(10)->get();
+        $title = $job->name;
+        return view('job-single', compact('job', 'title', 'recents'));
     }
 
     /*public function test()

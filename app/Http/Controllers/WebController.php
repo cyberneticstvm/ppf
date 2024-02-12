@@ -227,6 +227,7 @@ class WebController extends Controller
         echo "success";*/
         foreach ($members as $key => $member) :
             echo $member->email;
+            echo '<br>';
         endforeach;
         die;
     }

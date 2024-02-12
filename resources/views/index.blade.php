@@ -87,17 +87,17 @@
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <h4>Benevolent Activities</h4>
+                        <h4>Benevolent Activities / Jobs</h4>
                     </div>
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/benevolent.jpg') }}" class="img" alt="image">
-                            <a href="{{ route('events.all', encrypt(15)) }}" class="ab_link">
+                            <a href="{{ route('jobeno') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('events.all', encrypt(15)) }}">Benevolent Activities</a></h2>
+                            <h2><a href="{{ route('jobeno') }}">Benevolent Activities / Jobs</a></h2>
                             <div class="tag"></div>
                         </div>
                     </div>

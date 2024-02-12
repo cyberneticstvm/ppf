@@ -52,6 +52,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/officials', 'officials')->name('officials');
         Route::get('/unitofficials', 'unitOfficials')->name('unit.officials');
         Route::get('/benevolent', 'benevolent')->name('benevolent');
+        Route::get('/jobeno', 'jobeno')->name('jobeno');
         Route::get('/events', 'events')->name('events');
         Route::get('/events/all/{id}', 'eventsAll')->name('events.all');
         Route::get('/events/single/{id}', 'eventSingle')->name('event.single');

@@ -73,6 +73,12 @@ class WebController extends Controller
         return view('benevolent', compact('title', 'activities'));
     }
 
+    public function jobeno()
+    {
+        $title = "Progressive Professional Forum Kuwait Benevolent Activities / Jobs";
+        return view('jobeno', compact('title'));
+    }
+
     public function eventsAll($id)
     {
         $events = Event::where('category_id', decrypt($id))->where('status', 'active')->orderBy('display_order')->get();

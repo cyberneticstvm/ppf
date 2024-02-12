@@ -219,7 +219,7 @@ class WebController extends Controller
 
     public function sendnotificationemail()
     {
-        $members = Membership::whereNotNull('email')->get();
+        $members = Membership::whereNotNull('email')->whereNot('email', '')->get();
         dd($members);
         die;
     }

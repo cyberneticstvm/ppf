@@ -220,15 +220,15 @@ class WebController extends Controller
 
     public function sendnotificationemail()
     {
-        $members = Membership::whereNotNull('email')->whereNot('email', '')->offset(48)->limit(25)->get();
-        /*foreach ($members as $key => $member) :
+        $members = Membership::whereNotNull('email')->whereNot('email', '')->offset(53)->limit(20)->get();
+        foreach ($members as $key => $member) :
             Mail::to($member->email)->send(new NotificationEmail($member));
         endforeach;
-        echo "success";*/
-        foreach ($members as $key => $member) :
+        echo "success";
+        /*foreach ($members as $key => $member) :
             echo $member->email;
             echo '<br>';
         endforeach;
-        die;
+        die;*/
     }
 }

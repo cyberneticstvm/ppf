@@ -47,6 +47,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::controller(WebController::class)->group(function () {
         /*Route::get('/test', 'test')->name('test');*/
+        Route::get('/sendnotificationemail', 'sendnotificationemail')->name('sendnotificationemail');
         Route::get('/', 'index')->name('index');
         Route::get('/about', 'about')->name('aboutus');
         Route::get('/officials', 'officials')->name('officials');

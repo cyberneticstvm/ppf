@@ -216,4 +216,11 @@ class WebController extends Controller
             Membership::where('membership_number', $user->username)->update(['user_id' => $user->id]);
         endforeach;
     }*/
+
+    public function sendnotificationemail()
+    {
+        $members = Membership::whereNotNull('email')->get();
+        dd($members);
+        die;
+    }
 }

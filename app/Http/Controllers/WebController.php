@@ -222,7 +222,7 @@ class WebController extends Controller
     {
         $members = Membership::whereNotNull('email')->whereNot('email', '')->offset(0)->limit(3)->get();
         foreach ($members as $key => $member) :
-            Mail::to($member->email)->send(new NotificationEmail($member));
+            Mail::to($member->email)->cc('mail@cybernetics.me')->send(new NotificationEmail($member));
         endforeach;
         echo "success";
     }

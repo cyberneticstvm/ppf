@@ -225,4 +225,5 @@ class WebController extends Controller
             Mail::to($member->email)->send(new NotificationEmail($member));
         endforeach;
         echo "success";
+    }
 }

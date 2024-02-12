@@ -107,7 +107,7 @@
                                                     <span class="date_in_number">{{ $item->created_at?->format('d, F Y') }}</span>
                                                 </div>
                                                 <div class="source">
-                                                    <h2 class="title"><a href="{{ route('publication.single', encrypt($item->id)) }}" rel="bookmark">{{ $item->title }}</a></h2>
+                                                    <h2 class="title"><a href="{{ route('job.single', encrypt($item->id)) }}" rel="bookmark">{{ $item->title }}</a></h2>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="content_inner">
                                     <p class="post-date"><span class="icon-calendar"></span>{{ $item->created_at?->format('d, F Y') }}</p>
-                                    <h3><a href="{{ route('publication.single', encrypt($item->id)) }}">{{ $item->title }}</a></h3>
+                                    <h3><a href="{{ route('job.single', encrypt($item->id)) }}">{{ $item->title }}</a></h3>
                                 </div>
                             </div>
                             @empty

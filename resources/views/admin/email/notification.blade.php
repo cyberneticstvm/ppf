@@ -13,7 +13,7 @@
 
     If you know your password and want to change the same, sign in using existing credentials and use Change Password option which you can see the left upper corner and below the profile image.<br />
 
-    You are kindly requested to login using member login and update your credentials. Please use dropdown menu to select your Industry/specialisation and profession fields. <br /><br /><br />
+    You are kindly requested to login using member login and update your credentials. Please use dropdown menu to select your Industry/specialisation, Qualification and profession fields. <br /><br /><br />
 
     Regards,<br />
     PPF Ex Com

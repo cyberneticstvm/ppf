@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a href="{{ ($job->document) ? $job->document : '#' }}" target="_blank">Attachment</a>
+                            <a href="{{ ($job->document) ? asset($job->document) : '#' }}" target="_blank">Attachment</a>
                         </div>
                         <div class="related_post">
                             <div class="title_sections_inner">

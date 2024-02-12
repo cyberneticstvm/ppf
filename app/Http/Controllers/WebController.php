@@ -220,9 +220,9 @@ class WebController extends Controller
 
     public function sendnotificationemail()
     {
-        $members = Membership::whereNotNull('email')->whereNot('email', '')->offset(0)->limit(3)->get();
+        $members = Membership::whereNotNull('email')->whereNot('email', '')->offset(3)->limit(20)->get();
         foreach ($members as $key => $member) :
-            Mail::to($member->email)->cc('mail@cybernetics.me')->send(new NotificationEmail($member));
+            Mail::to($member->email)->send(new NotificationEmail($member));
         endforeach;
         echo "success";
     }

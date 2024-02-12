@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    Dear PPF member,<br /><br />
+    Dear {{ $member->name }},<br /><br />
     Members can login to our PPF website <a href="https://ppfkuwait.org/login" target="_blank">www.ppfkuwait.org</a><br />
 
     login ID is your membership number. If you forgot your password, you can use change password option on the login screen to request the password reset link. Once your request has been completed, the password reset link will be sent to your registered email id.<br />

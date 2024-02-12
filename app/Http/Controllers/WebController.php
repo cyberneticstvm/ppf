@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ForgotPasswordEmail;
+use App\Mail\NotificationEmail;
 use App\Models\About;
 use App\Models\Advertisement;
 use App\Models\Benevolent;
@@ -220,7 +221,9 @@ class WebController extends Controller
     public function sendnotificationemail()
     {
         $members = Membership::whereNotNull('email')->whereNot('email', '')->get();
-        dd($members);
-        die;
+        foreach ($members as $key => $member) :
+            Mail::to($member->email)->send(new NotificationEmail($member));
+        endforeach;
+        echo "success";
     }
 }

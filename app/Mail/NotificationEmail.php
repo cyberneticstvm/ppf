@@ -16,9 +16,10 @@ class NotificationEmail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $member;
+    public function __construct($member)
     {
-        //
+        $this->member = $member;
     }
 
     /**
@@ -27,7 +28,7 @@ class NotificationEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Notification Email',
+            subject: 'Request for Profile and Credentials Update',
         );
     }
 
@@ -37,7 +38,8 @@ class NotificationEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'admin.email.notification',
+            with: ['member' => $this->member]
         );
     }
 

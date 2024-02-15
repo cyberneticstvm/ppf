@@ -29,7 +29,7 @@
                                     <thead>
                                         <th>SL No</th>
                                         <th>Job Title</th>
-                                        <th>Contry</th>
+                                        <th>Country</th>
                                         <th>Image</th>
                                         <th>Document</th>
                                         <th>Status</th>

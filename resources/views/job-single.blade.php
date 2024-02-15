@@ -36,7 +36,7 @@
                     <section class="blog_single_details_outer">
                         <div class="single_content_upper">
                             <div class="blog_feature_image">
-                                <img src="{{ asset($job->image) }}" class="wp-post-image" alt="img">
+                                <img src="{{ ($job->image) ? asset($job->image) : asset('frontend/assets/images/home/job.webp') }}" class="wp-post-image" alt="img">
                             </div>
                             <!--===============spacing==============-->
                             <div class="pd_bottom_20"></div>
@@ -97,7 +97,7 @@
                                     <div class="swiper-slide">
                                         <div class="news_box default_style list_view normal_view clearfix has_images">
                                             <div class="image img_hover-1">
-                                                <img src="{{ asset($item->image) }}" class="img-fluid" alt="img">
+                                                <img src="{{ {{ ($item->image) ? asset($item->image) : asset('frontend/assets/images/home/job.webp') }} }}" class="img-fluid" alt="img">
                                                 <a href="#" class="categories">
                                                     <i class="icon-folder"></i>{{ $item->country->name }}
                                                 </a>

@@ -40,7 +40,7 @@
                             </div>
                             <div class="contnet">
                                 <h3>Office Bearers</h3>
-                                <p>President: <a href="tel:+96566935862"> +965 66935862</a><br />Gen. Secretary: <a href="tel:+96565971184"> +965 65971184</a></p>
+                                <p>President: <a href="tel:+96594094335"> +965 94094335</a><br />Gen. Secretary: <a href="tel:+96566845676"> +965 66845676</a></p>
                             </div>
                         </div>
                     </div>

@@ -227,7 +227,7 @@
                                  <h6> Contact</h6>
                                  <div class="con_content">
                                     <h5> Phone :</h5>
-                                    <a href="tel:+96566935862"> +965 66935862</a>
+                                    <a href="tel:+96566845676"> +965 66845676</a>
                                  </div>
                                  <div class="con_content">
                                     <h5> Mail Us :</h5>

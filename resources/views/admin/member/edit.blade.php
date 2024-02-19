@@ -299,7 +299,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0" for="approved_date">Approved Date </label>
-                                        {{ html()->date('approved_date', $member->approved_date?->format('Y-m-d') ?? date('Y-m-d'))->class('form-control') }}
+                                        {{ html()->date('approved_date', ($member->approval_status == 'approved') ? $member->approved_date?->format('Y-m-d') : date('Y-m-d'))->class('form-control') }}
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0" for="next_renewal_date">Next Renewal Date </label>

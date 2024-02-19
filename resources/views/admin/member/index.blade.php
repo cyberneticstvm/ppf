@@ -44,7 +44,7 @@
                                             <td>{{ ucfirst($item->type) }} Member</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->kw_primary_contact_number }}</td>
-                                            <td>{{ $item->approved_date?->format('d/M/Y') }}</td>
+                                            <td>{{ ($item->approval_status == 'approved') ? $item->approved_date?->format('d/M/Y') : '' }}</td>
                                             <td class="text-center"><a href="{{ route('member.show', encrypt($item->id)) }}"><i class="fa fa-eye text-info fa-lg"></i></a></td>
                                             <td class="text-center"><a href="{{ route('member.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>
                                             <td class="text-center"><a href="{{ route('member.delete', encrypt($item->id)) }}" class="dlt"><i class="fa fa-trash text-danger fa-lg"></i></a></td>

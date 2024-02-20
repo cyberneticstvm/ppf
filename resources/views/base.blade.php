@@ -167,7 +167,7 @@
                </div>
                @include("nav")
                @if(scrollMessage())
-               <div class="container-fluid hidden-sm scroolMsg">
+               <div class="container-fluid scroolMsg">
                   <div class="row">
                      <div class="col-12 p-3 bg-info text-white">
                         <marquee>

@@ -282,6 +282,7 @@
                                         <label class="col-form-label pt-0" for="child4_name">Child4 Name </label>
                                         {{ html()->text('child4_name', $member->child4_name)->class('form-control')->placeholder('Child4 Name') }}
                                     </div>
+                                    @if(Auth::user()->type == 'admin' || Auth::user()->type == 'editor')
                                     <h4 class="mt-3">Other Details</h4>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="renewal_status">Renewal Status </label>
@@ -305,6 +306,7 @@
                                         <label class="col-form-label pt-0" for="next_renewal_date">Next Renewal Date </label>
                                         {{ html()->date('next_renewal_date', $member->next_renewal_date?->format('Y-m-d') ?? date('Y-m-d', strtotime('+1 year')))->class('form-control') }}
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="card-footer text-end">

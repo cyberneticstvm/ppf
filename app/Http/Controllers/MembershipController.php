@@ -10,6 +10,7 @@ use App\Models\Qualification;
 use App\Models\Specialization;
 use App\Models\User;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -85,18 +86,22 @@ class MembershipController extends Controller
         $input['kw_secondary_contact_number'] = $request->kw_secondary_contact_number_country . $request->kw_secondary_contact_number;
         $input['membership_number'] = generateMembershipNumber($request->type)->mn;
         $input['approval_status'] = 'pending';
-        DB::transaction(function () use ($request, $input) {
-            $user = User::create([
-                'name' => $request->name,
-                'username' => $input['membership_number'],
-                'email' => $request->email,
-                'password' => bcrypt($input['membership_number']),
-                'type' => $request->type,
-            ]);
-            $input['user_id'] = $user->id;
-            Membership::create($input);
-        });
-        Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
+        try {
+            DB::transaction(function () use ($request, $input) {
+                $user = User::create([
+                    'name' => $request->name,
+                    'username' => $input['membership_number'],
+                    'email' => $request->email,
+                    'password' => bcrypt($input['membership_number']),
+                    'type' => $request->type,
+                ]);
+                $input['user_id'] = $user->id;
+                Membership::create($input);
+            });
+            Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
+        }
         return redirect()->back()->with("success", "Member registration success!");
     }
 
@@ -150,7 +155,9 @@ class MembershipController extends Controller
      */
     public function destroy(string $id)
     {
-        Membership::findOrFail(decrypt($id))->delete();
+        $member = Membership::findOrFail(decrypt($id));
+        //User::where('username', $member->membership_number)->delete();
+        $member->delete();
         return redirect()->back()->with("success", "Member deleted successfully!");
     }
 }

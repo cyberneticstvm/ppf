@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RegistrationConfirmationEmail;
+use App\Models\Governorate;
 use App\Models\Membership;
 use App\Models\Profession;
 use App\Models\Qualification;
@@ -57,8 +58,9 @@ class MembershipController extends Controller
         $specs = Specialization::all();
         $quals = Qualification::all();
         $profs = Profession::all();
+        $govs = Governorate::all();
         $title = "Progressive Professional Forum - Membership";
-        return view('memberships', compact('type', 'title', 'specs', 'quals', 'profs'));
+        return view('memberships', compact('type', 'title', 'specs', 'quals', 'profs', 'govs'));
     }
 
     /**
@@ -116,7 +118,8 @@ class MembershipController extends Controller
         $specs = Specialization::all();
         $quals = Qualification::all();
         $profs = Profession::all();
-        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs'));
+        $govs = Governorate::all();
+        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs'));
     }
 
     /**

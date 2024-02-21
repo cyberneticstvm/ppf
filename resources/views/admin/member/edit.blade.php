@@ -177,7 +177,8 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0 " for="governorate">Governorate </label>
-                                        {{ html()->text('governorate', $member->governorate)->class('form-control')->placeholder('Governorate') }}
+                                        {{ html()->select('governorate', $govs->pluck('name', 'name'), old('governorate'))->class('form-control')->placeholder('Select') }}
+                                        <!--{{ html()->text('governorate', $member->governorate)->class('form-control')->placeholder('Governorate') }}-->
                                     </div>
                                     <h4 class="mt-3">Address in India</h4>
                                     <div class="col-md-2">

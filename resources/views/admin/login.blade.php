@@ -86,7 +86,7 @@
                             <h5>Change Password</h5>
                         </div>
 
-                        <p>Forgot Passwordt?<a class="ms-2" href="{{ route('forgot.password') }}">Request Password Reset Link</a></p>
+                        <p>Forgot Password?<a class="ms-2" href="{{ route('forgot.password') }}">Request Password Reset Link</a></p>
                         {{ html()->form()->close() }}
                     </div>
                 </div>

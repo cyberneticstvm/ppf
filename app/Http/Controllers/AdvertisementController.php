@@ -76,7 +76,7 @@ class AdvertisementController extends Controller
         ]);
         $input = $request->all();
         if ($request->file('image')) :
-            $url = uploadFile($request->file('image'), $path = 'event');
+            $url = uploadFile($request->file('image'), $path = 'advertisement');
             $input['image'] = $url;
         endif;
         $input['updated_by'] = $request->user()->id;

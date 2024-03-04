@@ -31,9 +31,10 @@
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="row mt-5">
-                    <ol>
-                        @forelse($jobs as $key => $item)
-                        <!--<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-12">
+                        <ul>
+                            @forelse($jobs as $key => $item)
+                            <!--<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="mg_image_box">
                             <div class="image_box">
                                 <img decoding="async" src="{{ ($item->image) ? asset($item->image) : asset('frontend/assets/images/home/job.webp') }}" class="img" alt="{{ $item->title }}">
@@ -47,11 +48,12 @@
                         </div>
                         </div>-->
 
-                        <li><a href="{{ route('job.single', encrypt($item->id)) }}">{{ $item->title }}</a></li>
+                            <li><a href="{{ route('job.single', encrypt($item->id)) }}">{{ $item->title }}</a></li>
 
-                        @empty
-                        @endforelse
-                    </ol>
+                            @empty
+                            @endforelse
+                        </ul>
+                    </div>
                 </div>
                 <!--===============spacing==============-->
                 <div class="pd_bottom_40"></div>

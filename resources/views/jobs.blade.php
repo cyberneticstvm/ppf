@@ -27,7 +27,7 @@
     </div>
 </div>
 <div id="content" class="site-content ">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row default_row">
             <div class="full_width_box">
                 <div class="row mt-5">

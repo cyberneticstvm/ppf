@@ -53,6 +53,7 @@
                             @empty
                             @endforelse
                         </ul>
+                        {!! $jobs->withQueryString()->links('pagination::bootstrap-5') !!}
                     </div>
                 </div>
                 <!--===============spacing==============-->

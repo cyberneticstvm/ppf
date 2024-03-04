@@ -197,7 +197,7 @@ class WebController extends Controller
 
     public function allJobs()
     {
-        $jobs = Job::where('status', 'active')->latest()->paginate(10);
+        $jobs = Job::where('status', 'active')->latest()->paginate(25);
         $title = "Progressive Professional Forum Kuwait Job / Community";
         return view('jobs', compact('title', 'jobs'));
     }

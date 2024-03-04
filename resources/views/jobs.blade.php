@@ -48,7 +48,7 @@
                         </div>
                         </div>-->
 
-                            <li><a href="{{ route('job.single', encrypt($item->id)) }}">{{ $item->title }}</a></li>
+                            <li><a href="{{ route('job.single', encrypt($item->id)) }}" class="text-dark">{{ $item->title }}</a></li>
 
                             @empty
                             @endforelse

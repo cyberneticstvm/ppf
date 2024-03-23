@@ -132,6 +132,7 @@
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{ route('user.profile.show', encrypt(member()->id)) }}">View Profile</a></li>
                             <li><a href="{{ route('user.profile.edit', encrypt(member()->id)) }}">Edit Profile</a></li>
+                            <li><a href="{{ route('user.profile.settings', encrypt(member()->id)) }}">Settings</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-main-title">

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Mail\RegistrationConfirmationEmail;
 use App\Models\Governorate;
 use App\Models\Membership;
+use App\Models\MemberSkillSet;
 use App\Models\Profession;
 use App\Models\Qualification;
+use App\Models\SkillSet;
 use App\Models\Specialization;
 use App\Models\User;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -124,7 +127,9 @@ class MembershipController extends Controller
         $quals = Qualification::all();
         $profs = Profession::all();
         $govs = Governorate::all();
-        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs'));
+        $skills = SkillSet::orderBy('name')->get();
+        $memberskills = MemberSkillSet::where('member_id', decrypt($id))->get();
+        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs', 'skills', 'memberskills'));
     }
 
     /**
@@ -139,14 +144,31 @@ class MembershipController extends Controller
             'email' => 'required|email:rfs,dns|unique:memberships,email,' . $id,
             'type' => 'required',
         ]);
-        $input = $request->all();
+        $input = $request->except(array('skills'));
         if ($request->file('photo')) :
             $url = uploadFile($request->file('photo'), $path = 'member/photos');
             $input['photo'] = $url;
         endif;
-        $member = Membership::findOrFail($id);
-        $member->update($input);
-        User::where('username', $member->membership_number)->update(['email' => $request->email, 'type' => $request->type]);
+        try {
+            DB::transaction(function () use ($id, $input, $request) {
+                $member = Membership::findOrFail($id);
+                $member->update($input);
+                if ($request->skills) :
+                    $skills = [];
+                    foreach ($request->skills as $key => $skill) :
+                        $skills[] = [
+                            'skill_id' => $skill,
+                            'member_id' => $id,
+                        ];
+                    endforeach;
+                    MemberSkillSet::where('member_id', $id)->delete();
+                    MemberSkillSet::insert($skills);
+                endif;
+                User::where('username', $member->membership_number)->update(['email' => $request->email, 'type' => $request->type]);
+            });
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage());
+        }
         return redirect()->back()->with("success", "Member details updated successfully!");
     }
 

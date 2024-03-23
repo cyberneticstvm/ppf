@@ -11,6 +11,7 @@
   <link rel="icon" href="{{ asset('/backend/assets/images/favicon.ico') }}" type="image/x-icon">
   <link rel="shortcut icon" href="{{ asset('/backend/assets/images/favicon.ico') }}" type="image/x-icon">
   <title>PPF Kuwait - Admin Portal</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <!-- Google font-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
@@ -27,6 +28,7 @@
   <!-- Feather icon-->
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/feather-icon.css') }}">
   <!-- Plugins css start-->
+  <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/select2.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/datatables.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/summernote.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/animate.css') }}">
@@ -34,6 +36,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/date-picker.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/prism.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/vector-map.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/drawer/bootstrap-drawer.css') }}">
   <!-- Plugins css Ends-->
   <!-- Bootstrap css-->
   <link rel="stylesheet" type="text/css" href="{{ asset('/backend/assets/css/bootstrap.css') }}">
@@ -130,6 +133,9 @@
   <script src="{{ asset('/backend/assets/js/datepicker/date-picker/datepicker.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/datepicker/date-picker/datepicker.en.js') }}"></script>
   <script src="{{ asset('/backend/assets/js/datepicker/date-picker/datepicker.custom.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/drawer/bootstrap-drawer.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/select2/select2.full.min.js') }}"></script>
+  <script src="{{ asset('/backend/assets/js/select2/select2-custom.js') }}"></script>
   <!-- Plugins JS Ends-->
   <!-- Theme js-->
   <script src="{{ asset('/backend/assets/js/script.js') }}"></script>

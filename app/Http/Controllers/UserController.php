@@ -6,11 +6,14 @@ use App\Models\Membership;
 use App\Models\User;
 use App\Models\Profession;
 use App\Models\Qualification;
+use App\Models\SkillSet;
 use App\Models\Specialization;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -63,6 +66,44 @@ class UserController extends Controller
         ]);
         $user = User::findOrFail(Auth::id())->update(['password' => bcrypt($request->password)]);
         return redirect()->back()->with("success", "Password has been reset successfully");
+    }
+
+    public function settings()
+    {
+        $member = Membership::where('user_id', Auth::id())->firstOrFail();
+        return view('admin.settings.index', compact('member'));
+    }
+
+    public function settingsUpdate(Request $request)
+    {
+        Membership::where('user_id', Auth::id())->update([
+            'show_mobile' => ($request->show_mobile) ?? 0,
+            'show_email' => ($request->show_email) ?? 0,
+        ]);
+        return redirect()->route('user.profile.settings')->with("success", "Settings updated successfully");
+    }
+
+    public function addSkill(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+        if ($validator->fails()) :
+            return response()->json([
+                'error' => $validator->errors()->first()
+            ]);
+        endif;
+        $sid = SkillSet::insertGetId([
+            'name' => $request->name,
+            'user_id' => Auth::id(),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        $data = SkillSet::where('id', $sid)->where('user_id', Auth::id())->firstOrFail();
+        return response()->json([
+            'success' => "Skill Set created successfully",
+            'data' => $data,
+        ]);
     }
 
     public function searchMember()

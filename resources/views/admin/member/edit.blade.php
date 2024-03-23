@@ -134,10 +134,20 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0" for="doj">Date of Joining </label>
-                                        {{ html()->date('doj', $member->doj?->format('Y-m-d') ?? date('Y-m-d'))->class('form-control') }}
+                                        {{ html()->date('doj', $member->doj?->format('Y-m-d') ?? date('Y-m-d'))->if((Auth::user()->type != 'admin'), function($el){
+                                            return $el->attribute('readonly', 'true');
+                                        })->class('form-control') }}
                                         @error('doj')
                                         <small class="text-danger">{{ $errors->first('doj') }}</small>
                                         @enderror
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="col-form-label pt-0" for="linked_in_profile_url">Linked in Pofile URL </label>
+                                        {{ html()->text('linked_in_profile_url', $member->linked_in_profile_url)->class('form-control')->placeholder('Linked in Pofile URL') }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="col-form-label pt-0" for="skills">Skill Set (<a class="addSkill" href="javascript:void(0)">Add New Skill Set</a>)</label>
+                                        {{ html()->select('skills[]', $skills->pluck('name', 'id'), $memberskills->where('member_id', $member->id)->pluck('skill_id'))->class('form-control select2')->attribute('id', 'selSkillSet')->multiple() }}
                                     </div>
                                     <h4 class="mt-3">Address in Kuwait</h4>
                                     <div class="col-md-2">
@@ -322,5 +332,30 @@
         </div>
     </div>
     <!-- Container-fluid Ends-->
+</div>
+<div class="drawer drawer-right slide" tabindex="-1" role="dialog" aria-labelledby="drawer-3-title" aria-hidden="true" id="skillDrawer">
+    <div class="drawer-content drawer-content-scrollable" role="document">
+        {{ html()->form('POST', route('skill.save'))->class('theme-form frmSkillSet')->open() }}
+        @csrf
+        <div class="card-header">
+            <h3 class="mb-3 mt-3">Add New Skill Set</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label class="control-label">Skill Set Name</label>
+                    {{ html()->text('name', old('name'))->class('form-control')->attribute('id', 'skillName')->placeholder('Skill Set Name')->required() }}
+                    @error('name')
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <a class="btn btn-danger" data-toggle="drawer" data-target="#skillDrawer">Cancel</a>
+            <button class="btn btn-primary btn-submit">Save</button>
+        </div>
+        {{ html()->form()->close() }}
+    </div>
 </div>
 @endsection

@@ -59,6 +59,9 @@ return new class extends Migration
             $table->enum('renewal_status', ['new', 'pending', 'renewed'])->nullable();
             $table->date('approved_date')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('linked_in_profile_url')->nullable();
+            $table->boolean('show_mobile')->default(0)->nullable();
+            $table->boolean('show_email')->default(0)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -89,6 +89,11 @@ Route::prefix('/user')->middleware(['web', 'auth', 'user', 'active'])->group(fun
 
         Route::get('/search', 'searchMember')->name('search.member');
         Route::post('/search', 'searchMemberUpdate')->name('search.member.update');
+
+        Route::get('/settings', 'settings')->name('user.profile.settings');
+        Route::post('/settings', 'settingsUpdate')->name('user.profile.settings.update');
+
+        Route::post('/skill/add', 'addSkill')->name('skill.save');
     });
 
     Route::controller(MembershipController::class)->group(function () {

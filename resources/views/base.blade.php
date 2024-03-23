@@ -91,17 +91,17 @@
                </div>
             </div>-->
             <header class="header header_default style_three get_sticky_header">
-               <div class="header_mid">
+               <div class="header_mid hidden-sm">
                   <div class="medium-container">
                      <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-2 col-md-12">
+                        <div class="col-xl-3 col-lg-2 col-md-12 hidden-sm">
                            <div class="logo mid_logo_icon">
                               <a href="/" class="logo_mid">
                                  <img src="{{ asset(logo()->logo) }}" alt="{{ logo()->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
                               </a>
                            </div>
                         </div>
-                        <div class="col-xl-6 col-lg-10 col-md-12">
+                        <div class="col-xl-6 col-lg-10 col-md-12 hidden-sm">
                            <div class="row">
                               <div class="col-lg-6 same_column">
                                  <div class="mid_content one">
@@ -169,7 +169,7 @@
                @if(scrollMessage())
                <div class="container-fluid scroolMsg">
                   <div class="row">
-                     <div class="col-12 p-3 bg-info text-white">
+                     <div class="col-12 p-3 text-white">
                         <marquee>
                            <a href="{{ (scrollMessage()->url) ?? '#' }}">{!! scrollMessage()->message !!}</a>
                         </marquee>
@@ -364,13 +364,37 @@
          <div class="menu-backdrop"></div>
          <nav class="menu-box">
             <div class="close-btn"><i class="icon-close"></i></div>
-            <form role="search" method="get" action="#">
-               <input type="search" class="search" placeholder="Search..." value="" name="s" title="Search" />
-               <button type="submit" class="sch_btn"> <i class="icon-search"></i></button>
-            </form>
-            <div class="menu-outer">
-               <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="logo mid_logo_icon">
+                        <a href="/" class="logo_mid">
+                           <img src="{{ asset(logo()->logo) }}" alt="{{ logo()->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row mt-3">
+                  <div class="col-md-3 w-50">
+                     <div class="mid_content one">
+                        <span class=" icon-phone mid_icon"></span>
+                        <div class="text">
+                           <p><a href="tel:{{ logo()->mobile }}">{{ logo()->mobile }}</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-3 w-50">
+                     <div class="mid_content one">
+                        <span class="icon-email mid_icon"></span>
+                        <div class="text">
+                           <p><a href="mailto:{{ logo()->email }}">{{ logo()->email }}</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="menu-outer">
+                  <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+               </div>
          </nav>
       </div>
       <!---==============mobile menu end =================-->

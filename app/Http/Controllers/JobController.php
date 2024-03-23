@@ -37,7 +37,9 @@ class JobController extends Controller
             'document' => 'sometimes|required|mimes:pdf,doc,docx,xlsx|max:1024',
             'country_id' => 'required',
             'status' => 'required',
+            'category' => 'required',
             'description' => 'required',
+            'last_date_of_apply' => 'required_if:category,==,job',
         ]);
         $input = $request->all();
         if ($request->file('image')) :
@@ -83,7 +85,9 @@ class JobController extends Controller
             'document' => 'sometimes|required|mimes:pdf,doc,docx,xlsx|max:1024',
             'country_id' => 'required',
             'status' => 'required',
+            'category' => 'required',
             'description' => 'required',
+            'last_date_of_apply' => 'required_if:category,==,job',
         ]);
         $input = $request->all();
         if ($request->file('image')) :

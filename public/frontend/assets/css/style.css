@@ -654,3 +654,7 @@ iframe {
 .blog_feature_image img {
   height: 100% !important;
 }
+
+.scroolMsg {
+  background: #dee2e6 !important;
+}

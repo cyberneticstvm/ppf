@@ -71,6 +71,8 @@ Route::middleware(['web'])->group(function () {
         Route::post('/reset-password', 'resetPasswordUpdate')->name('forgot.password.update');
         Route::get('/job/all', 'allJobs')->name('job.all');
         Route::get('/jobs/single/{id}', 'singleJob')->name('job.single');
+        Route::get('/scheme/all', 'allSchemes')->name('schemes');
+        Route::get('/scheme/single/{id}', 'singleScheme')->name('scheme.single');
     });
 
     Route::prefix('/user/thoughts')->controller(ThoughtController::class)->group(function () {

@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                     <div class="banner_title_inner">
                         <div class="title_page">
-                            Jobs / Community
+                            Government Schemes
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="breadcrumbs creote">
                         <ul class="breadcrumb m-auto">
                             <li><a href="/">Home</a> </li>
-                            <li class="active">Jobs / Community</li>
+                            <li class="active">Government Schemes</li>
                         </ul>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <div class="block_faq">
                                 <div class="accordion">
                                     <dl>
-                                        @forelse($jobs as $key => $item)
+                                        @forelse($schemes as $key => $item)
                                         <dt class="faq_header {{ ($key == 0) ? 'active' : '' }}">
                                             {{ $item->title }}<span class="icon-play"></span>
                                         </dt>
@@ -45,7 +45,6 @@
                                                 {!! substr($item->description, 0, 50) !!}
                                             </p>
                                             <p class="text-end">Created On: {{ $item->created_at->format('d, M Y') }}</p>
-                                            <p class="text-end">Last Date: {{ $item->last_date_of_apply->format('d, M Y') }}</p>
                                             <p class="text-end"><a href="{{ route('scheme.single', encrypt($item->id)) }}">Read More..</a></p>
                                         </dd>
                                         @empty
@@ -54,7 +53,7 @@
                                 </div>
                             </div>
                         </section>
-                        {!! $jobs->withQueryString()->links('pagination::bootstrap-5') !!}
+                        {!! $schemes->withQueryString()->links('pagination::bootstrap-5') !!}
                     </div>
                 </div>
                 <!--===============spacing==============-->

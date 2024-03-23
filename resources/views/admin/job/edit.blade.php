@@ -48,18 +48,32 @@
                                         <small class="text-danger">{{ $errors->first('document') }}</small>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="country_id">Country </label>
                                         {{ html()->select('country_id', $countries, $job->country_id)->class('form-control')->placeholder('Select') }}
                                         @error('country_id')
                                         <small class="text-danger">{{ $errors->first('country_id') }}</small>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="status">Status </label>
                                         {{ html()->select('status', status(), $job->status)->class('form-control')->placeholder('Select') }}
                                         @error('status')
                                         <small class="text-danger">{{ $errors->first('status') }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="col-form-label pt-0 req" for="category">Category </label>
+                                        {{ html()->select('category', array('job' => 'Job', 'scheme' => 'Scheme'), $job->category)->class('form-control')->placeholder('Select') }}
+                                        @error('category')
+                                        <small class="text-danger">{{ $errors->first('category') }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="col-form-label pt-0 req" for="last_date_of_apply">Last Date of Application</label>
+                                        {{ html()->date('last_date_of_apply', $job->last_date_of_apply?->format('Y-m-d'))->class('form-control') }}
+                                        @error('last_date_of_apply')
+                                        <small class="text-danger">{{ $errors->first('last_date_of_apply') }}</small>
                                         @enderror
                                     </div>
                                     <div class="col-md-12">

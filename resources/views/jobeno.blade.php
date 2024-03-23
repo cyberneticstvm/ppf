@@ -75,12 +75,12 @@
                     <div class="mg_image_box">
                         <div class="image_box">
                             <img decoding="async" src="{{ asset('frontend/assets/images/home/govt.webp') }}" class="img" alt="image">
-                            <a href="{{ route('jobeno') }}" class="ab_link">
+                            <a href="{{ route('schemes') }}" class="ab_link">
                                 <span class="icon-right-arrow-long"></span>
                             </a>
                         </div>
                         <div class="content">
-                            <h2><a href="{{ route('jobeno') }}">Government Schemes</a></h2>
+                            <h2><a href="{{ route('schemes') }}">Government Schemes</a></h2>
                             <div class="tag"></div>
                         </div>
                     </div>

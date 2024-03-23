@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0" for="button_url">Button URL </label>
-                                        {{ html()->text('button_url', old('button_url'))->class('form-control')->maxlength('25')->placeholder('Button URL') }}
+                                        {{ html()->text('button_url', old('button_url'))->class('form-control')->placeholder('Button URL') }}
                                         @error('button_url')
                                         <small class="text-danger">{{ $errors->first('button_url') }}</small>
                                         @enderror

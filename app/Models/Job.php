@@ -12,6 +12,8 @@ class Job extends Model
 
     protected $guarded = [];
 
+    protected $casts = ['last_date_of_apply' => 'datetime'];
+
     public function country()
     {
         return $this->belongsTo(Country::class, 'country_id', 'id');

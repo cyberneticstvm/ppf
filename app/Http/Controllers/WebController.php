@@ -197,7 +197,7 @@ class WebController extends Controller
 
     public function allJobs()
     {
-        $jobs = Job::where('status', 'active')->latest()->paginate(25);
+        $jobs = Job::where('status', 'active')->where('category', 'job')->latest()->paginate(25);
         $title = "Progressive Professional Forum Kuwait Job / Community";
         return view('jobs', compact('title', 'jobs'));
     }
@@ -208,6 +208,21 @@ class WebController extends Controller
         $recents = Job::where('id', '!=', $job->id)->latest()->limit(10)->get();
         $title = $job->name;
         return view('job-single', compact('job', 'title', 'recents'));
+    }
+
+    public function allSchemes()
+    {
+        $schemes = Job::where('status', 'active')->where('category', 'scheme')->latest()->paginate(25);
+        $title = "Progressive Professional Forum Kuwait Job / Community";
+        return view('schemes', compact('title', 'schemes'));
+    }
+
+    public function singleScheme($id)
+    {
+        $scheme = Job::findOrFail(decrypt($id));
+        $recents = Job::where('id', '!=', $scheme->id)->latest()->limit(10)->get();
+        $title = $scheme->name;
+        return view('scheme-single', compact('scheme', 'title', 'recents'));
     }
 
     /*public function test()

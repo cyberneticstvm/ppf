@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('document')->nullable();
             $table->longText('description')->nullable();
+            $table->date('last_date_of_apply')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('category', ['job', 'scheme', 'other'])->nullable();
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by');

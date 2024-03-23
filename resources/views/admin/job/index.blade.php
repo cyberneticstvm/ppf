@@ -32,6 +32,7 @@
                                         <th>Country</th>
                                         <th>Image</th>
                                         <th>Document</th>
+                                        <th>Category</th>
                                         <th>Status</th>
                                         <th>Deleted?</th>
                                         <th>Edit</th>
@@ -45,6 +46,7 @@
                                             <td>{{ $item->country?->name }}</td>
                                             <td><a href="{{ asset($item->image) }}" target="_blank"><i class="fa fa-image text-info fa-lg"></i></a></td>
                                             <td><a href="{{ asset($item->document) }}" target="_blank"><i class="fa fa-file-o text-info fa-lg"></i></a></td>
+                                            <td>{{ $item->category }}</td>
                                             <td>{!! $item->jobStatus() !!}</td>
                                             <td>{!! $item->deletedStatus() !!}</td>
                                             <td class="text-center"><a href="{{ route('job.edit', encrypt($item->id)) }}"><i class="fa fa-edit text-warning fa-lg"></i></a></td>

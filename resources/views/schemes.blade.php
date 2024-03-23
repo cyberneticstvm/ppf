@@ -42,7 +42,7 @@
                                         </dt>
                                         <dd class="accordion-content hide" style="{{ ($key == 0) ? 'display:block;' : '' }}">
                                             <p>
-                                                {!! substr($item->description, 0, 50) !!}
+                                                {!! substr($item->description, 0, 250) !!}...
                                             </p>
                                             <p class="text-end">Created On: {{ $item->created_at->format('d, M Y') }}</p>
                                             <p class="text-end"><a href="{{ route('scheme.single', encrypt($item->id)) }}">Read More..</a></p>

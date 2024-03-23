@@ -95,11 +95,11 @@ class UserController extends Controller
         endif;
         $sid = SkillSet::insertGetId([
             'name' => $request->name,
-            'user_id' => Auth::id(),
+            'created_by' => Auth::id(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        $data = SkillSet::where('id', $sid)->where('user_id', Auth::id())->firstOrFail();
+        $data = SkillSet::where('id', $sid)->where('created_by', Auth::id())->firstOrFail();
         return response()->json([
             'success' => "Skill Set created successfully",
             'data' => $data,

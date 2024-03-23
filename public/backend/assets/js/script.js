@@ -343,7 +343,7 @@ $(function () {
 })
 
 function bindDDLbyId(sel, res) {
-    var newOption = new Option(res.data.name, res.data.name, true, true);
+    var newOption = new Option(res.data.name, res.data.id, true, true);
     $('#' + sel).append(newOption).trigger('change');
 }
 

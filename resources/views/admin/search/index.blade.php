@@ -45,6 +45,10 @@
                                         <label class="col-form-label pt-0" for="status">Membership Type </label>
                                         {{ html()->select('type', membershipTypes(), (old('type')) ?? $inputs[4])->class('form-control')->placeholder('Select') }}
                                     </div>
+                                    <div class="col-md-6">
+                                        <label class="col-form-label pt-0" for="skills">Skill Set </label>
+                                        {{ html()->select('skills[]', $skills->pluck('name', 'id'), (old('skills')) ?? $inputs[5])->class('form-control select2')->multiple() }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer text-end">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Membership;
+use App\Models\MemberSkillSet;
 use App\Models\User;
 use App\Models\Profession;
 use App\Models\Qualification;
@@ -112,8 +113,9 @@ class UserController extends Controller
         $quals = Qualification::all();
         $profs = Profession::all();
         $members = [];
-        $inputs = array('Select', 'Select', 'Select', 'Select', 'Select');
-        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs'));
+        $inputs = array('Select', 'Select', 'Select', 'Select', 'Select', '');
+        $skills = SkillSet::orderBy('name')->get();
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs', 'skills'));
     }
 
     public function searchMemberUpdate(Request $request)
@@ -121,7 +123,8 @@ class UserController extends Controller
         $specs = Specialization::all();
         $quals = Qualification::all();
         $profs = Profession::all();
-        $inputs = array($request->qualification, $request->profession, $request->specialization, $request->approval_status, $request->type);
+        $skills = SkillSet::orderBy('name')->get();
+        $inputs = array($request->qualification, $request->profession, $request->specialization, $request->approval_status, $request->type, $request->skills);
         $members = Membership::when($request->qualification, function ($q) use ($request) {
             return $q->where('qualification', $request->qualification);
         })->when($request->profession, function ($q) use ($request) {
@@ -132,8 +135,10 @@ class UserController extends Controller
             return $q->where('approval_status', $request->approval_status);
         })->when($request->type, function ($q) use ($request) {
             return $q->where('type', $request->type);
+        })->when($request->skills, function ($q) use ($request) {
+            return $q->whereIn('id', MemberSkillSet::whereIn('skill_id', $request->skills)->pluck('member_id'));
         })->orderBy('name')->get();
-        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs'));
+        return view('admin.search.index', compact('specs', 'quals', 'profs', 'members', 'inputs', 'skills'));
     }
 
     public function createuser()

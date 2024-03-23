@@ -74,6 +74,8 @@
                                     <thead>
                                         <th>SL No</th>
                                         <th>Member Name</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
                                         <th>Qualification</th>
                                         <th>Industry</th>
                                         <th>Profession</th>
@@ -85,6 +87,8 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $member->name }}</td>
+                                            <td>{{ $member->showMobile() }}</td>
+                                            <td>{{ $member->showEmail() }}</td>
                                             <td>{{ $member->qualification }}</td>
                                             <td>{{ $member->specialization }}</td>
                                             <td>{{ $member->profession }}</td>

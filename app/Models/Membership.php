@@ -18,4 +18,14 @@ class Membership extends Model
     {
         return ($this->deleted_at == NULL) ? '' : '<span class="badge badge-danger">Deleted</span>';
     }
+
+    public function showMobile()
+    {
+        return ($this->show_mobile) ? $this->kw_primary_contact_number : '';
+    }
+
+    public function showEmail()
+    {
+        return ($this->show_email) ? $this->email : '';
+    }
 }

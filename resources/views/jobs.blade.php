@@ -45,7 +45,7 @@
                                                 {!! substr($item->description, 0, 50) !!}
                                             </p>
                                             <p class="text-end">Created On: {{ $item->created_at->format('d, M Y') }}</p>
-                                            <p class="text-end">Last Date: {{ $item->last_date_of_apply->format('d, M Y') }}</p>
+                                            <p class="text-end">Last Date: {{ $item->last_date_of_apply?->format('d, M Y') }}</p>
                                             <p class="text-end"><a href="{{ route('scheme.single', encrypt($item->id)) }}">Read More..</a></p>
                                         </dd>
                                         @empty

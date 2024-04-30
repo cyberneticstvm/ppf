@@ -79,6 +79,7 @@
                                         <th>Qualification</th>
                                         <th>Industry</th>
                                         <th>Profession</th>
+                                        <th>Linked In</th>
                                         <th>Type</th>
                                         <th>Status</th>
                                     </thead>
@@ -92,6 +93,11 @@
                                             <td>{{ $member->qualification }}</td>
                                             <td>{{ $member->specialization }}</td>
                                             <td>{{ $member->profession }}</td>
+                                            @if($member->linked_in_profile_url)
+                                            <td class="text-center"><a href="{{ $member->linked_in_profile_url }}">View</a></td>
+                                            @else
+                                            <td></td>
+                                            @endif
                                             <td>{{ $member->type }}</td>
                                             <td>{{ $member->approval_status }}</td>
                                         </tr>

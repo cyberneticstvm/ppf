@@ -94,7 +94,7 @@
                                             <td>{{ $member->specialization }}</td>
                                             <td>{{ $member->profession }}</td>
                                             @if($member->linked_in_profile_url)
-                                            <td class="text-center"><a href="{{ $member->linked_in_profile_url }}">View</a></td>
+                                            <td class="text-center"><a href="{{ $member->linked_in_profile_url }}" target="_blank">View</a></td>
                                             @else
                                             <td></td>
                                             @endif

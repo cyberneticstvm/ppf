@@ -141,6 +141,10 @@
                                 <small class="text-danger">{{ $errors->first('kw_secondary_contact_number') }}</small>
                                 @enderror
                             </div>
+                            <div class="form-group col-md-6">
+                                <label class="">Area / Place in Kuwait</label>
+                                {{ html()->text('kw_area', old('kw_area'))->class('form-control')->placeholder('Place in Kuwait') }}
+                            </div>
                             <button type="submit" class="btn-submit theme-btn one">Submit</button>
                         </div>
                         {{ html()->form()->close() }}

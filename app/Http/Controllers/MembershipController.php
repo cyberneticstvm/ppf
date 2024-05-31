@@ -129,7 +129,8 @@ class MembershipController extends Controller
         $govs = Governorate::all();
         $skills = SkillSet::orderBy('name')->get();
         $memberskills = MemberSkillSet::where('member_id', decrypt($id))->get();
-        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs', 'skills', 'memberskills'));
+        $members = Membership::whereIn('approval_status', ['approved', 'pending'])->get();
+        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs', 'skills', 'memberskills', 'members'));
     }
 
     /**

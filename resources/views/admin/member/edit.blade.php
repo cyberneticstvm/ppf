@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="kw_area">Area / Place</label>
-                                        {{ html()->text('kw_area', $member->kw_area)->class('form-control')->placeholder('Area') }}
+                                        {{ html()->text('kw_area', $member->kw_area)->class('form-control')->placeholder('Area / Place') }}
                                         @error('kw_area')
                                         <small class="text-danger">{{ $errors->first('kw_area') }}</small>
                                         @enderror

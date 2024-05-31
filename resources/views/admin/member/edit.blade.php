@@ -318,7 +318,7 @@
                                         {{ html()->date('next_renewal_date', $member->next_renewal_date?->format('Y-m-d') ?? date('Y-m-d', strtotime('+1 year')))->class('form-control') }}
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0 req" for="referred_by">Referred by </label>
+                                        <label class="col-form-label pt-0" for="referred_by">Referred by </label>
                                         {{ html()->select('referred_by', $members->pluck('name', 'id'), $member->referred_by)->class('form-control')->placeholder('Select') }}
                                     </div>
                                     @endif

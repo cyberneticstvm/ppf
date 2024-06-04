@@ -89,22 +89,22 @@ class MembershipController extends Controller
         $input['kw_secondary_contact_number'] = $request->kw_secondary_contact_number_country . $request->kw_secondary_contact_number;
         $input['membership_number'] = generateMembershipNumber($request->type)->mn;
         $input['approval_status'] = 'pending';
-        //try {
-        DB::transaction(function () use ($request, $input) {
-            $user = User::create([
-                'name' => $request->name,
-                'username' => $input['membership_number'],
-                'email' => $request->email,
-                'password' => bcrypt($input['membership_number']),
-                'type' => $request->type,
-            ]);
-            $input['user_id'] = $user->id;
-            Membership::create($input);
-        });
-        Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
-        //} catch (Exception $e) {
-        //return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
-        //}
+        try {
+            DB::transaction(function () use ($request, $input) {
+                $user = User::create([
+                    'name' => $request->name,
+                    'username' => $input['membership_number'],
+                    'email' => $request->email,
+                    'password' => bcrypt($input['membership_number']),
+                    'type' => $request->type,
+                ]);
+                $input['user_id'] = $user->id;
+                Membership::create($input);
+            });
+            Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
+        } catch (Exception $e) {
+            return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
+        }
         return redirect()->back()->with("success", "Member registration success!");
     }
 

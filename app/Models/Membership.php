@@ -28,4 +28,19 @@ class Membership extends Model
     {
         return ($this->show_email) ? $this->email : '';
     }
+
+    public function specializations()
+    {
+        return $this->belongsTo(Specialization::class, 'specialization', 'id');
+    }
+
+    public function qualifications()
+    {
+        return $this->belongsTo(Qualification::class, 'qualification', 'id');
+    }
+
+    public function members()
+    {
+        return $this->belongsTo(Membership::class, 'referred_by', 'id');
+    }
 }

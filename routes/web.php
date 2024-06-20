@@ -230,6 +230,8 @@ Route::prefix('/admin')->middleware(['web', 'auth', 'admin'])->group(function ()
         Route::post('/edit/{id}', 'update')->name('member.update');
         Route::get('/show/{id}', 'show')->name('member.show');
         Route::get('/delete/{id}', 'destroy')->name('member.delete')->middleware('delete');
+
+        Route::get('/member/export/{status}', 'exportMember')->name('admin.export.member');
     });
 
     Route::prefix('/logo')->controller(SiteManagementController::class)->group(function () {

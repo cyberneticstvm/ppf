@@ -11,6 +11,9 @@
                         <li class="breadcrumb-item active">Approved Member List</li>
                     </ol>
                 </div>
+                <div class="col-sm-6 text-end">
+                    <a href="{{ route('admin.export.member', 'approved') }}" class="btn btn-success">Export</a>
+                </div>
             </div>
         </div>
     </div>

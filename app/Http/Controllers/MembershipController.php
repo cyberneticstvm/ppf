@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MembersExport;
 use App\Mail\RegistrationConfirmationEmail;
 use App\Models\Governorate;
 use App\Models\Membership;
@@ -17,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MembershipController extends Controller
 {
@@ -182,5 +184,10 @@ class MembershipController extends Controller
         //User::where('username', $member->membership_number)->delete();
         $member->delete();
         return redirect()->back()->with("success", "Member deleted successfully!");
+    }
+
+    public function exportMember($status)
+    {
+        return Excel::download(new MembersExport($status), 'members.xlsx');
     }
 }

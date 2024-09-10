@@ -29,7 +29,7 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
             return [
                 '1' =>  $key + 1,
                 '2' => $data->membership_number,
-                '3' => $data->civil_id . '',
+                '3' => $data->civil_id . ' ',
                 '4' => $data->name,
                 '5' => $data->type,
                 '6' => $data->email,
@@ -58,6 +58,6 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
 
     public function styles(Worksheet $sheet)
     {
-        $sheet->getStyle('A1:N1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:O1')->getFont()->setBold(true);
     }
 }

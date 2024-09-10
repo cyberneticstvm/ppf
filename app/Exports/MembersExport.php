@@ -29,7 +29,7 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
             return [
                 '1' =>  $key + 1,
                 '2' => $data->membership_number,
-                '3' => $data->civil_id,
+                '3' => $data->civil_id . '',
                 '4' => $data->name,
                 '5' => $data->type,
                 '6' => $data->email,

@@ -82,7 +82,8 @@ class MembershipController extends Controller
             'kw_primary_contact_number_country' => 'required',
             'kw_primary_contact_number' => 'required|numeric',
             'passport_number' => 'required_if:type,==,overseas',
-            'civil_id' => 'required_if:type,==,primary|required_if:type,==,associate|numeric|digits:12',
+            /*'civil_id' => 'required_if:type,==,primary|required_if:type,==,associate|numeric|digits:12',*/
+            'civil_id' => 'required',
             'profession' => 'required_if:type,==,primary|required_if:type,==,overseas',
             'qualification' => 'required_if:type,==,primary|required_if:type,==,overseas',
         ]);
@@ -146,6 +147,7 @@ class MembershipController extends Controller
             'dob' => 'required',
             'email' => 'required|email:rfs,dns|unique:memberships,email,' . $id,
             'type' => 'required',
+            'civil_id' => 'required',
         ]);
         $input = $request->except(array('skills'));
         if ($request->file('photo')) :

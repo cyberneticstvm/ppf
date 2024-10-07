@@ -73,7 +73,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="">Civil ID Number</label>
-                                {{ html()->text('civil_id', old('civil_id'))->class('form-control')->maxlength('20')->placeholder('Civil ID Number') }}
+                                {{ html()->text('civil_id', old('civil_id'))->class('form-control')->maxlength('20')->placeholder('Civil ID Number')->required() }}
                                 @error('civil_id')
                                 <small class="text-danger">{{ $errors->first('civil_id') }}</small>
                                 @enderror

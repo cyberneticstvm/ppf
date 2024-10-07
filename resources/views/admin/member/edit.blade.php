@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label class="col-form-label pt-0 req" for="civil_id">Civil ID Number </label>
-                                        {{ html()->text('civil_id', $member->civil_id)->class('form-control')->placeholder('Civil ID Number') }}
+                                        {{ html()->text('civil_id', $member->civil_id)->class('form-control')->placeholder('Civil ID Number')->required() }}
                                         @error('civil_id')
                                         <small class="text-danger">{{ $errors->first('civil_id') }}</small>
                                         @enderror

@@ -104,7 +104,7 @@ class MembershipController extends Controller
                 $input['user_id'] = $user->id;
                 Membership::create($input);
             });
-            //Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
+            Mail::to($request->email)->send(new RegistrationConfirmationEmail($input));
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }

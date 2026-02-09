@@ -77,6 +77,7 @@ class MembershipController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'dob' => 'required',
+            'reference' => 'required',
             'email' => 'required|email:rfs,dns|unique:memberships,email',
             'type' => 'required',
             'kw_primary_contact_number_country' => 'required',
@@ -108,7 +109,7 @@ class MembershipController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage())->withInput($request->all());
         }
-        return redirect()->back()->with("success", "Member registration success!");
+        return redirect()->back()->with("success", "Your registration has successful! Our team will verify & process your application and update the status soon.");
     }
 
     /**
@@ -133,7 +134,8 @@ class MembershipController extends Controller
         $skills = SkillSet::orderBy('name')->get();
         $memberskills = MemberSkillSet::where('member_id', decrypt($id))->get();
         $members = Membership::whereIn('approval_status', ['approved', 'pending'])->get();
-        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs', 'skills', 'memberskills', 'members'));
+        $areas = array("Salmiya" => "Salmiya", "Abbasiya" => "Abbasiya", "Abu Halifa" => "Abu Halifa", "Fahaheel" => "Fahaheel");
+        return view('admin.member.edit', compact('member', 'specs', 'quals', 'profs', 'govs', 'skills', 'memberskills', 'members', 'areas'));
     }
 
     /**

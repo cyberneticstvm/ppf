@@ -145,6 +145,10 @@
                                 <label class="">Area / Place in Kuwait</label>
                                 {{ html()->text('kw_area', old('kw_area'))->class('form-control')->placeholder('Place in Kuwait') }}
                             </div>
+                            <div class="form-group col-md-6">
+                                <label class="req">Referred by</label>
+                                {{ html()->text('reference', old('reference'))->class('form-control')->placeholder('Referred by') }}
+                            </div>
                             <button type="submit" class="btn-submit theme-btn one">Submit</button>
                         </div>
                         {{ html()->form()->close() }}

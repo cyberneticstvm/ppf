@@ -147,7 +147,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="req">Referred by</label>
-                                {{ html()->text('reference', old('reference'))->class('form-control')->placeholder('Referred by') }}
+                                {{ html()->text('reference', old('reference'))->class('form-control')->placeholder('Referred by')->required() }}
                             </div>
                             <button type="submit" class="btn-submit theme-btn one">Submit</button>
                         </div>

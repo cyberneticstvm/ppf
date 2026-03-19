@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="col-form-label pt-0 req" for="region">Region </label>
-                                        {{ html()->select('region', array('fahaheel' => 'Fahaheel', 'abbasiya' => 'Abbasiya', 'salmiya' => 'Salmiya'), $region->region)->class('form-control')->placeholder('Select') }}
+                                        {{ html()->select('region', array('fahaheel' => 'Fahaheel', 'abbasiya' => 'Abbasiya', 'salmiya' => 'Salmiya', 'AbuHalifa' => 'Abu Halifa'), $region->region)->class('form-control')->placeholder('Select') }}
                                         @error('region')
                                         <small class="text-danger">{{ $errors->first('region') }}</small>
                                         @enderror

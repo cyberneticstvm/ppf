@@ -152,7 +152,7 @@ class MembershipController extends Controller
             'type' => 'required',
             'civil_id' => 'required',
         ]);
-        $input = $request->except(array('skills'));
+        $input = $request->except(array('skills', 'send_renewal_notification_email'));
         if ($request->file('photo')) :
             $url = uploadFile($request->file('photo'), $path = 'member/photos');
             $input['photo'] = $url;

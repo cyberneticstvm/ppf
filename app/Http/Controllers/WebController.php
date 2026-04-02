@@ -164,8 +164,6 @@ class WebController extends Controller
         $this->validate($request, [
             'email' => 'required|email'
         ]);
-        dd($request);
-        die;
         try {
             $user = User::where('email', $request->email)->firstOrFail();
             $token = Str::random(25);

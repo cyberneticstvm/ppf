@@ -330,7 +330,7 @@
                                         {{ html()->select('area', $areas, $member->area)->class('form-control')->placeholder('Select') }}
                                     </div>
                                     <div class="col-md-3">
-                                        <label class="col-form-label pt-0" for="area">Send Renewal Notification </label>
+                                        <label class="col-form-label pt-0" for="area">Send Renewal Notification </label><br>
                                         {{ html()->checkbox('send_renewal_notification_email', false, '1')->class('form-checkbox') }}
                                     </div>
                                     @endif

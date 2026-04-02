@@ -8,8 +8,11 @@
 <body>
     Dear {{ $data->name }},<br /><br />
 
+    We are pleased to inform you that your membership has been successfully renewed.
 
-    Regards,<br />
+    Your membership is now active and valid until {{ $data->next_renewal_date }}, ensuring uninterrupted access to all associated benefits and services.
+
+    Warm Regards,<br />
     PPF Ex Com
 </body>
 

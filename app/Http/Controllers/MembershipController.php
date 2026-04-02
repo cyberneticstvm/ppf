@@ -28,7 +28,8 @@ class MembershipController extends Controller
      */
     public function index()
     {
-        $members = Membership::where('approval_status', 'approved')->latest()->get();
+        $members = Membership::latest()->get();
+        //where('approval_status', 'approved')->
         return view('admin.member.index', compact('members'));
     }
 

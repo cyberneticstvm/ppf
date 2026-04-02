@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\MembersExport;
 use App\Mail\RegistrationConfirmationEmail;
+use App\Mail\RenewalNotificationEmail;
 use App\Models\Governorate;
 use App\Models\Membership;
 use App\Models\MemberSkillSet;
@@ -172,6 +173,9 @@ class MembershipController extends Controller
                     MemberSkillSet::insert($skills);
                 endif;
                 User::where('username', $member->membership_number)->update(['email' => $request->email, 'type' => $request->type]);
+                if ($request->send_renewal_notification_email):
+                    Mail::to($member->email)->send(new RenewalNotificationEmail($request));
+                endif;
             });
         } catch (Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());

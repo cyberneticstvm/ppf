@@ -28,7 +28,7 @@ class RenewalNotificationEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Membership Status Update Notification Email',
+            subject: 'Membership Status Update Notification',
         );
     }
 

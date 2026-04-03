@@ -10,7 +10,7 @@
 
     We are pleased to inform you that your membership has been successfully renewed.
 
-    Your membership is now active and valid until {{ $data->next_renewal_date }}, ensuring uninterrupted access to all associated benefits and services.
+    Your membership is now active and valid until {{ $data->next_renewal_date }}, ensuring uninterrupted access to all associated benefits and services.<br /><br />
 
     Warm Regards,<br />
     PPF Ex Com

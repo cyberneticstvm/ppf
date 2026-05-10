@@ -39,16 +39,18 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
                 '10' => $data->qualifications?->name,
                 '11' => $data->in_district,
                 '12' => $data->members?->name,
-                '13' => $data->doj?->format('d.M.Y'),
-                '14' => $data->approved_date?->format('d.M.Y'),
-                '15' => $data->next_renewal_date?->format('d.M.Y'),
+                '13' => $data->area,
+                '14' => $data->renewal_status,
+                '15' => $data->doj?->format('d.M.Y'),
+                '16' => $data->approved_date?->format('d.M.Y'),
+                '17' => $data->next_renewal_date?->format('d.M.Y'),
             ];
         });
     }
 
     public function headings(): array
     {
-        return ['SL No', 'Membership ID', 'Civil ID', 'Name', 'Type', 'Email', 'Primary Contact', 'Place / Area', 'Industry / Specialization', 'Qualification', 'District', 'Referred by', 'Join Date', 'Approved Date', 'Next Renewal Date'];
+        return ['SL No', 'Membership ID', 'Civil ID', 'Name', 'Type', 'Email', 'Primary Contact', 'Place / Area', 'Industry / Specialization', 'Qualification', 'District', 'Referred by', 'Area', 'Renewal Status', 'Join Date', 'Approved Date', 'Next Renewal Date'];
     }
 
     /*public function map($data): array

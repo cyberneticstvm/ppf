@@ -32,25 +32,26 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
                 '3' => $data->civil_id . ' ',
                 '4' => $data->name,
                 '5' => $data->type,
-                '6' => $data->email,
-                '7' => $data->kw_primary_contact_number,
-                '8' => $data->kw_area,
-                '9' => $data->specializations?->name,
-                '10' => $data->qualifications?->name,
-                '11' => $data->in_district,
-                '12' => $data->members?->name,
-                '13' => $data->area,
-                '14' => $data->renewal_status,
-                '15' => $data->doj?->format('d.M.Y'),
-                '16' => $data->approved_date?->format('d.M.Y'),
-                '17' => $data->next_renewal_date?->format('d.M.Y'),
+                '6' => $data->profession,
+                '7' => $data->email,
+                '8' => $data->kw_primary_contact_number,
+                '9' => $data->kw_area,
+                '10' => $data->specializations?->name,
+                '11' => $data->qualifications?->name,
+                '12' => $data->in_district,
+                '13' => $data->members?->name,
+                '14' => $data->area,
+                '15' => $data->renewal_status,
+                '16' => $data->doj?->format('d.M.Y'),
+                '17' => $data->approved_date?->format('d.M.Y'),
+                '18' => $data->next_renewal_date?->format('d.M.Y'),
             ];
         });
     }
 
     public function headings(): array
     {
-        return ['SL No', 'Membership ID', 'Civil ID', 'Name', 'Type', 'Email', 'Primary Contact', 'Place / Area', 'Industry / Specialization', 'Qualification', 'District', 'Referred by', 'Area', 'Renewal Status', 'Join Date', 'Approved Date', 'Next Renewal Date'];
+        return ['SL No', 'Membership ID', 'Civil ID', 'Name', 'Type', 'Profession', 'Email', 'Primary Contact', 'Place / Area', 'Industry / Specialization', 'Qualification', 'District', 'Referred by', 'Area', 'Renewal Status', 'Join Date', 'Approved Date', 'Next Renewal Date'];
     }
 
     /*public function map($data): array

@@ -27,12 +27,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/db-test', function () {
     try {
         DB::connection()->getPdo();
-
         return 'DB connection OK';
     } catch (\Throwable $e) {
         return 'DB connection failed: ' . $e->getMessage();

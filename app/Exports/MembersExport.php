@@ -24,7 +24,7 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
 
     public function collection()
     {
-        $members = Membership::selectRaw("membership_number, civil_id, name, type, email, kw_primary_contact_number, kw_area, specialization, qualification, in_district, referred_by, area, renewal_status, doj, approved_date, next_renewal_date")->where('approval_status', $this->status)->get();
+        $members = Membership::selectRaw("membership_number, civil_id, name, type, email, profession,kw_primary_contact_number, kw_area, specialization, qualification, in_district, referred_by, area, renewal_status, doj, approved_date, next_renewal_date")->where('approval_status', $this->status)->get();
         return $members->map(function ($data, $key) {
             return [
                 '1' =>  $key + 1,
@@ -32,7 +32,7 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
                 '3' => $data->civil_id . ' ',
                 '4' => $data->name,
                 '5' => $data->type,
-                '6' => $data->professions?->name,
+                '6' => $data->profession,
                 '7' => $data->email,
                 '8' => $data->kw_primary_contact_number,
                 '9' => $data->kw_area,

@@ -32,7 +32,7 @@ class MembersExport implements FromCollection, WithHeadings, ShouldAutoSize, Wit
                 '3' => $data->civil_id . ' ',
                 '4' => $data->name,
                 '5' => $data->type,
-                '6' => $data->profession,
+                '6' => $data->professions?->name,
                 '7' => $data->email,
                 '8' => $data->kw_primary_contact_number,
                 '9' => $data->kw_area,

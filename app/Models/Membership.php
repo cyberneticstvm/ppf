@@ -34,6 +34,11 @@ class Membership extends Model
         return $this->belongsTo(Specialization::class, 'specialization', 'id');
     }
 
+    public function professions()
+    {
+        return $this->belongsTo(Profession::class, 'profession', 'id');
+    }
+
     public function qualifications()
     {
         return $this->belongsTo(Qualification::class, 'qualification', 'id');

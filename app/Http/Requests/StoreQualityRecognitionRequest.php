@@ -55,7 +55,7 @@ class StoreQualityRecognitionRequest extends FormRequest
                 return;
             }
             $key = QualityRecognitionSubmission::organizationKey($this->company_name, $this->country, config('quality_recognition.year'));
-            if (QualityRecognitionSubmission::where('organization_key', $key)->exists()) {
+            if (QualityRecognitionSubmission::withTrashed()->where('organization_key', $key)->exists()) {
                 $validator->errors()->add('company_name', 'An entry for this company and country has already been submitted for this award year. Please contact PPF if you need to update it.');
             }
         });

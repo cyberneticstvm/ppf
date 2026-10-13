@@ -31,7 +31,7 @@ class QualityRecognitionController extends Controller
             $submission = QualityRecognitionSubmission::create($data);
         } catch (QueryException $exception) {
             // The unique database key also protects simultaneous duplicate requests.
-            if (QualityRecognitionSubmission::where('organization_key', $data['organization_key'])->exists()) {
+            if (QualityRecognitionSubmission::withTrashed()->where('organization_key', $data['organization_key'])->exists()) {
                 throw ValidationException::withMessages(['company_name' => 'An entry for this company and country has already been submitted for this award year.']);
             }
             throw $exception;

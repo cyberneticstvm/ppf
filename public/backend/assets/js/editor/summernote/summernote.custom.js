@@ -39,8 +39,11 @@ var save = function () {
 
 $(function () {
     "use strict"
-    $('.editor').summernote({
-        height: 300,
-        tabsize: 2
+    $('.editor').each(function () {
+        $(this).summernote({
+            height: 300,
+            tabsize: 2,
+            placeholder: $(this).attr('placeholder') || ''
+        });
     });
 })

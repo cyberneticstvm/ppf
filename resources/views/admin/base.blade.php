@@ -143,6 +143,7 @@
   <!-- login js-->
   <!-- Plugin used-->
   @include("admin.message")
+  <script src="{{ asset('frontend/assets/js/form-submit-progress.js') }}" defer></script>
 </body>
 
 </html>

@@ -7,9 +7,10 @@
             }
         });
 
-        $('form').submit(function() {
-            $(".btn-submit").attr("disabled", true);
-            $(".btn-submit").html("Loading...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
+        $('form').submit(function(event) {
+            if (this.hasAttribute('data-submit-progress') || event.isDefaultPrevented()) return;
+            $(this).find(".btn-submit").attr("disabled", true);
+            $(this).find(".btn-submit").html("Loading...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
         });
     });
 </script>

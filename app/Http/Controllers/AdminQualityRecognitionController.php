@@ -25,7 +25,7 @@ class AdminQualityRecognitionController extends Controller
             ->when($filters['status'] ?? null, fn ($query, $status) => $query->where('status', $status))
             ->when($filters['search'] ?? null, fn ($query, $search) => $query->where(function ($query) use ($search) {
                 $query->where('company_name', 'like', '%'.$search.'%')->orWhere('reference', 'like', '%'.$search.'%');
-            }))->latest()->paginate(25)->withQueryString();
+            }))->latest()->get();
 
         return view('admin.quality-recognition.index', compact('submissions'));
     }
@@ -49,5 +49,12 @@ class AdminQualityRecognitionController extends Controller
         $delivered = $submission->acknowledgement_sent_at && $submission->notification_sent_at;
 
         return back()->with($delivered ? 'success' : 'error', $delivered ? 'Both submission emails have been sent.' : 'Some emails are still pending. Check the recipient configuration and mail service, then retry.');
+    }
+
+    public function destroy(QualityRecognitionSubmission $submission)
+    {
+        $submission->delete();
+
+        return redirect()->route('admin.quality-recognition.index')->with('success', 'Quality Recognition submission deleted successfully.');
     }
 }

@@ -40,6 +40,7 @@ class QualityRecognitionTest extends TestCase
             $table->softDeletes();
         });
         (require database_path('migrations/2026_10_10_000001_create_quality_recognition_submissions_table.php'))->up();
+        (require database_path('migrations/2026_10_13_000002_add_soft_deletes_to_quality_recognition_submissions.php'))->up();
         Mail::fake();
     }
 
@@ -276,5 +277,36 @@ class QualityRecognitionTest extends TestCase
     public function test_thank_you_page_does_not_expose_entries_without_session(): void
     {
         $this->get(route('quality-recognition.thanks'))->assertRedirect(route('quality-recognition.create'));
+    }
+
+    public function test_admin_can_soft_delete_recognition_and_removed_record_keeps_duplicate_protection(): void
+    {
+        $submission = $this->submit();
+        $this->actingAs($this->admin())->delete(route('admin.quality-recognition.destroy', $submission))->assertRedirect(route('admin.quality-recognition.index'));
+        $this->assertSoftDeleted('quality_recognition_submissions', ['id' => $submission->id]);
+        $this->get(route('admin.quality-recognition.index'))->assertOk()->assertDontSee($submission->reference);
+        $this->post(route('quality-recognition.store'), $this->payload())->assertSessionHasErrors('company_name');
+        Mail::assertSentCount(2);
+    }
+
+    public function test_editors_cannot_delete_recognition_submissions(): void
+    {
+        $submission = $this->submit();
+        $editor = new User(['type' => 'editor']);
+        $editor->id = 9;
+        $this->actingAs($editor)->delete(route('admin.quality-recognition.destroy', $submission))->assertForbidden();
+        $this->assertNull($submission->fresh()->deleted_at);
+    }
+
+    public function test_recognition_admin_list_supplies_all_rows_to_shared_datatable(): void
+    {
+        $submission = $this->submit();
+        for ($i = 1; $i <= 26; $i++) {
+            $copy = $submission->replicate();
+            $copy->forceFill(['public_id' => (string) \Illuminate\Support\Str::uuid(), 'reference' => 'QER-TABLE-'.$i, 'organization_key' => hash('sha256', 'table-'.$i)])->save();
+        }
+        $response = $this->actingAs($this->admin())->get(route('admin.quality-recognition.index'));
+        $response->assertOk()->assertSee('id="basic-1"', false)->assertSee('display table table-sm table-striped')->assertSee('Delete submission');
+        $this->assertCount(27, $response->viewData('submissions'));
     }
 }

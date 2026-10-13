@@ -32,7 +32,7 @@
         @if($errors->any())
         <div class="alert alert-danger" role="alert" tabindex="-1" id="qr-errors"><strong>Please check your entry:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>
         @endif
-        <form method="POST" action="{{ route('quality-recognition.store') }}" id="quality-recognition-form">
+        <form method="POST" action="{{ route('quality-recognition.store') }}" id="quality-recognition-form" data-submit-progress data-submit-label="Submitting...">
             @csrf
             <p class="qr-required">Fields marked <span aria-hidden="true">*</span> are required. Optional evidence selections describe what you could share later; no file upload is needed.</p>
             @foreach([1 => ['Your Quality Foundation', array_slice(config('quality_recognition.questions'), 0, 4, true)], 2 => ['Innovation & Improvement', array_slice(config('quality_recognition.questions'), 4, null, true)]] as $section => [$heading, $questions])
@@ -79,7 +79,7 @@
                 </div>
             </section>
             <section class="qr-card" id="qr-review" hidden tabindex="-1" aria-labelledby="qr-review-heading"><h3 id="qr-review-heading">Review your entry</h3><p>Please check your answers and contact email before submitting.</p><dl id="qr-review-content"></dl><button type="button" class="btn btn-outline-secondary" id="qr-edit">Back to editing</button></section>
-            <div class="qr-submit"><button type="submit" class="theme-btn one" id="qr-submit">Submit entry</button><p>Your entry will be saved and sent to the PPF team for review. You will receive an acknowledgement email with a PDF copy of your answers. The admin will verify your submission and send any certificate separately.</p></div>
+            <div class="qr-submit"><button type="submit" class="theme-btn one btn-submit" id="qr-submit">Submit entry</button><p data-submit-status hidden role="status" aria-live="polite">Submitting your entry and preparing your acknowledgement email. Please wait until the process finishes.</p><p>Your entry will be saved and sent to the PPF team for review. You will receive an acknowledgement email with a PDF copy of your answers. The admin will verify your submission and send any certificate separately.</p></div>
         </form>
         <p class="qr-footnote">Thank you for sharing your story. Entries are recognised by the Progressive Professional Forum (PPF), Kuwait — celebrating the quality that companies and organizations build the world over.</p>
     </div>

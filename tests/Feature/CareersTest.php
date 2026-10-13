@@ -168,4 +168,16 @@ class CareersTest extends TestCase
         $member->id = 9;
         $this->actingAs($member)->get(route('admin.careers.poster', $career))->assertForbidden();
     }
+
+    public function test_career_admin_list_has_shared_datatable_and_edit_delete_actions_for_all_rows(): void
+    {
+        for ($i = 1; $i <= 26; $i++) {
+            Career::create($this->postData(['title' => 'Opening '.$i]) + ['created_by' => 42, 'updated_by' => 42]);
+        }
+        $response = $this->actingAs($this->admin())->get(route('admin.careers.index'));
+        $response->assertOk()->assertSee('id="basic-1"', false)->assertSee('display table table-sm table-striped')->assertSee('Edit job post')->assertSee('Delete job post');
+        $this->assertCount(26, $response->viewData('careers'));
+        $career = Career::firstOrFail();
+        $this->get(route('admin.careers.edit', $career))->assertOk()->assertSee($career->title)->assertSee('Enter job title, e.g. Quality Engineer')->assertSee('data-placeholder=', false);
+    }
 }

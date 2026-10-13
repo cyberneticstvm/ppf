@@ -27,7 +27,7 @@ class AdminCareerController extends Controller
         $careers = Career::query()
             ->when($filters['search'] ?? null, fn ($query, $search) => $query->where('title', 'like', '%'.$search.'%'))
             ->when($filters['status'] ?? null, fn ($query, $status) => $query->where('status', $status))
-            ->latest()->paginate(25)->withQueryString();
+            ->latest()->get();
 
         return view('admin.careers.index', compact('careers'));
     }

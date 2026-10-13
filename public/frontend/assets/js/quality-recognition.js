@@ -7,6 +7,7 @@
     let reviewed = false;
     button.textContent = 'Review & prepare submission';
     const edit = () => {
+        if (form.getAttribute('aria-busy') === 'true') return;
         reviewed = false;
         review.hidden = true;
         button.textContent = 'Review & prepare submission';
@@ -19,8 +20,6 @@
     });
     form.addEventListener('submit', event => {
         if (reviewed) {
-            button.disabled = true;
-            button.textContent = 'Submitting your entry…';
             return;
         }
         event.preventDefault();
@@ -50,4 +49,5 @@
         review.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     document.getElementById('qr-errors')?.focus();
+    window.addEventListener('pageshow', event => { if (event.persisted) edit(); });
 })();

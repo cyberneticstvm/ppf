@@ -25,10 +25,15 @@ The local migration check reported **Nothing to migrate**, so it is already reco
 ## Submission flow
 
 1. The applicant completes the seven questions and company details, optionally selects evidence types, and reviews the entry before confirming submission. It also works without JavaScript, with direct form submission and server validation.
+   During the final confirmation, the submit button displays the existing Bootstrap spinner and is disabled while saving the entry and preparing its acknowledgement. The review step itself does not start the loading state. Returning to a cached page resets the button and review state; validation redirects render a fresh enabled form.
 2. A database entry is saved with a unique reference and a `pending` review status. One normalized company name/country combination is permitted per award year, backed by a unique database key.
 3. An acknowledgement is sent to the applicant's email with an attached PDF copy of their submitted answers. The PDF includes the reference, submission date, all company/contact fields, seven responses, optional evidence choices, impact metric, showcase answer, and consent preferences. Internal admin review notes are excluded. A separate message sends the complete entry and admin review link to the configured PPF address. Both use the existing Laravel mail configuration.
 4. The thank-you page displays the reference within the applicant's session. There is no public endpoint exposing submitted entry details.
 5. Admins can filter and review entries, set `pending`, `approved`, or `rejected`, record internal notes, and retry any pending submission emails. Review notes are not sent to applicants.
+
+The admin list uses the same shared DataTables layout and search, sorting, page-size, and pagination features as the existing modules. Admins can delete a submission from the list or its review page after confirmation. This is a soft delete: the original record is retained but hidden from normal review, retry, and certificate routes. The company/year uniqueness reservation remains, so a removed record does not allow a second entry for the same award year.
+
+Deploy the deletion support with `php artisan migrate --path=database/migrations/2026_10_13_000002_add_soft_deletes_to_quality_recognition_submissions.php`. This has been applied to the local database.
 
 The form separates contact email and optional phone from the reference form's combined field. It separates optional follow-up consent from optional best-practice publication consent, and requires acknowledgement of the displayed rules. Evidence selections describe what could be shared later; they do not upload files.
 

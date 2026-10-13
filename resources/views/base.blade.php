@@ -568,6 +568,7 @@
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/main.js') }}"></script>
    <!---========================== javascript ==========================-->
    @include("admin.message")
+   <script src="{{ asset('frontend/assets/js/form-submit-progress.js') }}" defer></script>
    @stack('scripts')
 </body>
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Career extends Model
 {
@@ -21,5 +22,12 @@ class Career extends Model
     public function scopePublished($query)
     {
         return $query->where('status', 'published');
+    }
+
+    public function getExcerptAttribute(): string
+    {
+        $text = preg_replace('/<\/(?:p|div|li|h[1-6]|blockquote|tr)>|<br\s*\/?\s*>/i', ' ', $this->description ?? '');
+
+        return Str::limit(Str::squish(html_entity_decode(strip_tags($text), ENT_QUOTES | ENT_HTML5, 'UTF-8')), 190);
     }
 }

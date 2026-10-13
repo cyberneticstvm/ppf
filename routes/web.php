@@ -72,6 +72,7 @@ Route::prefix('admin/quality-recognition')->name('admin.quality-recognition.')
         Route::get('/{submission}/certificate', [QualityRecognitionCertificateController::class, 'download'])->name('certificate');
         Route::post('/{submission}/review', 'update')->name('update');
         Route::post('/{submission}/retry-emails', 'retryEmails')->middleware('throttle:5,1')->name('retry-emails');
+        Route::delete('/{submission}', 'destroy')->name('destroy');
     });
 
 Route::middleware(['web'])->group(function () {

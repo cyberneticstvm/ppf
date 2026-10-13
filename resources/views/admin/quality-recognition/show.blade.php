@@ -21,6 +21,7 @@
                 <button class="btn btn-primary" type="submit">Save review</button>
             </form>
             @if($submission->reviewed_at)<p class="mt-3">Last reviewed: {{ $submission->reviewed_at->format('d M Y, H:i') }}</p>@endif
+            <form class="mt-3" method="POST" action="{{ route('admin.quality-recognition.destroy', $submission) }}" onsubmit="return confirm('Delete this Quality Recognition submission?')">@csrf @method('DELETE')<button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete submission</button></form>
         </div></div>
         <div class="card"><div class="card-header"><h5>Email delivery</h5></div><div class="card-body">
             <p>Applicant acknowledgement with answers PDF: <strong>{{ $submission->acknowledgement_sent_at ? 'Sent' : 'Pending' }}</strong></p>

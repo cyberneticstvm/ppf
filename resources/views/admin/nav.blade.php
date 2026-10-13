@@ -65,6 +65,9 @@
                         </ul>
                     </li>-->
                     @if(Auth::user()->type == 'admin')
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="briefcase"></i><span>Careers</span></a>
+                        <ul class="nav-submenu menu-content"><li><a href="{{ route('admin.careers.index') }}">Manage Careers</a></li><li><a href="{{ route('admin.careers.create') }}">Add Job Post</a></li></ul>
+                    </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="award"></i><span>Quality Recognition</span></a>
                         <ul class="nav-submenu menu-content"><li><a href="{{ route('admin.quality-recognition.index') }}">Submissions &amp; Approval</a></li></ul>
                     </li>

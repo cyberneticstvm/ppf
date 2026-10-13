@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QualityRecognitionController;
 use App\Http\Controllers\AdminQualityRecognitionController;
 use App\Http\Controllers\QualityRecognitionCertificateController;
+use App\Http\Controllers\AdminCareerController;
+use App\Http\Controllers\CareerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,19 @@ Route::prefix('quality-recognition')->name('quality-recognition.')->controller(Q
     Route::get('/', 'create')->name('create');
     Route::post('/', 'store')->middleware('throttle:5,1')->name('store');
     Route::get('/thank-you', 'thanks')->name('thanks');
+});
+
+Route::get('/careers', [CareerController::class, 'index'])->name('careers.index');
+Route::get('/careers/{id}/poster', [CareerController::class, 'poster'])->whereNumber('id')->name('careers.poster');
+Route::get('/careers/{id}', [CareerController::class, 'show'])->whereNumber('id')->name('careers.show');
+Route::prefix('admin/careers')->name('admin.careers.')->middleware(['auth', 'admin'])->controller(AdminCareerController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::get('/{career}/edit', 'edit')->name('edit');
+    Route::get('/{career}/poster', 'poster')->name('poster');
+    Route::put('/{career}', 'update')->name('update');
+    Route::delete('/{career}', 'destroy')->name('destroy');
 });
 
 Route::prefix('admin/quality-recognition')->name('admin.quality-recognition.')

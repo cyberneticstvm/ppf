@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 function logo()
 {
-    return Logo::findOrFail(1);
+    return Logo::find(1);
 }
 
 function scrollMessage()

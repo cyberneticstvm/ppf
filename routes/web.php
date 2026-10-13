@@ -15,6 +15,9 @@ use App\Http\Controllers\ThoughtController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QualityRecognitionController;
+use App\Http\Controllers\AdminQualityRecognitionController;
+use App\Http\Controllers\QualityRecognitionCertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,21 @@ Route::get('/db-test', function () {
 Route::get('/login', function () {
     return view('admin.login');
 })->name('login');
+
+Route::prefix('quality-recognition')->name('quality-recognition.')->controller(QualityRecognitionController::class)->group(function () {
+    Route::get('/', 'create')->name('create');
+    Route::post('/', 'store')->middleware('throttle:5,1')->name('store');
+    Route::get('/thank-you', 'thanks')->name('thanks');
+});
+
+Route::prefix('admin/quality-recognition')->name('admin.quality-recognition.')
+    ->middleware(['auth', 'admin'])->controller(AdminQualityRecognitionController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/{submission}', 'show')->name('show');
+        Route::get('/{submission}/certificate', [QualityRecognitionCertificateController::class, 'download'])->name('certificate');
+        Route::post('/{submission}/review', 'update')->name('update');
+        Route::post('/{submission}/retry-emails', 'retryEmails')->middleware('throttle:5,1')->name('retry-emails');
+    });
 
 Route::middleware(['web'])->group(function () {
     Route::controller(UserController::class)->group(function () {

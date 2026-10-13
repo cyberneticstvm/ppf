@@ -29,6 +29,8 @@
    <!--<link rel='stylesheet' href="{{ asset('/frontend/assets/css/woocommerce-layout.css') }}" type='text/css' media='all' />
    <link rel='stylesheet' href="{{ asset('/frontend/assets/css/woocommerce.css') }}" type='text/css' media='all' />-->
    <!----woocommerce---->
+   <link rel="stylesheet" href="{{ asset('frontend/assets/css/footer-quality-recognition.css') }}">
+   @stack('styles')
 </head>
 
 <body class="theme-creote">
@@ -97,7 +99,7 @@
                         <div class="col-xl-3 col-lg-2 col-md-12 hidden-sm">
                            <div class="logo mid_logo_icon">
                               <a href="/" class="logo_mid">
-                                 <img src="{{ asset(logo()->logo) }}" alt="{{ logo()->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
+                                 <img src="{{ asset(logo()?->logo) }}" alt="{{ logo()?->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
                               </a>
                            </div>
                         </div>
@@ -108,7 +110,7 @@
                                     <span class=" icon-phone mid_icon"></span>
                                     <div class="text">
                                        <h4>Call Us:</h4>
-                                       <p><a href="tel:{{ logo()->mobile }}">{{ logo()->mobile }}</a></p>
+                                       <p><a href="tel:{{ logo()?->mobile }}">{{ logo()?->mobile }}</a></p>
                                     </div>
                                  </div>
                               </div>
@@ -117,7 +119,7 @@
                                     <span class="icon-email mid_icon"></span>
                                     <div class="text">
                                        <h4>Email Us:</h4>
-                                       <p><a href="mailto:{{ logo()->email }}">{{ logo()->email }}</a></p>
+                                       <p><a href="mailto:{{ logo()?->email }}">{{ logo()?->email }}</a></p>
                                     </div>
                                  </div>
                               </div>
@@ -200,6 +202,11 @@
                               <div class="image_box">
                                  <a href="{{ route('membership') }}"><img decoding="async" src="{{ asset('frontend/assets/images/home/advt-box-img.jpeg') }}" class="img" alt="image"></a>
                               </div>
+                              <a href="{{ route('quality-recognition.create') }}" class="footer-quality-recognition">
+                                 <span class="footer-quality-recognition-icon" aria-hidden="true"><i class="fa fa-trophy"></i></span>
+                                 <span class="footer-quality-recognition-label">Quality Recognition<small>Share your quality story</small></span>
+                                 <span class="footer-quality-recognition-arrow" aria-hidden="true">&rarr;</span>
+                              </a>
                            </div>
                         </div>
                      </div>
@@ -369,7 +376,7 @@
                   <div class="col-md-6">
                      <div class="logo mid_logo_icon">
                         <a href="/" class="logo_mid">
-                           <img src="{{ asset(logo()->logo) }}" alt="{{ logo()->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
+                           <img src="{{ asset(logo()?->logo) }}" alt="{{ logo()?->alt_text }}" class="logo_default ppfLogo" style="max-width: 80%">
                         </a>
                      </div>
                   </div>
@@ -379,7 +386,7 @@
                      <div class="mid_content one">
                         <span class=" icon-phone mid_icon"></span>
                         <div class="text">
-                           <p><a href="tel:{{ logo()->mobile }}">{{ logo()->mobile }}</a></p>
+                           <p><a href="tel:{{ logo()?->mobile }}">{{ logo()?->mobile }}</a></p>
                         </div>
                      </div>
                   </div>
@@ -387,7 +394,7 @@
                      <div class="mid_content one">
                         <span class="icon-email mid_icon"></span>
                         <div class="text">
-                           <p><a href="mailto:{{ logo()->email }}">{{ logo()->email }}</a></p>
+                           <p><a href="mailto:{{ logo()?->email }}">{{ logo()?->email }}</a></p>
                         </div>
                      </div>
                   </div>
@@ -560,6 +567,7 @@
    <script type='text/javascript' src="{{ asset('/frontend/assets/js/main.js') }}"></script>
    <!---========================== javascript ==========================-->
    @include("admin.message")
+   @stack('scripts')
 </body>
 
 </html>

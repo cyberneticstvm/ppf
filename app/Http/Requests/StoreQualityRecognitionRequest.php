@@ -29,6 +29,8 @@ class StoreQualityRecognitionRequest extends FormRequest
             'phone' => 'nullable|string|max:50',
             'evidence_types' => 'nullable|array|max:8',
             'evidence_types.*' => ['string', 'distinct', Rule::in(config('quality_recognition.evidence_options'))],
+            'evidence_files' => 'nullable|array|max:5',
+            'evidence_files.*' => 'required|file|mimes:pdf,jpg,jpeg,png,webp,doc,docx,xls,xlsx,ppt,pptx|max:5120',
             'impact_metric' => 'nullable|string|max:255',
             'showcase' => 'nullable|string|max:10000',
             'follow_up_consent' => 'sometimes|boolean',
@@ -45,7 +47,7 @@ class StoreQualityRecognitionRequest extends FormRequest
     public function attributes(): array
     {
         return collect(config('quality_recognition.company_fields'))->mapWithKeys(fn ($details, $field) => [$field => $details['label']])->all()
-            + ['rules_accepted' => 'rules and judging acknowledgement'];
+            + ['rules_accepted' => 'rules and judging acknowledgement', 'evidence_files' => 'supporting files', 'evidence_files.*' => 'supporting file'];
     }
 
     public function withValidator($validator): void

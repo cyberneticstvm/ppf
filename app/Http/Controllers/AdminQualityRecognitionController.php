@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\QualityRecognitionSubmission;
 use App\Services\QualityRecognitionNotifications;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class AdminQualityRecognitionController extends Controller
@@ -41,6 +42,18 @@ class AdminQualityRecognitionController extends Controller
         $submission->update($data + ['reviewed_by' => $request->user()->id, 'reviewed_at' => now()]);
 
         return back()->with('success', 'Submission review saved successfully.');
+    }
+
+    public function downloadEvidence(QualityRecognitionSubmission $submission, string $file)
+    {
+        $evidence = collect($submission->evidence_files ?? [])->firstWhere('id', $file);
+        abort_unless($evidence && Storage::disk('local')->exists($evidence['path']), 404);
+
+        return Storage::disk('local')->download($evidence['path'], $evidence['name'], [
+            'Content-Type' => $evidence['mime_type'],
+            'X-Content-Type-Options' => 'nosniff',
+            'Cache-Control' => 'private, no-store',
+        ]);
     }
 
     public function retryEmails(QualityRecognitionSubmission $submission, QualityRecognitionNotifications $notifications)

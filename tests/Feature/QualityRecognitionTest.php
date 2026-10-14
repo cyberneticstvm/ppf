@@ -8,9 +8,11 @@ use App\Models\User;
 use App\Services\QualityRecognitionAnswersPdf;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Mail\MailManager;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Mockery;
 use Tests\TestCase;
@@ -41,6 +43,8 @@ class QualityRecognitionTest extends TestCase
         });
         (require database_path('migrations/2026_10_10_000001_create_quality_recognition_submissions_table.php'))->up();
         (require database_path('migrations/2026_10_13_000002_add_soft_deletes_to_quality_recognition_submissions.php'))->up();
+        (require database_path('migrations/2026_10_14_000001_add_evidence_files_to_quality_recognition_submissions.php'))->up();
+        Storage::fake('local');
         Mail::fake();
     }
 
@@ -74,7 +78,7 @@ class QualityRecognitionTest extends TestCase
 
     public function test_form_uses_the_existing_layout_and_reference_questions(): void
     {
-        $this->get(route('quality-recognition.create'))->assertOk()->assertSee('Quality Excellence Recognition')->assertSee('Your Quality Foundation')->assertSee('Innovation &amp; Improvement', false)->assertSee('quality-recognition.css')->assertSee('quality-recognition.js');
+        $this->get(route('quality-recognition.create'))->assertOk()->assertSee('Quality Excellence Recognition')->assertSee('Your Quality Foundation')->assertSee('Innovation &amp; Improvement', false)->assertSee('quality-recognition.css')->assertSee('quality-recognition.js')->assertSee('enctype="multipart/form-data"', false)->assertSee('name="evidence_files[]" id="evidence_files" multiple', false);
     }
 
     public function test_submission_is_saved_and_both_emails_are_sent(): void
@@ -95,7 +99,10 @@ class QualityRecognitionTest extends TestCase
     {
         // Use Laravel's in-memory transport to exercise actual MIME assembly and PDF rendering.
         Mail::swap(new MailManager($this->app));
-        $submission = $this->submit();
+        $this->post(route('quality-recognition.store'), $this->payload() + [
+            'evidence_files' => [UploadedFile::fake()->create('evidence.pdf', 10, 'application/pdf')],
+        ])->assertRedirect(route('quality-recognition.thanks'));
+        $submission = QualityRecognitionSubmission::firstOrFail();
         $messages = Mail::mailer('array')->getSymfonyTransport()->messages();
         $this->assertCount(2, $messages);
         $acknowledgement = $messages->first()->getOriginalMessage();
@@ -308,5 +315,71 @@ class QualityRecognitionTest extends TestCase
         $response = $this->actingAs($this->admin())->get(route('admin.quality-recognition.index'));
         $response->assertOk()->assertSee('id="basic-1"', false)->assertSee('display table table-sm table-striped')->assertSee('Delete submission');
         $this->assertCount(27, $response->viewData('submissions'));
+    }
+
+    public function test_multiple_evidence_files_are_stored_privately_and_downloadable_only_by_admin(): void
+    {
+        $this->post(route('quality-recognition.store'), $this->payload() + ['evidence_files' => [
+            UploadedFile::fake()->create('Results.pdf', 12, 'application/pdf'),
+            UploadedFile::fake()->image('Team.png'),
+        ]])->assertRedirect(route('quality-recognition.thanks'));
+        $submission = QualityRecognitionSubmission::firstOrFail();
+        $this->assertCount(2, $submission->evidence_files);
+        foreach ($submission->evidence_files as $file) {
+            Storage::disk('local')->assertExists($file['path']);
+            $this->assertStringStartsWith('quality-recognition/'.$submission->public_id.'/', $file['path']);
+            $this->assertGreaterThan(0, $file['size']);
+        }
+        $file = $submission->evidence_files[0];
+        $url = route('admin.quality-recognition.evidence', [$submission, $file['id']]);
+        $this->get($url)->assertRedirect(route('login'));
+        $editor = new User(['type' => 'editor']);
+        $editor->id = 9;
+        $this->actingAs($editor)->get($url)->assertForbidden();
+        $this->actingAs($this->admin())->get(route('admin.quality-recognition.show', $submission))->assertOk()->assertSee('Results.pdf')->assertSee('Team.png')->assertSee($url);
+        $response = $this->get($url)->assertOk()->assertDownload('Results.pdf')->assertHeader('X-Content-Type-Options', 'nosniff');
+        $this->assertSame(Storage::disk('local')->get($file['path']), $response->streamedContent());
+        $this->get(route('admin.quality-recognition.evidence', [$submission, (string) \Illuminate\Support\Str::uuid()]))->assertNotFound();
+        Storage::disk('local')->delete($file['path']);
+        $this->get($url)->assertNotFound();
+    }
+
+    public function test_invalid_evidence_files_are_rejected_before_saving_or_sending_mail(): void
+    {
+        foreach ([
+            [UploadedFile::fake()->create('script.php', 1, 'application/x-httpd-php')],
+            [UploadedFile::fake()->create('large.pdf', 5121, 'application/pdf')],
+            array_map(fn ($i) => UploadedFile::fake()->create('file'.$i.'.pdf', 1, 'application/pdf'), range(1, 6)),
+        ] as $files) {
+            $this->post(route('quality-recognition.store'), $this->payload() + ['evidence_files' => $files])->assertSessionHasErrors();
+        }
+        $this->assertSame(0, QualityRecognitionSubmission::count());
+        $this->assertSame([], Storage::disk('local')->allFiles());
+        Mail::assertNothingSent();
+    }
+
+    public function test_evidence_download_cannot_access_another_submissions_file(): void
+    {
+        $this->post(route('quality-recognition.store'), $this->payload() + ['evidence_files' => [UploadedFile::fake()->image('proof.png')]])->assertRedirect();
+        $first = QualityRecognitionSubmission::firstOrFail();
+        $payload = $this->payload();
+        $payload['company_name'] = 'Another company';
+        $this->post(route('quality-recognition.store'), $payload)->assertRedirect();
+        $second = QualityRecognitionSubmission::latest('id')->firstOrFail();
+        $this->actingAs($this->admin())->get(route('admin.quality-recognition.evidence', [$second, $first->evidence_files[0]['id']]))->assertNotFound();
+        $this->delete(route('admin.quality-recognition.destroy', $first))->assertRedirect();
+        $this->get(route('admin.quality-recognition.show', $first))->assertRedirect();
+        $this->assertTrue($first->fresh()->trashed());
+    }
+
+    public function test_storage_failure_rolls_back_submission_and_does_not_send_mail(): void
+    {
+        $disk = Mockery::mock(\Illuminate\Filesystem\FilesystemAdapter::class);
+        $disk->shouldReceive('putFileAs')->twice()->andReturn('quality-recognition/stored-proof.png', false);
+        $disk->shouldReceive('delete')->with(['quality-recognition/stored-proof.png'])->once()->andReturn(true);
+        Storage::shouldReceive('disk')->with('local')->andReturn($disk);
+        $this->post(route('quality-recognition.store'), $this->payload() + ['evidence_files' => [UploadedFile::fake()->image('proof.png'), UploadedFile::fake()->image('second.png')]])->assertSessionHasErrors('evidence_files');
+        $this->assertSame(0, QualityRecognitionSubmission::count());
+        Mail::assertNothingSent();
     }
 }

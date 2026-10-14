@@ -70,6 +70,7 @@ Route::prefix('admin/quality-recognition')->name('admin.quality-recognition.')
         Route::get('/', 'index')->name('index');
         Route::get('/{submission}', 'show')->name('show');
         Route::get('/{submission}/certificate', [QualityRecognitionCertificateController::class, 'download'])->name('certificate');
+        Route::get('/{submission}/evidence/{file}', 'downloadEvidence')->whereUuid('file')->name('evidence');
         Route::post('/{submission}/review', 'update')->name('update');
         Route::post('/{submission}/retry-emails', 'retryEmails')->middleware('throttle:5,1')->name('retry-emails');
         Route::delete('/{submission}', 'destroy')->name('destroy');

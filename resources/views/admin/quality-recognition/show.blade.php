@@ -10,6 +10,12 @@
         <div class="card"><div class="card-header"><h5>Quality story</h5></div><div class="card-body">
             @foreach(config('quality_recognition.questions') as $field => $question)<h6>{{ $loop->iteration }}. {{ $question['label'] }}</h6><p style="white-space:pre-wrap;overflow-wrap:anywhere">{{ $submission->$field }}</p><hr>@endforeach
             <h6>Possible evidence</h6><p>{{ implode(', ', $submission->evidence_types ?? []) ?: 'None selected' }}</p>
+            <h6>Uploaded supporting files</h6>
+            @forelse($submission->evidence_files ?? [] as $file)
+                <p style="overflow-wrap:anywhere"><a href="{{ route('admin.quality-recognition.evidence', [$submission, $file['id']]) }}"><i class="fa fa-download" aria-hidden="true"></i> {{ $file['name'] }}</a> <small class="text-muted">({{ number_format($file['size'] / 1024, 1) }} KB)</small></p>
+            @empty
+                <p>No files uploaded.</p>
+            @endforelse
             <h6>Impact metric</h6><p>{{ $submission->impact_metric ?: 'Not provided' }}</p><h6>Optional showcase</h6><p style="white-space:pre-wrap;overflow-wrap:anywhere">{{ $submission->showcase ?: 'Not provided' }}</p>
         </div></div>
     </div><div class="col-xl-4">

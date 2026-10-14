@@ -55,6 +55,16 @@ The existing optional endpoint downloads a certificate for an authenticated admi
 
 ## Implementation map
 
+### Optional supporting uploads
+
+The evidence section accepts up to five non-confidential files, each at most 5 MB: PDF, JPG/JPEG, PNG, WebP, Word, Excel and PowerPoint. The selected names appear in the frontend review step. On validation failure, applicants must reselect files because browsers do not repopulate file inputs.
+
+Files are stored on the explicit `local` disk under `storage/app/quality-recognition/{public_id}/`, outside the public directory. The nullable JSON `evidence_files` database column records each file's UUID, original display name, storage path, detected MIME type and size. The migration is `2026_10_14_000001_add_evidence_files_to_quality_recognition_submissions.php`; deploy it using `php artisan migrate`.
+
+Admins download the files from the submission detail screen through an authenticated, admin-only endpoint. The requested file must belong to that submission. Files are never attached to either notification email; the applicant still receives the existing answers PDF only. Soft-deleted submissions retain their files with the retained database record, but their download endpoints become inaccessible.
+
+Submission creation and file metadata updates use a database transaction; if storage or database persistence fails, the transaction is rolled back and newly stored files are removed. Set PHP `upload_max_filesize` to at least `5M` and `post_max_size` above the combined 25 MB file limit (for example `32M`), with equivalent web-server request-body limits. The local PHP configuration already permits these sizes.
+
 | Area | Files |
 | --- | --- |
 | Questions, labels, evidence choices, recipient, certificate template | `config/quality_recognition.php` |

@@ -13,6 +13,7 @@ class QualityRecognitionSubmission extends Model
 
     protected $casts = [
         'evidence_types' => 'array',
+        'evidence_files' => 'array',
         'follow_up_consent' => 'boolean',
         'sharing_consent' => 'boolean',
         'reviewed_at' => 'datetime',

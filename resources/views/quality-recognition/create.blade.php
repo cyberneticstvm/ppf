@@ -32,9 +32,9 @@
         @if($errors->any())
         <div class="alert alert-danger" role="alert" tabindex="-1" id="qr-errors"><strong>Please check your entry:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>
         @endif
-        <form method="POST" action="{{ route('quality-recognition.store') }}" id="quality-recognition-form" data-submit-progress data-submit-label="Submitting...">
+        <form method="POST" action="{{ route('quality-recognition.store') }}" enctype="multipart/form-data" id="quality-recognition-form" data-submit-progress data-submit-label="Submitting...">
             @csrf
-            <p class="qr-required">Fields marked <span aria-hidden="true">*</span> are required. Optional evidence selections describe what you could share later; no file upload is needed.</p>
+            <p class="qr-required">Fields marked <span aria-hidden="true">*</span> are required. Supporting files are optional — share non-confidential material only.</p>
             @foreach([1 => ['Your Quality Foundation', array_slice(config('quality_recognition.questions'), 0, 4, true)], 2 => ['Innovation & Improvement', array_slice(config('quality_recognition.questions'), 4, null, true)]] as $section => [$heading, $questions])
             <section class="qr-card" aria-labelledby="section-{{ $section }}">
                 <div class="qr-section-title"><span>{{ $section }}</span><h3 id="section-{{ $section }}">{{ $heading }}</h3></div>
@@ -50,6 +50,15 @@
                     <div class="qr-chips">@foreach(config('quality_recognition.evidence_options') as $option)<label><input type="checkbox" name="evidence_types[]" value="{{ $option }}" @checked(in_array($option, (array) old('evidence_types', [])))><span>{{ $option }}</span></label>@endforeach</div>
                     @error('evidence_types')<small class="text-danger">{{ $message }}</small>@enderror
                     @error('evidence_types.*')<small class="text-danger">{{ $message }}</small>@enderror
+                    <div class="qr-field mt-3">
+                        <label for="evidence_files">Upload supporting files <small>(optional)</small></label>
+                        <p class="qr-hint" id="evidence-files-hint">Select up to 5 files, maximum 5 MB each. PDF, JPG, PNG, WebP, Word, Excel or PowerPoint. Files are available only to the PPF admin team and are not attached to emails.</p>
+                        <input type="file" name="evidence_files[]" id="evidence_files" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx,.ppt,.pptx" class="form-control" aria-describedby="evidence-files-hint evidence-files-selection">
+                        <p class="qr-hint mt-2" id="evidence-files-selection" role="status" aria-live="polite"></p>
+                        @error('evidence_files')<small class="text-danger">{{ $message }}</small>@enderror
+                        @foreach($errors->get('evidence_files.*') as $messages) @foreach($messages as $message)<small class="text-danger d-block">{{ $message }}</small>@endforeach @endforeach
+                        @if($errors->any())<p class="qr-hint">Please reselect supporting files before submitting again.</p>@endif
+                    </div>
                 </fieldset>
                 @endif
                 @if($field === 'improvement_impact')

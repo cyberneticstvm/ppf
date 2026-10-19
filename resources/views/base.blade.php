@@ -266,7 +266,7 @@
                                  <li><a href="/events">Events</a></li>
                                  <li><a href="/publications">Publications</a></li>
                                  <li><a href="/job/all">Jobs / Community</a></li>
-                                 <li><a href="{{ route('careers.index') }}">Careers</a></li>
+                                 <li><a href="{{ route('careers.index') }}">Job Portal</a></li>
                               </ul>
 
                            </div>
